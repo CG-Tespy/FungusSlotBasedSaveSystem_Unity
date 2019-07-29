@@ -7,5 +7,8 @@ Latest version (V1.00) asset packages:<br/>
 Standalone: https://drive.google.com/file/d/1nnSDhSiJGyUAcTwfS-7XJoL7m-vsh_66/view?usp=sharing
 
 Bundled with Fungus 3.10.0: https://drive.google.com/file/d/17cKMrXHw5I5CnLbZ_SLxVCuyqQigxm_m/view?usp=sharing 
-<br/><br/><br/>
+<br/><br/>
+Fungus website link: http://fungusgames.com/ <br/> <br/>
+
+
 Information on how to use this can be found on this repo's wiki pages.
