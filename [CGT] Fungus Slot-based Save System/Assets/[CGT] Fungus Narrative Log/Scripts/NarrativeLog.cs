@@ -1,17 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
-namespace Fungus.NarrativeLogSystem
+namespace CGTUnity.Fungus.NarrativeLogSystem
 {
     /// <summary>
     /// Keeps track of the text in Say Dialogs up to any given point in a game.
     /// </summary>
     public class NarrativeLog : MonoBehaviour
     {
-        
         public virtual List<Entry> Entries          { get; protected set; }
 
+        #region Methods
         protected virtual void Awake()
         {
             Entries =                               new List<Entry>();
@@ -26,7 +26,7 @@ namespace Fungus.NarrativeLogSystem
                 return;
 
             // Get the story and name texts, apply them to a new entry to register
-            var newEntry =              new Entry(sayDialog.StoryText, sayDialog.NameText);
+            var newEntry =                          new Entry(sayDialog.StoryText, sayDialog.NameText);
             AddNewEntry(newEntry);
 
         }
@@ -70,6 +70,8 @@ namespace Fungus.NarrativeLogSystem
         {
             WriterSignals.OnWriterState -=                  OnWriterStateChange;
         }
+
+        #endregion
 
     }
 

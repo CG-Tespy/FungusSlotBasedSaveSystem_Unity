@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Fungus;
 using System.IO;
-using System.Text;
 
 namespace CGTUnity.Fungus.SaveSystem
 {
@@ -13,8 +10,8 @@ namespace CGTUnity.Fungus.SaveSystem
     {
         #region Fields
         
-        [Tooltip("For when you want your save data to be harder to hack. Experimental.")]
-        [SerializeField] protected bool writeAsBinary;
+        [Tooltip("For when you want to make it harder for players to cheat by editing the save data. Experimental.")]
+        [SerializeField] protected bool writeEncrypted;
 
         protected System.Text.Encoding actualEncoding;
 
@@ -36,7 +33,7 @@ namespace CGTUnity.Fungus.SaveSystem
         }
 
         /// <summary>
-        /// Writes the passed save data to the passed save directory, returning true if successful, and 
+        /// Writes the passed save data to the passed save directory, returning true if successful, or 
         /// false otherwise.
         /// </summary>
         public virtual bool WriteOneToDisk(GameSaveData saveData, string saveDir)
@@ -59,7 +56,7 @@ namespace CGTUnity.Fungus.SaveSystem
                                                             fileExtension);
             var filePath =                                  string.Format(filePathFormat, saveDir, fileName);
             
-            if (!writeAsBinary)
+            if (!writeEncrypted)
                 File.WriteAllText(filePath, dataToWrite, actualEncoding);
             
             else

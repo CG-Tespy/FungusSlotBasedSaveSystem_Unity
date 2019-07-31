@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Fungus.NarrativeLogSystem;
-using NarrativeSignals =                                Fungus.NarrativeLogSystem.Signals;
+using CGTUnity.Fungus.NarrativeLogSystem;
+using NarrativeSignals =                                CGTUnity.Fungus.NarrativeLogSystem.Signals;
 
 namespace CGTUnity.Fungus.SaveSystem
 {

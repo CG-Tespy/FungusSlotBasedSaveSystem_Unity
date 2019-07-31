@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Fungus.NarrativeLogSystem;
+using CGTUnity.Fungus.NarrativeLogSystem;
 
 namespace CGTUnity.Fungus.SaveSystem
 {

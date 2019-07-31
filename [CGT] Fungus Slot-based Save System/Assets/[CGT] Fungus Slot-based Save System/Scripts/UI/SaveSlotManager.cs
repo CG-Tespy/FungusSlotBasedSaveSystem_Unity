@@ -121,14 +121,6 @@ namespace CGTUnity.Fungus.SaveSystem
                 slot.Clear();
         }
 
-        public virtual void ClearSlot(SaveSlot slot)
-        {
-            if (slot == null)
-                throw new System.NullReferenceException("Cannot clear a null slot.");
-
-            slot.Clear();
-        }
-
         #endregion
 
         #region Event listeners

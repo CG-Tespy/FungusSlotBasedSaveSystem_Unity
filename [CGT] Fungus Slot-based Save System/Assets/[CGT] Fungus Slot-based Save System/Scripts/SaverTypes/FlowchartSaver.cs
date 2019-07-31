@@ -12,7 +12,7 @@ namespace CGTUnity.Fungus.SaveSystem
     {
 
         [Tooltip("A list of Flowchart objects whose variables will be encoded in the save data. Boolean, Integer, Float and String variables are supported.")]
-        [SerializeField] Flowchart[] flowcharts =               null;
+        [SerializeField] protected Flowchart[] flowcharts =               null;
 
         #region Methods
 

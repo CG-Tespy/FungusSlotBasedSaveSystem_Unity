@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
 
-namespace Fungus
+namespace CGTUnity.Fungus.SaveSystem
 {
     [EventHandlerInfo("Scene",
                         "Save Data Loaded",

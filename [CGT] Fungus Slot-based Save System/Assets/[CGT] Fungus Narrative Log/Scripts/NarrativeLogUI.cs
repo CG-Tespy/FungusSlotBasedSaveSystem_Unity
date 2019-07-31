@@ -1,16 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-using EntryDisplay = Fungus.NarrativeLogSystem.NarrativeLogEntryDisplay;
+using EntryDisplay =                                        CGTUnity.Fungus.NarrativeLogSystem.NarrativeLogEntryDisplay;
 
-namespace Fungus.NarrativeLogSystem
+namespace CGTUnity.Fungus.NarrativeLogSystem
 {
     /// <summary>
     /// Manages the UI aspects of the Narrative Log.
     /// </summary>
     public class NarrativeLogUI : MonoBehaviour
     {
+        #region Fields
         [Tooltip("Contains the entries this UI is there to display.")]
         [SerializeField] protected NarrativeLog narrativeLog;
         [Tooltip("Contains the overall aesthetic of each entry.")]
@@ -18,6 +18,9 @@ namespace Fungus.NarrativeLogSystem
         [SerializeField] protected RectTransform entryHolder;
         protected CanvasGroup canvasGroup;
         protected List<EntryDisplay> entryDisplays =        new List<EntryDisplay>();
+        #endregion
+
+        #region Methods
 
         protected virtual void Awake()
         {
@@ -84,6 +87,7 @@ namespace Fungus.NarrativeLogSystem
             Signals.LogCleared -=        OnLogCleared;
         }
 
+        #endregion
         #endregion
     }
 }

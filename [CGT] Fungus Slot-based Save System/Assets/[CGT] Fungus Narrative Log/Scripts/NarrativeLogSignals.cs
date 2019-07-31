@@ -1,25 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine.Events;
 
-
-namespace Fungus.NarrativeLogSystem
+namespace CGTUnity.Fungus.NarrativeLogSystem
 {
     /// <summary>
     /// Signals related to the new NarrativeLog's actions.
     /// </summary>
     public static class Signals
     {
-
         /// <summary>
         /// Invoked when a new entry is registered into the Narrative Log.
         /// </summary>
-        public static UnityAction<Entry> NarrativeAdded = delegate {};
+        public static UnityAction<Entry> NarrativeAdded =   delegate {};
 
         /// <summary>
         /// Invoked when a NarrativeLog's contents are cleared.
         /// </summary>
-        public static UnityAction LogCleared = delegate {};
+        public static UnityAction LogCleared =              delegate {};
     }
 }

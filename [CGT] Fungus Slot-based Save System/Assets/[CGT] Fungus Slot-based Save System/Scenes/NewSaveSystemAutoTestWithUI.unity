@@ -1397,7 +1397,6 @@ GameObject:
   - component: {fileID: 899471406}
   - component: {fileID: 899471405}
   - component: {fileID: 899471403}
-  - component: {fileID: 899471402}
   - component: {fileID: 899471401}
   - component: {fileID: 899471400}
   - component: {fileID: 899471399}
@@ -1417,7 +1416,6 @@ GameObject:
   - component: {fileID: 899471382}
   - component: {fileID: 899471381}
   - component: {fileID: 899471380}
-  - component: {fileID: 899471379}
   - component: {fileID: 899471378}
   - component: {fileID: 899471377}
   - component: {fileID: 899471376}
@@ -1455,6 +1453,8 @@ GameObject:
   - component: {fileID: 899471386}
   - component: {fileID: 899471385}
   - component: {fileID: 899471384}
+  - component: {fileID: 899471402}
+  - component: {fileID: 899471379}
   m_Layer: 0
   m_Name: TestSaveSystemUI
   m_TagString: Untagged
@@ -2667,7 +2667,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471379
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2677,7 +2677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b391f286193f0d34c990faf98b6306dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 24
+  itemId: 84
   indentLevel: 0
   key: second
 --- !u!114 &899471380
@@ -3510,7 +3510,7 @@ MonoBehaviour:
     {w=1.0}
   description: 
   character: {fileID: 562240247}
-  portrait: {fileID: 21300000, guid: 75b6e7c8c9b6b4d40ae30dc671be34b7, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3537,7 +3537,7 @@ MonoBehaviour:
   sayDialog: {fileID: 1510543572}
 --- !u!114 &899471402
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3547,7 +3547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b391f286193f0d34c990faf98b6306dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 2
+  itemId: 83
   indentLevel: 0
   key: first
 --- !u!114 &899471403
@@ -3620,7 +3620,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 899471403}
   selectedCommands: []
   variables:
   - {fileID: 899471409}

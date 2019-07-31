@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Fungus.NarrativeLogSystem;
+using CGTUnity.Fungus.NarrativeLogSystem;
 using CGTUnity.Fungus.SaveSystem;
 
 /// <summary>

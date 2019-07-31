@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace CGTUnity.Fungus.SaveSystem
+﻿namespace CGTUnity.Fungus.SaveSystem
 {
     public interface ISaveLoader
     {

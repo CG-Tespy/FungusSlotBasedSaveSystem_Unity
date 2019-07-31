@@ -11,7 +11,7 @@ namespace CGTUnity.Fungus.SaveSystem
     /// </summary>
     public class GameLoader : SaveLoader<GameSaveData>
     {
-        List<SaveLoader> subloaders =               new List<SaveLoader>(); 
+        protected List<SaveLoader> subloaders =               new List<SaveLoader>(); 
         // Handles loading the different types of data.
 
         #region Methods

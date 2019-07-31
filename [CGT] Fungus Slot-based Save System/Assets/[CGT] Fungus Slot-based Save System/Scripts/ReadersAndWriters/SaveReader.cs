@@ -14,8 +14,8 @@ namespace CGTUnity.Fungus.SaveSystem
     {
         #region Fields
         
-        [Tooltip("Set this to true if you want it to read binary-written save data.")]
-        [SerializeField] protected bool readAsBinary;
+        [Tooltip("Set this to true if you want it to read non-plaintext-written save data. Experimental.")]
+        [SerializeField] protected bool readEncrypted;
 
         protected System.Text.Encoding actualEncoding; // The System.Text.Encoding class isn't serializable, so...
 
@@ -45,7 +45,7 @@ namespace CGTUnity.Fungus.SaveSystem
         }
 
         /// <summary>
-        /// Reads a save file at the passed filePath, returning a GameSaveData.
+        /// Reads a save file at the passed filePath, returning a GameSaveData if appropriate.
         /// </summary>
         public virtual GameSaveData ReadOneFromDisk(string filePath)
         {
@@ -60,7 +60,7 @@ namespace CGTUnity.Fungus.SaveSystem
             // Read the file's contents into a json string...
             var jsonSaveData =                                  "";
 
-            if (!readAsBinary)
+            if (!readEncrypted)
             {
                 jsonSaveData =                                  File.ReadAllText(filePath, actualEncoding);
             }

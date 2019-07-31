@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
-namespace Fungus.NarrativeLogSystem
+namespace CGTUnity.Fungus.NarrativeLogSystem
 {
 	/// <summary>
 	/// As the class name suggests, it holds data for a single entry within the NarrativeLog. If you
@@ -18,7 +15,7 @@ namespace Fungus.NarrativeLogSystem
         public virtual string StoryText             { get { return storyText; } set { storyText = value; } }
         public virtual string NameText              { get { return nameText; } set { nameText = value; } }
 
-        public Entry() {}
+        public Entry()                              {}
         public Entry(string text, string name)
         {
             this.storyText =                        text;

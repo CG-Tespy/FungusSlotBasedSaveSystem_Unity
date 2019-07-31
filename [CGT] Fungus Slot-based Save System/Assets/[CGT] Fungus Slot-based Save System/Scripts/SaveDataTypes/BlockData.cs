@@ -59,7 +59,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
         #endregion
 
-        public void SetFrom(Block block)
+        public virtual void SetFrom(Block block)
         {
             blockName =                                 block.BlockName;
             var flowchart =                             block.GetFlowchart();

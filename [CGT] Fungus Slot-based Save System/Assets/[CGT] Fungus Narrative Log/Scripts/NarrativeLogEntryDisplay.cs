@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 
-namespace Fungus.NarrativeLogSystem
+namespace CGTUnity.Fungus.NarrativeLogSystem
 {
     /// <summary>
     /// Displays Narrative Log Entries in the UI.
