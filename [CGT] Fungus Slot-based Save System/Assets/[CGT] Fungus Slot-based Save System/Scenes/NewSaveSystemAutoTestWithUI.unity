@@ -1372,6 +1372,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7280154492312455318, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280154492312455318, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b12f900f9a7956d42beff1bd226d6725, type: 3}
 --- !u!114 &873101400 stripped
@@ -1380,7 +1390,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 873101397}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1716104069}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe94516fa0c7b11438610b1d2dfd2e8b, type: 3}
@@ -1455,6 +1465,7 @@ GameObject:
   - component: {fileID: 899471384}
   - component: {fileID: 899471402}
   - component: {fileID: 899471379}
+  - component: {fileID: 899471404}
   m_Layer: 0
   m_Name: TestSaveSystemUI
   m_TagString: Untagged
@@ -2667,7 +2678,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471379
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3537,7 +3548,7 @@ MonoBehaviour:
   sayDialog: {fileID: 1510543572}
 --- !u!114 &899471402
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3577,6 +3588,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 899471402}
   - {fileID: 899471401}
+  - {fileID: 899471404}
   - {fileID: 899471400}
   - {fileID: 899471399}
   - {fileID: 899471398}
@@ -3596,6 +3608,71 @@ MonoBehaviour:
   - {fileID: 899471384}
   - {fileID: 899471383}
   - {fileID: 899471382}
+--- !u!114 &899471404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899471347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d9ff288f3904c05ada7ac9c9a075bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 85
+  indentLevel: 0
+  description: 
+  delay: 0
+  invokeType: 0
+  staticEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1716104069}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  booleanParameter:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  booleanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  integerParameter:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  integerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  floatParameter:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  stringParameter:
+    stringRef: {fileID: 0}
+    stringVal: 
+  stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3622,7 +3699,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 899471403}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 899471404}
   variables:
   - {fileID: 899471409}
   - {fileID: 899471408}
@@ -5126,6 +5204,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1716104069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7280154492312455321, guid: b12f900f9a7956d42beff1bd226d6725,
+    type: 3}
+  m_PrefabInstance: {fileID: 873101397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1751593715
 PrefabInstance:
   m_ObjectHideFlags: 0

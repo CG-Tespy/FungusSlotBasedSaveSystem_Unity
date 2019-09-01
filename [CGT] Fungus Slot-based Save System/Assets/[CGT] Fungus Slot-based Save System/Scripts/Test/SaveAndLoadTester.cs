@@ -40,7 +40,7 @@ public class SaveAndLoadTester : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadMode)
     {
-        return;
+        //return;
         if (loadMode == LoadSceneMode.Single)
         {
             // Get the gameLoader to load

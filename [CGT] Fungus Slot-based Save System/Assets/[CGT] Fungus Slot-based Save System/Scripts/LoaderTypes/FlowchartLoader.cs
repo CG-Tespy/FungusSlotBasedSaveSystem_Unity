@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using Fungus;
+using BaseFungus = Fungus;
 
 namespace CGTUnity.Fungus.SaveSystem
 {
@@ -57,28 +59,78 @@ namespace CGTUnity.Fungus.SaveSystem
 
         protected virtual void LoadVariables(FlowchartData data, ref Flowchart flowchart)
         {
-            for (int i = 0; i < data.BoolVars.Count; i++)
+            FlowchartVariables vars =                       data.Vars;
+
+            LoadVariables<string, StringVar, StringVariable>(flowchart, vars.Strings);
+            LoadVariables<int, IntVar, IntegerVariable>(flowchart, vars.Ints);
+            LoadVariables<float, FloatVar, FloatVariable>(flowchart, vars.Floats);
+            LoadVariables<bool, BoolVar, BooleanVariable>(flowchart, vars.Bools);
+            LoadVariables<Color, ColorVar, ColorVariable>(flowchart, vars.Colors);
+            LoadVariables<Vector2, Vec2Var, Vector2Variable>(flowchart, vars.Vec2s);
+            LoadVariables<Vector3, Vec3Var, Vector3Variable>(flowchart, vars.Vec3s);
+
+            /*
+
+            for (int i = 0; i < vars.Bools.Count; i++)
             {
-                var boolVar =               data.BoolVars[i];
+                var boolVar =               vars.Bools[i];
                 flowchart.SetBooleanVariable(boolVar.Key, boolVar.Value);
             }
 
-            for (int i = 0; i < data.IntVars.Count; i++)
+            for (int i = 0; i < vars.Ints.Count; i++)
             {
-                var intVar =                data.IntVars[i];
+                var intVar =                vars.Ints[i];
                 flowchart.SetIntegerVariable(intVar.Key, intVar.Value);
             }
 
-            for (int i = 0; i < data.FloatVars.Count; i++)
+            for (int i = 0; i < vars.Floats.Count; i++)
             {
-                var floatVar =              data.FloatVars[i];
+                var floatVar =              vars.Floats[i];
                 flowchart.SetFloatVariable(floatVar.Key, floatVar.Value);
             }
 
-            for (int i = 0; i < data.StringVars.Count; i++)
+            for (int i = 0; i < vars.Strings.Count; i++)
             {
-                var stringVar =             data.StringVars[i];
+                var stringVar =             vars.Strings[i];
                 flowchart.SetStringVariable(stringVar.Key, stringVar.Value);
+            }
+
+            for (int i = 0; i < vars.Colors.Count; i++)
+            {
+                var colorVar =              vars.Colors[i];
+                flowchart.SetVariable<Color, ColorVariable>(colorVar.Key, colorVar.Value);
+            }
+
+            for (int i = 0; i < vars.Vector2s.Count; i++)
+            {
+                var vec2Var =               vars.Vector2s[i];
+                flowchart.SetVariable<Vector2, Vector2Variable>(vec2Var.Key, vec2Var.Value);
+            }
+
+            for (int i = 0; i < vars.Vector3s.Count; i++)
+            {
+                var vec3Var =               vars.Vector3s[i];
+                flowchart.SetVariable<Vector3, Vector3Variable>(vec3Var.Key, vec3Var.Value);
+            }
+            */
+
+        }
+
+        /// <summary>
+        /// Loads variables into the passed flowchart based on the type arguments.
+        /// TBase: Base type that the serializable var containers are for
+        /// TSVarType: This save system's serializable variable container
+        /// TNSVarType Fungus's built-in not-as-serializable variable container
+        /// </summary>
+        protected virtual void LoadVariables<TBase, TSVarType, TNSVarType>(Flowchart toLoadInto, 
+                                                                            IList<TSVarType> toLoadFrom)
+        where TSVarType: Var<TBase>
+        where TNSVarType: BaseFungus.VariableBase<TBase>
+        {
+            for (int i = 0; i < toLoadFrom.Count; i++)
+            {
+                var variable =                  toLoadFrom[i];
+                toLoadInto.SetVariable<TBase, TNSVarType>(variable.Key, variable.Value);
             }
         }
 
