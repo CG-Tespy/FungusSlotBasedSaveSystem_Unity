@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 899471405}
+  selectedFlowchart: {fileID: 1307372157}
 --- !u!4 &418058503
 Transform:
   m_ObjectHideFlags: 1
@@ -386,8 +386,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: bb145366ce7024469a5758b08d31802c, type: 3}
     m_FontSize: 50
@@ -1982,40 +1980,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471363
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2200,40 +2188,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471369
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2283,40 +2261,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471371
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2376,40 +2344,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471373
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2459,40 +2417,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471375
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2642,40 +2590,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471379
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2779,40 +2717,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471383
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2998,40 +2926,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471389
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3091,40 +3009,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471391
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3202,40 +3110,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471394
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3294,40 +3192,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471396
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3377,40 +3265,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471398
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3442,40 +3320,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471399
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3639,40 +3507,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3864,8 +3722,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1009912568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3884,8 +3740,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 226248ac6f184e448af731df91b91958, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3979,8 +3833,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: ea8f56c43254d41728f5ac4e8299b6c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -4023,6 +3875,7 @@ GameObject:
   - component: {fileID: 1307372144}
   - component: {fileID: 1307372143}
   - component: {fileID: 1307372142}
+  - component: {fileID: 1307372159}
   m_Layer: 0
   m_Name: UIActionHandler
   m_TagString: Untagged
@@ -4075,40 +3928,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1307372144
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4180,40 +4023,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1307372147
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4285,40 +4118,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1307372150
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4401,40 +4224,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1307372153
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4517,40 +4330,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1307372156
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4603,7 +4406,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks: []
   selectedCommands: []
-  variables: []
+  variables:
+  - {fileID: 1307372159}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -4628,6 +4432,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1307372159
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307372141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633bea14077b44e19956e8113fbac7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: Var
+  value: {fileID: 1307372158}
 --- !u!1 &1323623562
 GameObject:
   m_ObjectHideFlags: 0
@@ -4758,8 +4577,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
 --- !u!225 &1403820134
 CanvasGroup:
@@ -4791,8 +4608,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: e8ab00ef0d9684dcb9deb52811d91218, type: 3}
   m_Type: 1
   m_PreserveAspect: 1
@@ -4887,8 +4702,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -5384,8 +5197,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1770173203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5404,8 +5215,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -5500,8 +5309,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 79197ecfbc3a4294a89ce589dac02cf2, type: 3}
     m_FontSize: 45
@@ -5579,8 +5386,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 64bd3e45f7a714f16b3c213f55f17fea, type: 3}
     m_FontSize: 14

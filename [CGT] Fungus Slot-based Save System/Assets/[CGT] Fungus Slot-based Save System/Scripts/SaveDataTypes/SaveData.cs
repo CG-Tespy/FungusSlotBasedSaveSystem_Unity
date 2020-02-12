@@ -48,5 +48,15 @@ namespace CGTUnity.Fungus.SaveSystem
             this.sceneName =                string.Empty;
         }
 
+        public virtual SaveDataItem ToSaveDataItem()
+        {
+            var thisAsJson = JsonUtility.ToJson(this);
+            var typeOfThis = this.GetType();
+
+            var newItem = new SaveDataItem(typeOfThis.Name, thisAsJson);
+
+            return newItem;
+        }
+
     }
 }

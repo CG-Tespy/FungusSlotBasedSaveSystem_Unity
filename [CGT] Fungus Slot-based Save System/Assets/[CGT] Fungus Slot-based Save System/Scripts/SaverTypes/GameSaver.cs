@@ -50,7 +50,7 @@ namespace CGTUnity.Fungus.SaveSystem
             var description =                       newGameSave.Description;
             var sayDialog =                         SayDialog.ActiveSayDialog;
 
-            if (sayDialog != null || string.IsNullOrEmpty(sayDialog.StoryText))
+            if (sayDialog != null && string.IsNullOrEmpty(sayDialog.StoryText))
                 description =                       sayDialog.StoryText;
             else
                 description =                       newGameSave.LastWritten.ToLongDateString();

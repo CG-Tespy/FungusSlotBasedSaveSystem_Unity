@@ -4,41 +4,49 @@ using UnityEngine;
 namespace CGTUnity.Fungus.SaveSystem
 {
     /// <summary>
-    /// Generic serializable container for variable types.
+    /// Contains fields all vars, regardless of type, should.
     /// </summary>
-    [System.Serializable]
-    public class Var<T>
+    public abstract class VarBase
     {
         [SerializeField] protected string typeName;
         [SerializeField] protected string key;
-        [SerializeField] protected T value;
         protected System.Type type;
 
-        public string TypeName              { get { return typeName; } protected set { typeName = value; } }
-        public string Key                   { get { return key; } set { key = value; } }
-        public T Value                      { get { return value; } set { this.value = value; } }
-        public System.Type Type             
+        public string TypeName { get { return typeName; } protected set { typeName = value; } }
+        public string Key { get { return key; } set { key = value; } }
+        public System.Type Type
         {
-            get 
-            { 
+            get
+            {
                 if (type == null) // This property is being accessed after this Var instance got deserialized.
                 {
                     // So, we'd best reinitialize the value before returning it, so we don't return null.
-                    type =                  System.Type.GetType(typeName);
+                    type = System.Type.GetType(typeName);
                 }
 
-                return type; 
-            } 
-            protected set { type = value; } 
+                return type;
+            }
+            protected set { type = value; }
         }
-        
+    
+    }
+
+    /// <summary>
+    /// Generic serializable container for variable types.
+    /// </summary>
+    [System.Serializable]
+    public abstract class Var<T> : VarBase
+    {
+        [SerializeField] protected T value;
+
+        public T Value                      { get { return value; } set { this.value = value; } }
+
         public Var()
         {
             if (type != null)
-                typeName =                  typeof(T).FullName;
+                typeName = typeof(T).FullName;
         }
 
-        
     }
 
     [System.Serializable]
@@ -61,6 +69,16 @@ namespace CGTUnity.Fungus.SaveSystem
 
     [System.Serializable]
     public class Vec3Var: Var<Vector3>   {}
+
+    /// <summary>
+    /// Generic serializable container for variables that shouldn't be serialized like
+    /// value variables.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class ReferenceVar<T> : VarBase
+    {
+
+    }
 
     [System.Serializable]
     public class FlowchartVariables
