@@ -117,5 +117,15 @@ namespace CGTUnity.Fungus.SaveSystem
                 this.Forward.Equals(other.Forward);
         }
 
+        public virtual void ApplyTo(Transform transform)
+        {
+            transform.position = position;
+            transform.localScale = localScale;
+            transform.rotation = rotation;
+            transform.up = up;
+            transform.right = right;
+            transform.forward = forward;
+        }
+
     }
 }

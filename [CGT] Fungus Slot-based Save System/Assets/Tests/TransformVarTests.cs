@@ -18,10 +18,13 @@ namespace Tests
         GameObject testScenePrefab;
         GameObject testScene;
         Flowchart flowchart;
-        TransformVariable transVar;
+        TransformVariable flowchartTransVar;
         GameSaver gameSaver;
         GameLoader gameLoader;
         SaveManager saveManager;
+
+
+        GameObject firstObj, secondObj, thirdObj, fourthObj;
 
         [SetUp]
         public void SetupScene()
@@ -39,10 +42,20 @@ namespace Tests
         void GetReferencesFromScene()
         {
             flowchart = GameObject.FindObjectOfType<Flowchart>();
-            transVar = GameObject.FindObjectOfType<TransformVariable>();
+            flowchartTransVar = flowchart.GetVariable<TransformVariable>("thisTrans");
             gameSaver = GameObject.FindObjectOfType<GameSaver>();
             gameLoader = GameObject.FindObjectOfType<GameLoader>();
             saveManager = GameObject.FindObjectOfType<SaveManager>();
+
+            GetRefsToGameObjects();
+        }
+
+        void GetRefsToGameObjects()
+        {
+            firstObj = GameObject.Find("firstObj");
+            secondObj = GameObject.Find("secondObj");
+            thirdObj = GameObject.Find("thirdObj");
+            fourthObj = GameObject.Find("fourthObj");
         }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
@@ -52,7 +65,7 @@ namespace Tests
         {
             // Arrange
             // Create the save data
-            TransformVarData save = new TransformVarData(transVar.Value);
+            TransformVarData save = CreateTransformVarData();
 
             // Act
             // Try saving it to a json
@@ -66,11 +79,16 @@ namespace Tests
             Assert.IsTrue(deserializedCorrectly);
         }
 
+        TransformVarData CreateTransformVarData()
+        {
+            return new TransformVarData(flowchartTransVar.Value);
+        }
+
         [Test]
         public void TransformVarSavedCorrectly()
         {
             // Arrange
-            var correctSave = new TransformVarData(flowchart.transform);
+            var correctSave = new TransformVarData(flowchartTransVar.Value);
             var gameSave = gameSaver.CreateSave();
 
             // Act
@@ -82,11 +100,43 @@ namespace Tests
             
         }
 
-        [Test]
-        [Ignore("wait")]
-        public void TransformVarLoadedCorrectly()
+        [UnityTest]
+        public IEnumerator TransformVarLoadedCorrectly()
         {
+            // Arrange
+            // Make sure we can see the before and after
+            yield return new WaitForSeconds(1f);
+            ApplyTransformChangesToObjects();
+            yield return new WaitForSeconds(1f);
+            var gameSave = gameSaver.CreateSave();
 
+            // Act
+            gameLoader.LoadState(gameSave);
+            yield return new WaitForSeconds(1f);
+
+            GetRefsToGameObjects(); // The refs we have before this will have become null
+
+            // Check the states
+            bool firstTwoObjectsSynced = firstObj.transform.position == secondObj.transform.position
+                && firstObj.transform.rotation == secondObj.transform.rotation;
+            bool secondTwoObjectsSynced = thirdObj.transform.up == fourthObj.transform.up &&
+                thirdObj.transform.right == fourthObj.transform.right &&
+                thirdObj.transform.forward == fourthObj.transform.forward;
+            bool allObjectsSynced = firstTwoObjectsSynced && secondTwoObjectsSynced;
+
+            // Assert
+            Assert.IsTrue(allObjectsSynced);
+
+        }
+
+        void ApplyTransformChangesToObjects()
+        {
+            firstObj.transform.position = secondObj.transform.position;
+            firstObj.transform.rotation = secondObj.transform.rotation;
+
+            thirdObj.transform.up = fourthObj.transform.up;
+            thirdObj.transform.right = fourthObj.transform.right;
+            thirdObj.transform.forward = fourthObj.transform.forward;
         }
 
         [Test]

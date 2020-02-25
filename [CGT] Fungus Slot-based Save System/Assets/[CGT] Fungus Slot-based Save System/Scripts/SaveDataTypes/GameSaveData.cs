@@ -98,7 +98,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public virtual void SetFrom(GameSaveData other)
         {
-            SetFrom(other as SaveData);
+            base.SetFrom(other as SaveData);
             this.description =              other.description;
             this.slotNumber =               other.slotNumber;
             this.lastWritten =              other.lastWritten;
@@ -116,8 +116,8 @@ namespace CGTUnity.Fungus.SaveSystem
         }
 
         /// <summary>
-        /// Warning: A GameSaveData with a cleared state is not safe to load, unless your GameLoader is coded
-        /// to handle such.
+        /// Warning: A GameSaveData with a cleared state is not safe to load, unless your 
+        /// GameLoader is coded to handle such.
         /// </summary>
         public override void Clear()
         {

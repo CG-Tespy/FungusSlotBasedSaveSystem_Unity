@@ -8,7 +8,23 @@ namespace CGTUnity.Fungus.SaveSystem
     {
         public override bool Load(TransformVarData saveData)
         {
-            throw new System.NotImplementedException();
+            // Find the game object the data is for, and apply its state to the transform
+            GameObject gameObject = GameObject.Find(saveData.GameObjectName);
+
+            if (gameObject == null)
+            {
+                LetUserKnowTransformNotFoundFor(saveData);
+                return false;
+            }
+
+            saveData.ApplyTo(gameObject.transform);
+
+            return true;
+        }
+
+        protected virtual void LetUserKnowTransformNotFoundFor(TransformVarData data)
+        {
+            Debug.LogWarning("Transform not found for GameObject " + data.GameObjectName);
         }
 
         protected virtual bool CanLoadData(TransformVarData data, out string errorMessage)
@@ -41,10 +57,7 @@ namespace CGTUnity.Fungus.SaveSystem
             
         }
 
-        protected virtual void LetUserKnowTransformNotFoundFor(TransformVarData data)
-        {
-            
-        }
+        
 
     }
 }
