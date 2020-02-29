@@ -121,7 +121,8 @@ namespace Tests
                 && firstObj.transform.rotation == secondObj.transform.rotation;
             bool secondTwoObjectsSynced = thirdObj.transform.up == fourthObj.transform.up &&
                 thirdObj.transform.right == fourthObj.transform.right &&
-                thirdObj.transform.forward == fourthObj.transform.forward;
+                thirdObj.transform.forward == fourthObj.transform.forward &&
+                thirdObj.transform.localScale == fourthObj.transform.localScale;
             bool allObjectsSynced = firstTwoObjectsSynced && secondTwoObjectsSynced;
 
             // Assert
@@ -137,6 +138,7 @@ namespace Tests
             thirdObj.transform.up = fourthObj.transform.up;
             thirdObj.transform.right = fourthObj.transform.right;
             thirdObj.transform.forward = fourthObj.transform.forward;
+            thirdObj.transform.localScale = fourthObj.transform.localScale;
         }
 
         [Test]

@@ -70,16 +70,6 @@ namespace CGTUnity.Fungus.SaveSystem
     [System.Serializable]
     public class Vec3Var: Var<Vector3>   {}
 
-    /// <summary>
-    /// Generic serializable container for variables that shouldn't be serialized like
-    /// value variables.
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public class ReferenceVar<T> : VarBase
-    {
-
-    }
-
     [System.Serializable]
     public class FlowchartVariables
     {
