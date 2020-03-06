@@ -26,7 +26,7 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             // Create GameSaveData, and encode it into a SaveDataItem
             var gameSave =                          CreateSave();
-            var jsonSave =                          JsonUtility.ToJson(gameSave);
+            var jsonSave =                          JsonUtility.ToJson(gameSave, true);
             var newItem =                           new SaveDataItem(saveType.Name, jsonSave);
 
             // The array has only one element, since we only made one GameSaveData
@@ -50,7 +50,7 @@ namespace CGTUnity.Fungus.SaveSystem
             var description =                       newGameSave.Description;
             var sayDialog =                         SayDialog.ActiveSayDialog;
 
-            if (sayDialog != null && string.IsNullOrEmpty(sayDialog.StoryText))
+            if (sayDialog != null && !string.IsNullOrEmpty(sayDialog.StoryText))
                 description =                       sayDialog.StoryText;
             else
                 description =                       newGameSave.LastWritten.ToLongDateString();

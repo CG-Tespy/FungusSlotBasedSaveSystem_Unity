@@ -20,6 +20,7 @@ namespace CGTUnity.Fungus.SaveSystem
         [SerializeField] protected SaveReader saveReader;
         [SerializeField] protected GameLoader gameLoader;
         [SerializeField] protected GameSaver gameSaver;
+
         protected List<GameSaveData> gameSaves =                    new List<GameSaveData>();
         protected List<GameSaveData> unwrittenSaves =               new List<GameSaveData>();
         protected Dictionary<string, GameSaveData> writtenSaves =   new Dictionary<string, GameSaveData>();
@@ -29,11 +30,14 @@ namespace CGTUnity.Fungus.SaveSystem
         #endregion
 
         #region Properties
-        protected virtual string SaveDirectory
+
+        public virtual SaveReader SaveReader
         {
-            // By default, we're using a save directory relative to the game's launcher for
-            // player convenience.
-            get                                                     { return Application.dataPath + "/saveData/"; }
+            get { return saveReader; }
+        }
+        public virtual string SaveDirectory
+        {
+            get { return Path.Combine(Application.dataPath, "saveData"); } // Platform-neutrality
         }
         #endregion
 
@@ -56,6 +60,7 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             // So other objects (like the SaveSlotManager) can be ready to listen for the save-reading
             saveReader.ReadAllFromDisk(SaveDirectory);
+            Debug.Log("debug!");
         }
 
         protected virtual void OnDestroy()
@@ -278,6 +283,26 @@ namespace CGTUnity.Fungus.SaveSystem
         }
 
         #endregion
+
+        #region Save-retrieval
+        public virtual GameSaveData GetSave(int slotNumber)
+        {
+            for (int i = 0; i < gameSaves.Count; i++)
+            {
+                var currentSave = gameSaves[i];
+                if (currentSave.SlotNumber == slotNumber)
+                    return currentSave;
+            }
+
+            return null;
+        }
+        #endregion
+
+        public virtual void GetPathOfSave(int slotNumber)
+        {
+            GameSaveData thing;
+            
+        }
 
         #region Helpers
         // When it comes to saves being read or written, this manager only cares when it's the specified

@@ -1,12 +1,12 @@
 // This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
-
 using UnityEngine;
 using UnityEditor;
 using System;
 using UnityEditorInternal;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Fungus.EditorUtils
 {
@@ -30,6 +30,10 @@ namespace Fungus.EditorUtils
         private ReorderableList list;
         public Flowchart TargetFlowchart { get; private set; }
 
+        private float[] itemWidths = new float[4];
+        private Rect[] itemRects = new Rect[4];
+        private GUIContent emptyGUIContent = new GUIContent("");
+
         public SerializedProperty this[int index]
         {
             get { return _arrayProperty.GetArrayElementAtIndex(index); }
@@ -41,6 +45,18 @@ namespace Fungus.EditorUtils
                 return list.list[index] as Variable;
             else
                 return this[index].objectReferenceValue as Variable;
+        }
+
+        public void SetVarAt(int index, Variable v)
+        {
+            if (list.list != null)
+            {
+                list.list[index] = v;
+            }
+            else
+            {
+                this[index].objectReferenceValue = v;
+            }
         }
 
         public VariableListAdaptor(SerializedProperty arrayProperty, Flowchart _targetFlowchart)
@@ -111,8 +127,17 @@ namespace Fungus.EditorUtils
                 if (_arrayProperty == null || _arrayProperty.serializedObject == null)
                     return;
 
+
                 _arrayProperty.serializedObject.Update();
                 this.widthOfList = (w == 0 ? VariableListAdaptor.DefaultWidth : w) - ScrollSpacer;
+                
+                int width = widthOfList;
+                int totalRatio = DefaultWidth;
+
+                itemWidths[0] = (80.0f / totalRatio) * width;
+                itemWidths[1] = (100.0f / totalRatio) * width;
+                itemWidths[2] = (140.0f / totalRatio) * width;
+                itemWidths[3] = (60.0f / totalRatio) * width;
 
                 if (GUILayout.Button("Variables"))
                 {
@@ -139,24 +164,19 @@ namespace Fungus.EditorUtils
                 return;
             }
 
-            int width = widthOfList;
-            int totalRatio = DefaultWidth;
-
-
-            float[] widths = { (80.0f/ totalRatio) * width,
-                (100.0f / totalRatio) * width,
-                (140.0f/ totalRatio) * width,
-                (60.0f/ totalRatio) * width };
-            Rect[] rects = new Rect[4];
+            if(Event.current.type == EventType.ContextClick && position.Contains(Event.current.mousePosition))
+            {
+                DoRightClickMenu(index);
+            }
 
             for (int i = 0; i < 4; ++i)
             {
-                rects[i] = position;
-                rects[i].width = widths[i] - 5;
+                itemRects[i] = position;
+                itemRects[i].width = itemWidths[i] - 5;
 
                 for (int j = 0; j < i; ++j)
                 {
-                    rects[i].x += widths[j];
+                    itemRects[i].x += itemWidths[j];
                 }
             }
 
@@ -178,7 +198,7 @@ namespace Fungus.EditorUtils
             {
                 if (Application.isPlaying && flowchart.SelectedBlock.IsExecuting())
                 {
-                    highlight = flowchart.SelectedBlock.ActiveCommand.HasReference(variable);
+                    highlight = flowchart.SelectedBlock.ActiveCommand.IsVariableReferenced(variable);
                 }
                 else if (!Application.isPlaying && flowchart.SelectedCommands.Count > 0)
                 {
@@ -189,7 +209,7 @@ namespace Fungus.EditorUtils
                             continue;
                         }
 
-                        if (selectedCommand.HasReference(variable))
+                        if (selectedCommand.IsVariableReferenced(variable))
                         {
                             highlight = true;
                             break;
@@ -213,14 +233,19 @@ namespace Fungus.EditorUtils
 
             variableObject.Update();
 
-            GUI.Label(rects[0], variableInfo.VariableType);
+            GUI.Label(itemRects[0], variableInfo.VariableType);
 
-            key = EditorGUI.TextField(rects[1], variable.Key);
             SerializedProperty keyProp = variableObject.FindProperty("key");
             SerializedProperty defaultProp = variableObject.FindProperty("value");
             SerializedProperty scopeProp = variableObject.FindProperty("scope");
 
-            keyProp.stringValue = flowchart.GetUniqueVariableKey(key, variable);
+
+            EditorGUI.BeginChangeCheck();
+            key = EditorGUI.TextField(itemRects[1], variable.Key);
+            if (EditorGUI.EndChangeCheck())
+            {
+                keyProp.stringValue = flowchart.GetUniqueVariableKey(key, variable);
+            }
 
             bool isGlobal = scopeProp.enumValueIndex == (int)VariableScope.Global;
 
@@ -236,23 +261,78 @@ namespace Fungus.EditorUtils
                     var prevEnabled = GUI.enabled;
                     GUI.enabled = false;
 
-                    EditorGUI.PropertyField(rects[2], globalValProp, new GUIContent(""));
+                    EditorGUI.PropertyField(itemRects[2], globalValProp, emptyGUIContent);
 
                     GUI.enabled = prevEnabled;
                 }
             }
             else
             {
-                EditorGUI.PropertyField(rects[2], defaultProp, new GUIContent(""));
+                EditorGUI.PropertyField(itemRects[2], defaultProp, emptyGUIContent);
             }
 
 
-            scope = (VariableScope)EditorGUI.EnumPopup(rects[3], variable.Scope);
+            scope = (VariableScope)EditorGUI.EnumPopup(itemRects[3], variable.Scope);
             scopeProp.enumValueIndex = (int)scope;
 
             variableObject.ApplyModifiedProperties();
 
             GUI.backgroundColor = Color.white;
+        }
+
+        private void DoRightClickMenu(int index)
+        {
+            var v = GetVarAt(index);
+
+            GenericMenu commandMenu = new GenericMenu();
+            commandMenu.AddItem(new GUIContent("Remove"), false, () => {list.index = index; RemoveItem(list); });
+            commandMenu.AddItem(new GUIContent("Duplicate"), false, () => VariableSelectPopupWindowContent.AddVariable(v.GetType(), v.Key));
+            commandMenu.AddItem(new GUIContent("Find References"), false, () => FindUsage(GetVarAt(index)));
+            commandMenu.AddSeparator("");
+            commandMenu.AddItem(new GUIContent("Sort by Name"), false, () => SortBy(x =>  x.Key));
+            commandMenu.AddItem(new GUIContent("Sort by Type"), false, () => SortBy(x => x.GetType().Name));
+            commandMenu.AddItem(new GUIContent("Sort by Value"), false, () => SortBy(x => x.GetValue()));
+            commandMenu.ShowAsContext();
+        }
+
+        private void SortBy<TKey>(Func<Variable, TKey> orderFunc)
+        {
+            List<Variable> vars = new List<Variable>();
+            for (int i = 0; i < list.count; i++)
+            {
+                vars.Add(GetVarAt(i));
+            }
+
+            vars = vars.OrderBy(orderFunc).ToList();
+
+            for (int i = 0; i < list.count; i++)
+            {
+                SetVarAt(i, vars[i]);
+            }
+
+            _arrayProperty.serializedObject.ApplyModifiedProperties();
+        }
+
+        private void FindUsage(Variable variable)
+        {                
+            var varRefs = EditorExtensions.FindObjectsOfInterface<IVariableReference>()
+                .Where(x => x.HasReference(variable))
+                .Select(x => x.GetLocationIdentifier()).ToArray(); ;
+
+            string varRefString = variable.Key;
+
+            if (varRefs != null && varRefs.Length > 0)
+            {
+                varRefString += " referenced in " + varRefs.Length.ToString() + " places:\n";
+
+                varRefString += string.Join("\n - ", varRefs);
+            }
+            else
+            {
+                varRefString += ", found no references.";
+            }
+
+            Debug.Log(varRefString);
         }
     }
 }
