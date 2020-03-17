@@ -11,6 +11,7 @@ namespace CGTUnity.Fungus.SaveSystem
     /// </summary>
     public class SaveManager : MonoBehaviour
     {
+        public static SaveManager S { get; private set; }
         
         #region Fields
         // Most of the functionality here is passed off to the following submodules. Much of what 
@@ -21,9 +22,9 @@ namespace CGTUnity.Fungus.SaveSystem
         [SerializeField] protected GameLoader gameLoader;
         [SerializeField] protected GameSaver gameSaver;
 
-        protected List<GameSaveData> gameSaves =                    new List<GameSaveData>();
-        protected List<GameSaveData> unwrittenSaves =               new List<GameSaveData>();
-        protected Dictionary<string, GameSaveData> writtenSaves =   new Dictionary<string, GameSaveData>();
+        protected static List<GameSaveData> gameSaves =                    new List<GameSaveData>();
+        protected static List<GameSaveData> unwrittenSaves =               new List<GameSaveData>();
+        public static Dictionary<string, GameSaveData> writtenSaves =   new Dictionary<string, GameSaveData>();
         // ^ Keeping track of what's written or unwritten helps optimize the save-writing 
         // and save-deleting processes.
 
@@ -46,6 +47,12 @@ namespace CGTUnity.Fungus.SaveSystem
         #region MonoBehaviour Standard
         protected virtual void Awake()
         {
+            if (S != null && S != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+
             // Get the necessary components
             if (gameLoader == null) gameLoader =    FindObjectOfType<GameLoader>();
             if (gameSaver == null) gameSaver =      FindObjectOfType<GameSaver>();
@@ -58,9 +65,11 @@ namespace CGTUnity.Fungus.SaveSystem
 
         protected virtual void Start()
         {
-            // So other objects (like the SaveSlotManager) can be ready to listen for the save-reading
-            saveReader.ReadAllFromDisk(SaveDirectory);
-            Debug.Log("debug!");
+            // So other objects (like the SaveSlotManager) can be ready to listen
+            // for the save-reading
+            if (gameSaves.Count == 0)
+                saveReader.ReadAllFromDisk(SaveDirectory);
+
         }
 
         protected virtual void OnDestroy()
@@ -297,12 +306,6 @@ namespace CGTUnity.Fungus.SaveSystem
             return null;
         }
         #endregion
-
-        public virtual void GetPathOfSave(int slotNumber)
-        {
-            GameSaveData thing;
-            
-        }
 
         #region Helpers
         // When it comes to saves being read or written, this manager only cares when it's the specified

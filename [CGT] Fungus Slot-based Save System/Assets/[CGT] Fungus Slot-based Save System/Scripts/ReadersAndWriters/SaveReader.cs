@@ -83,7 +83,7 @@ namespace CGTUnity.Fungus.SaveSystem
             ValidateReadSaveData(saveData, filePath);
 
             // Alert listeners
-            var fileNameIndex =                                 filePath.LastIndexOf('/') + 1;
+            var fileNameIndex =                                 filePath.LastIndexOf('\\') + 1;
             var fileName =                                      filePath.Substring(fileNameIndex);
             Signals.GameSaveRead.Invoke(saveData, filePath, fileName);
             GameSaveRead.Invoke(saveData, filePath, fileName);

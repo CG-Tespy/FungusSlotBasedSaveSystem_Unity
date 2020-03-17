@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -27,6 +28,27 @@ namespace CGTUnity.Fungus.SaveSystem
 
             slots.AddRange(slotHolder.GetComponentsInChildren<SaveSlot>());
             ListenForEvents();
+            StartCoroutine(AssignSavesAfterDelay());
+        }
+
+        /// <summary>
+        /// After game startup, the SaveManager loads the saves already on disk. When this
+        /// starts up, it should assign the saves to the appropriate slots after said saves
+        /// are ready.
+        /// </summary>
+        IEnumerator AssignSavesAfterDelay(float delay = 1f)
+        {
+            yield return new WaitForSeconds(delay);
+
+            IList<GameSaveData> saves = new List<GameSaveData>();
+
+            foreach (var save in SaveManager.writtenSaves.Values)
+            {
+                saves.Add(save);
+            }
+
+            SetSlotsWith(saves, true);
+
         }
 
         protected virtual void OnDestroy()
@@ -67,6 +89,7 @@ namespace CGTUnity.Fungus.SaveSystem
         #endregion
 
         #region Altering Slots
+
         /// <summary>
         /// Assigns the passed saves to the appropriate slots.
         /// </summary>
