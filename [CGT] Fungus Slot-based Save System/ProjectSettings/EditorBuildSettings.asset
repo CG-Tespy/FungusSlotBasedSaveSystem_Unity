@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Tests/transformVarTestScene.unity
+    guid: a6c8c8c1da657ab45b237e8d12df97b1
   m_configObjects: {}

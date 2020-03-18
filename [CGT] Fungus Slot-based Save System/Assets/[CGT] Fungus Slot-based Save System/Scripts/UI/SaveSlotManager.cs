@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -12,6 +13,8 @@ namespace CGTUnity.Fungus.SaveSystem
         // This class updates its slots mainly by reacting to saves being written, read, or erased. It
         // updates some other parts of its state based on those actions, as well.
         // See this class's event listeners.
+        public static SaveSlotManager S { get; private set; }
+
         [SerializeField] protected RectTransform slotHolder;
         protected List<SaveSlot> slots =                new List<SaveSlot>();
 
@@ -22,11 +25,40 @@ namespace CGTUnity.Fungus.SaveSystem
         #region Monobehaviour Standard
         protected virtual void Awake()
         {
+            if (S != null && S != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+            
+            S = this;
+
             if (slotHolder == null)
                 throw new System.MissingFieldException(this.name + " needs a slot holder!");
 
             slots.AddRange(slotHolder.GetComponentsInChildren<SaveSlot>());
             ListenForEvents();
+            StartCoroutine(AssignSavesAfterDelay());
+        }
+
+        /// <summary>
+        /// After game startup, the SaveManager loads the saves already on disk. When this
+        /// starts up, it should assign the saves to the appropriate slots after said saves
+        /// are ready.
+        /// </summary>
+        IEnumerator AssignSavesAfterDelay(float delay = 1f)
+        {
+            yield return new WaitForSeconds(delay);
+
+            IList<GameSaveData> saves = new List<GameSaveData>();
+
+            foreach (var save in SaveManager.WrittenSaves.Values)
+            {
+                saves.Add(save);
+            }
+
+            SetSlotsWith(saves, true);
+
         }
 
         protected virtual void OnDestroy()
@@ -67,6 +99,7 @@ namespace CGTUnity.Fungus.SaveSystem
         #endregion
 
         #region Altering Slots
+
         /// <summary>
         /// Assigns the passed saves to the appropriate slots.
         /// </summary>

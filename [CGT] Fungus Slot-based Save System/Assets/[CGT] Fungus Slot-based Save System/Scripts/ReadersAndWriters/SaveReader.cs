@@ -50,7 +50,7 @@ namespace CGTUnity.Fungus.SaveSystem
         public virtual GameSaveData ReadOneFromDisk(string filePath)
         {
             // Safety.
-            if (!File.Exists(filePath)) // change it to File.Exists later
+            if (!File.Exists(filePath))
             {
                 var messageFormat =                             "Read error: file path doesn't exist. {0}";
                 var message =                                   string.Format(messageFormat, filePath);
@@ -83,7 +83,7 @@ namespace CGTUnity.Fungus.SaveSystem
             ValidateReadSaveData(saveData, filePath);
 
             // Alert listeners
-            var fileNameIndex =                                 filePath.LastIndexOf('/') + 1;
+            var fileNameIndex =                                 filePath.LastIndexOf('\\') + 1;
             var fileName =                                      filePath.Substring(fileNameIndex);
             Signals.GameSaveRead.Invoke(saveData, filePath, fileName);
             GameSaveRead.Invoke(saveData, filePath, fileName);

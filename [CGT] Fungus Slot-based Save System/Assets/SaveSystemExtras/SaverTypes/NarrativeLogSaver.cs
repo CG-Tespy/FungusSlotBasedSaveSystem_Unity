@@ -41,7 +41,7 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             // At the time of this writing, the NarrativeLog is a singleton, so we're setting up a
             // one-element array.
-            var jsonData =                              JsonUtility.ToJson(saveData);
+            var jsonData =                              JsonUtility.ToJson(saveData, true);
             var singleItem =                            new SaveDataItem(saveType.Name, jsonData);
             var result =                                new SaveDataItem[1] {singleItem};
 

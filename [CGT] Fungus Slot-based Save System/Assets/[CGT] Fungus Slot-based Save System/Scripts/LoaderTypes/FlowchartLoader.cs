@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
+using System.Collections.Generic;
 using Fungus;
+using BaseFungus = Fungus;
 
 namespace CGTUnity.Fungus.SaveSystem
 {
@@ -57,30 +59,39 @@ namespace CGTUnity.Fungus.SaveSystem
 
         protected virtual void LoadVariables(FlowchartData data, ref Flowchart flowchart)
         {
-            for (int i = 0; i < data.BoolVars.Count; i++)
-            {
-                var boolVar =               data.BoolVars[i];
-                flowchart.SetBooleanVariable(boolVar.Key, boolVar.Value);
-            }
+            FlowchartVariables vars =                       data.Vars;
+            LoadValueVariablesFrom(flowchart, vars);
+        }
 
-            for (int i = 0; i < data.IntVars.Count; i++)
-            {
-                var intVar =                data.IntVars[i];
-                flowchart.SetIntegerVariable(intVar.Key, intVar.Value);
-            }
+        protected virtual void LoadValueVariablesFrom(Flowchart flowchart, FlowchartVariables vars)
+        {
+            LoadValueVariables<string, StringVar, StringVariable>(flowchart, vars.Strings);
+            LoadValueVariables<int, IntVar, IntegerVariable>(flowchart, vars.Ints);
+            LoadValueVariables<float, FloatVar, FloatVariable>(flowchart, vars.Floats);
+            LoadValueVariables<bool, BoolVar, BooleanVariable>(flowchart, vars.Bools);
+            LoadValueVariables<Color, ColorVar, ColorVariable>(flowchart, vars.Colors);
+            LoadValueVariables<Vector2, Vec2Var, Vector2Variable>(flowchart, vars.Vec2s);
+            LoadValueVariables<Vector3, Vec3Var, Vector3Variable>(flowchart, vars.Vec3s);
+        }
 
-            for (int i = 0; i < data.FloatVars.Count; i++)
+        /// <summary>
+        /// Loads variables into the passed flowchart based on the type arguments.
+        /// TBase: Base type that the serializable var containers are for
+        /// TSVarType: This save system's serializable variable container
+        /// TNSVarType Fungus's built-in not-as-serializable variable container
+        /// </summary>
+        protected virtual void LoadValueVariables<TBase, TSVarType, TNSVarType>(Flowchart toLoadInto, 
+                                                                            IList<TSVarType> toLoadFrom)
+        where TSVarType: Var<TBase>
+        where TNSVarType: BaseFungus.VariableBase<TBase>
+        {
+            for (int i = 0; i < toLoadFrom.Count; i++)
             {
-                var floatVar =              data.FloatVars[i];
-                flowchart.SetFloatVariable(floatVar.Key, floatVar.Value);
-            }
-
-            for (int i = 0; i < data.StringVars.Count; i++)
-            {
-                var stringVar =             data.StringVars[i];
-                flowchart.SetStringVariable(stringVar.Key, stringVar.Value);
+                var variable =                  toLoadFrom[i];
+                toLoadInto.SetVariable<TBase, TNSVarType>(variable.Key, variable.Value);
             }
         }
+
 
         /// <summary>
         /// Keeps blocks like those with a Game Started event from interfering with the load process.

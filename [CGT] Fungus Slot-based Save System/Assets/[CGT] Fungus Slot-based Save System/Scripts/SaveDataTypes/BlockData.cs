@@ -11,16 +11,16 @@ namespace CGTUnity.Fungus.SaveSystem
     public class BlockData : SaveData
     {
         #region Fields
-        [SerializeField] string blockName;
-        [SerializeField] int commandIndex =             -1;
+        [SerializeField] string blockName = "";
+        [SerializeField] int commandIndex = -1;
         #endregion
 
         #region Properties
 
         public virtual string BlockName
         {
-            get                                         { return blockName; }
-            set                                         { blockName = value; }
+            get { return blockName; }
+            set { blockName = value; }
         }
 
         /// <summary>
@@ -65,6 +65,13 @@ namespace CGTUnity.Fungus.SaveSystem
             var flowchart =                             block.GetFlowchart();
             if (block.ActiveCommand != null)
                 commandIndex =                          block.CommandList.IndexOf(block.ActiveCommand);
+        }
+
+        public override void Clear()
+        {
+            base.Clear();
+            blockName = "";
+            commandIndex = -1;
         }
 
         #endregion

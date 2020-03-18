@@ -26,7 +26,7 @@ public class SaveAndLoadTester : MonoBehaviour
         saveData =                              gameSaver.CreateSave();
 
         // Write the save data to PlayerPrefs
-        var jsonSave =                          JsonUtility.ToJson(saveData);
+        var jsonSave =                          JsonUtility.ToJson(saveData, true);
         PlayerPrefs.SetString(saveKey, jsonSave);
     }
 
@@ -40,7 +40,7 @@ public class SaveAndLoadTester : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadMode)
     {
-        return;
+        //return;
         if (loadMode == LoadSceneMode.Single)
         {
             // Get the gameLoader to load

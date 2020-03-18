@@ -86,7 +86,7 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual SaveDataItem CreateItem(FlowchartData data)
         {
-            var jsonString =                            JsonUtility.ToJson(data);
+            var jsonString =                            JsonUtility.ToJson(data, true);
             var newItem =                               new SaveDataItem(saveType.Name, jsonString);
             return newItem;
         }

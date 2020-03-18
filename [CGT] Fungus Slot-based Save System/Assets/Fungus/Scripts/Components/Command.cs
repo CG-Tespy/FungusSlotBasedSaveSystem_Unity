@@ -39,7 +39,7 @@ namespace Fungus
     /// <summary>
     /// Base class for Commands. Commands can be added to Blocks to create an execution sequence.
     /// </summary>
-    public abstract class Command : MonoBehaviour
+    public abstract class Command : MonoBehaviour, IVariableReference
     {
         [FormerlySerializedAs("commandId")]
         [HideInInspector]
@@ -49,6 +49,30 @@ namespace Fungus
         [SerializeField] protected int indentLevel;
 
         protected string errorMessage = "";
+
+        #region Editor caches
+#if UNITY_EDITOR
+        //
+        protected List<Variable> referencedVariables = new List<Variable>();
+
+        //used by var list adapter to highlight variables 
+        public bool IsVariableReferenced(Variable variable)
+        {
+            return referencedVariables.Contains(variable) || HasReference(variable);
+        }
+
+        /// <summary>
+        /// Called by OnValidate
+        /// 
+        /// Child classes to specialise to add variable references to referencedVariables, either directly or
+        /// via the use of Flowchart.DetermineSubstituteVariables
+        /// </summary>
+        protected virtual void RefreshVariableCache()
+        {
+            referencedVariables.Clear();
+        }
+#endif
+        #endregion Editor caches
 
         #region Public members
 
@@ -204,12 +228,35 @@ namespace Fungus
             return false;
         }
 
+        public virtual string GetLocationIdentifier()
+        {
+            return ParentBlock.GetFlowchart().GetName() + ":" + ParentBlock.BlockName + "." + this.GetType().Name + "#" + CommandIndex.ToString(); 
+        }
+
+        /// <summary>
+        /// Called by unity when script is loaded or its data changed by editor
+        /// </summary>
+        public virtual void OnValidate()
+        {
+#if UNITY_EDITOR
+            RefreshVariableCache();
+#endif
+        }
+
         /// <summary>
         /// Returns the summary text to display in the command inspector.
         /// </summary>
         public virtual string GetSummary()
         {
             return "";
+        }
+
+        /// <summary>
+        /// Returns the searchable content for searches on the flowchart window.
+        /// </summary>
+        public virtual string GetSearchableContent()
+        {
+            return GetSummary();
         }
 
         /// <summary>
@@ -282,7 +329,7 @@ namespace Fungus
             }
 
             return localizationId;
-        }
+        }        
 
         #endregion
     }

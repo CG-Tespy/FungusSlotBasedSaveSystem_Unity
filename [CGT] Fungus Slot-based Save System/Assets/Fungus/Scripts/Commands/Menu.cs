@@ -14,7 +14,7 @@ namespace Fungus
                  "Menu", 
                  "Displays a button in a multiple choice menu")]
     [AddComponentMenu("")]
-    public class Menu : Command, ILocalizable
+    public class Menu : Command, ILocalizable, IBlockCaller
     {
         [Tooltip("Text to display on the menu button")]
         [TextArea()]
@@ -95,6 +95,17 @@ namespace Fungus
             return new Color32(184, 210, 235, 255);
         }
 
+        public override bool HasReference(Variable variable)
+        {
+            return interactable.booleanRef == variable || hideThisOption.booleanRef == variable ||
+                base.HasReference(variable);
+        }
+
+        public bool MayCallBlock(Block block)
+        {
+            return block == targetBlock;
+        }
+
         #endregion
 
         #region ILocalizable implementation
@@ -121,5 +132,18 @@ namespace Fungus
         }
 
         #endregion
+
+        #region Editor caches
+#if UNITY_EDITOR
+        protected override void RefreshVariableCache()
+        {
+            base.RefreshVariableCache();
+
+            var f = GetFlowchart();
+
+            f.DetermineSubstituteVariables(text, referencedVariables);
+        }
+#endif
+        #endregion Editor caches
     }
 }

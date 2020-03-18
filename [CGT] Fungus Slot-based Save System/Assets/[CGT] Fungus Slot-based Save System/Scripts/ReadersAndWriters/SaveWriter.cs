@@ -48,7 +48,7 @@ namespace CGTUnity.Fungus.SaveSystem
                 return false;
             }
 
-            var dataToWrite =                               JsonUtility.ToJson(saveData);
+            var dataToWrite =                               JsonUtility.ToJson(saveData, true);
 
             // Write the file at the appropriate directory with the appropriate writing method.
             var fileName =                                  string.Format(fileNameFormat, 

@@ -11,6 +11,7 @@ namespace CGTUnity.Fungus.SaveSystem
     /// </summary>
     public class SaveManager : MonoBehaviour
     {
+        public static SaveManager S { get; private set; }
         
         #region Fields
         // Most of the functionality here is passed off to the following submodules. Much of what 
@@ -20,20 +21,32 @@ namespace CGTUnity.Fungus.SaveSystem
         [SerializeField] protected SaveReader saveReader;
         [SerializeField] protected GameLoader gameLoader;
         [SerializeField] protected GameSaver gameSaver;
-        protected List<GameSaveData> gameSaves =                    new List<GameSaveData>();
-        protected List<GameSaveData> unwrittenSaves =               new List<GameSaveData>();
-        protected Dictionary<string, GameSaveData> writtenSaves =   new Dictionary<string, GameSaveData>();
+
+        protected static List<GameSaveData> gameSaves =                    new List<GameSaveData>();
+        protected static List<GameSaveData> unwrittenSaves =               new List<GameSaveData>();
+        public static Dictionary<string, GameSaveData> WrittenSaves { get; private set; } = new Dictionary<string, GameSaveData>();
         // ^ Keeping track of what's written or unwritten helps optimize the save-writing 
         // and save-deleting processes.
+
+        [Tooltip("Whether or not this SaveManager can add saves.")]
+        [SerializeField] bool savingEnabled = true;
+        public bool SavingEnabled
+        {
+            get { return savingEnabled; }
+            set { savingEnabled = value; }
+        }
 
         #endregion
 
         #region Properties
-        protected virtual string SaveDirectory
+
+        public virtual SaveReader SaveReader
         {
-            // By default, we're using a save directory relative to the game's launcher for
-            // player convenience.
-            get                                                     { return Application.dataPath + "/saveData/"; }
+            get { return saveReader; }
+        }
+        public virtual string SaveDirectory
+        {
+            get { return Path.Combine(Application.dataPath, "saveData"); } // Platform-neutrality
         }
         #endregion
 
@@ -42,6 +55,14 @@ namespace CGTUnity.Fungus.SaveSystem
         #region MonoBehaviour Standard
         protected virtual void Awake()
         {
+            if (S != null && S != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+
+            S = this;
+
             // Get the necessary components
             if (gameLoader == null) gameLoader =    FindObjectOfType<GameLoader>();
             if (gameSaver == null) gameSaver =      FindObjectOfType<GameSaver>();
@@ -54,8 +75,11 @@ namespace CGTUnity.Fungus.SaveSystem
 
         protected virtual void Start()
         {
-            // So other objects (like the SaveSlotManager) can be ready to listen for the save-reading
-            saveReader.ReadAllFromDisk(SaveDirectory);
+            // So other objects (like the SaveSlotManager) can be ready to listen
+            // for the save-reading
+            if (gameSaves.Count == 0)
+                saveReader.ReadAllFromDisk(SaveDirectory);
+
         }
 
         protected virtual void OnDestroy()
@@ -69,12 +93,12 @@ namespace CGTUnity.Fungus.SaveSystem
         protected virtual void OnGameSaveWritten(GameSaveData saveData, string filePath, string fileName)
         {
             unwrittenSaves.Remove(saveData);
-            writtenSaves[fileName] =                    saveData;
+            WrittenSaves[fileName] =                    saveData;
         }
 
         protected virtual void OnGameSaveRead(GameSaveData saveData, string filePath, string fileName)
         {
-            writtenSaves[fileName] =                    saveData;
+            WrittenSaves[fileName] =                    saveData;
             if (!gameSaves.Contains(saveData))
                 gameSaves.Add(saveData);
         }
@@ -83,7 +107,7 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             gameSaves.Remove(saveData);
             unwrittenSaves.Remove(saveData);
-            writtenSaves[fileName] =                    null;
+            WrittenSaves[fileName] =                    null;
         }
 
         #endregion
@@ -116,6 +140,12 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual bool AddSave(SaveSlot slot, bool writeToDisk = true)
         {
+            if (!savingEnabled)
+            {
+                Debug.LogWarning(this.name + "'s SaveManager is set to not add saves.");
+                return false;
+            }
+
             if (slot == null)
                 throw new System.NullReferenceException("Cannot register a save with a null slot's number.");
 
@@ -128,6 +158,12 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual bool AddSave(int slotNumber, bool writeToDisk = true)
         {
+            if (!savingEnabled)
+            {
+                Debug.LogWarning(this.name + "'s SaveManager is set to not add saves.");
+                return false;
+            }
+
             var newSaveData =                       gameSaver.CreateSave(slotNumber);
             return AddSave(newSaveData, writeToDisk);
         }
@@ -142,6 +178,12 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             if (newSave == null)
                 return false;
+
+            if (!savingEnabled)
+            {
+                Debug.LogWarning(this.name + "'s SaveManager is set to not add saves.");
+                return false;
+            }
 
             // See if any save-replacing will happen
             var saveWasReplaced =                 false;
@@ -219,9 +261,9 @@ namespace CGTUnity.Fungus.SaveSystem
             // Using foreach because key-value collections are unindexable.
             var eraseSuccessful =               false;
 
-            foreach (var fileName in writtenSaves.Keys)
+            foreach (var fileName in WrittenSaves.Keys)
             {
-                if (writtenSaves[fileName] == saveData)
+                if (WrittenSaves[fileName] == saveData)
                 {
                     var filePath =              SaveDirectory + fileName;
                     File.Delete(filePath);
@@ -279,6 +321,20 @@ namespace CGTUnity.Fungus.SaveSystem
 
         #endregion
 
+        #region Save-retrieval
+        public virtual GameSaveData GetSave(int slotNumber)
+        {
+            for (int i = 0; i < gameSaves.Count; i++)
+            {
+                var currentSave = gameSaves[i];
+                if (currentSave.SlotNumber == slotNumber)
+                    return currentSave;
+            }
+
+            return null;
+        }
+        #endregion
+
         #region Helpers
         // When it comes to saves being read or written, this manager only cares when it's the specified
         // save readers and writers doing it.
@@ -308,9 +364,9 @@ namespace CGTUnity.Fungus.SaveSystem
 
             // If the dict had the old save data, write the new one to replace it. Using foreach due to
             // dict limitations.
-            foreach (var fileName in writtenSaves.Keys)
+            foreach (var fileName in WrittenSaves.Keys)
             {
-                if (writtenSaves[fileName] == oldSave)
+                if (WrittenSaves[fileName] == oldSave)
                 {
                     writeNewSave =              true;
                     break;
