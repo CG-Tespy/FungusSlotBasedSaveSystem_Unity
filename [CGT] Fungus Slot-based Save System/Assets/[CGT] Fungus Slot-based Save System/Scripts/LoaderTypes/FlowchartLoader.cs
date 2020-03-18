@@ -61,7 +61,6 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             FlowchartVariables vars =                       data.Vars;
             LoadValueVariablesFrom(flowchart, vars);
-            LoadReferenceVariablesFrom(flowchart, vars);
         }
 
         protected virtual void LoadValueVariablesFrom(Flowchart flowchart, FlowchartVariables vars)
@@ -93,10 +92,6 @@ namespace CGTUnity.Fungus.SaveSystem
             }
         }
 
-        protected virtual void LoadReferenceVariablesFrom(Flowchart flowchart, FlowchartVariables vars)
-        {
-
-        }
 
         /// <summary>
         /// Keeps blocks like those with a Game Started event from interfering with the load process.

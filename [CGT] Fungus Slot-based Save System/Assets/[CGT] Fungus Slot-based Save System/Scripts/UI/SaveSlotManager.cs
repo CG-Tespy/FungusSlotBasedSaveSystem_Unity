@@ -13,6 +13,8 @@ namespace CGTUnity.Fungus.SaveSystem
         // This class updates its slots mainly by reacting to saves being written, read, or erased. It
         // updates some other parts of its state based on those actions, as well.
         // See this class's event listeners.
+        public static SaveSlotManager S { get; private set; }
+
         [SerializeField] protected RectTransform slotHolder;
         protected List<SaveSlot> slots =                new List<SaveSlot>();
 
@@ -23,6 +25,14 @@ namespace CGTUnity.Fungus.SaveSystem
         #region Monobehaviour Standard
         protected virtual void Awake()
         {
+            if (S != null && S != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+            
+            S = this;
+
             if (slotHolder == null)
                 throw new System.MissingFieldException(this.name + " needs a slot holder!");
 
@@ -42,7 +52,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
             IList<GameSaveData> saves = new List<GameSaveData>();
 
-            foreach (var save in SaveManager.writtenSaves.Values)
+            foreach (var save in SaveManager.WrittenSaves.Values)
             {
                 saves.Add(save);
             }

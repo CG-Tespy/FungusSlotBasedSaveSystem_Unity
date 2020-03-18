@@ -43,5 +43,11 @@ namespace CGTUnity.Fungus.SaveSystem
 
             return null;
         }
+
+        public override string GetSummary()
+        {
+            return "Key: " + Key;
+        }
+
     }
 }

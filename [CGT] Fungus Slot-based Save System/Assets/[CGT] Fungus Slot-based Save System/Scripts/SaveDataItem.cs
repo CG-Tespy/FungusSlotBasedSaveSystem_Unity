@@ -51,7 +51,7 @@ namespace CGTUnity.Fungus.SaveSystem
         public static SaveDataItem CreateFrom<T>(T saveData) where T : SaveData
         {
             var saveType = typeof(T);
-            var dataAsJson = JsonUtility.ToJson(saveData);
+            var dataAsJson = JsonUtility.ToJson(saveData, true);
 
             var newItem = new SaveDataItem(saveType.Name, dataAsJson);
 

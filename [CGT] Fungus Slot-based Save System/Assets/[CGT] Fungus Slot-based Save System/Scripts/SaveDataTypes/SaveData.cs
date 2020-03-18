@@ -50,7 +50,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public virtual SaveDataItem ToSaveDataItem()
         {
-            var thisAsJson = JsonUtility.ToJson(this);
+            var thisAsJson = JsonUtility.ToJson(this, true);
             var typeOfThis = this.GetType();
 
             var newItem = new SaveDataItem(typeOfThis.Name, thisAsJson);

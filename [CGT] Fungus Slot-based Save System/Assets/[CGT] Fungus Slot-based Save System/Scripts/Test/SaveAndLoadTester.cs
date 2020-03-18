@@ -26,7 +26,7 @@ public class SaveAndLoadTester : MonoBehaviour
         saveData =                              gameSaver.CreateSave();
 
         // Write the save data to PlayerPrefs
-        var jsonSave =                          JsonUtility.ToJson(saveData);
+        var jsonSave =                          JsonUtility.ToJson(saveData, true);
         PlayerPrefs.SetString(saveKey, jsonSave);
     }
 
