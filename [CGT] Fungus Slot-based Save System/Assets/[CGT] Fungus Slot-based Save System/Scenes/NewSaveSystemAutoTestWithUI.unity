@@ -386,8 +386,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: bb145366ce7024469a5758b08d31802c, type: 3}
     m_FontSize: 50
@@ -1372,6 +1370,771 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2863802172032706081, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172032706081, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172032706081, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172032706081, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172032706081, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611519258477, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611519258477, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611519258477, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611519258477, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611519258477, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587583488138, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587583488138, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587583488138, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587583488138, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587583488138, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922392585080, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922392585080, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922392585080, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922392585080, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922392585080, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764605416377, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764605416377, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764605416377, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764605416377, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764605416377, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250471748616, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250471748616, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250471748616, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250471748616, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250471748616, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437745035398, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437745035398, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437745035398, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437745035398, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437745035398, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789903964755, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789903964755, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789903964755, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789903964755, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789903964755, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545111075846, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545111075846, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545111075846, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545111075846, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545111075846, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545661729308, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545661729308, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545661729308, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545661729308, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545661729308, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545661729308, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545199446845, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545199446845, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545199446845, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545199446845, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545199446845, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485547545199446845, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786765124572579, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786765124572579, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786765124572579, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786765124572579, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786765124572579, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786765124572579, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764517176450, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764517176450, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764517176450, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764517176450, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764517176450, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789786764517176450, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172556054587, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172556054587, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172556054587, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172556054587, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172556054587, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172556054587, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172087595290, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172087595290, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172087595290, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172087595290, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172087595290, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863802172087595290, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440588138083984, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440588138083984, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440588138083984, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440588138083984, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440588138083984, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440588138083984, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587529328561, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587529328561, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587529328561, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587529328561, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587529328561, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108440587529328561, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579610998012279, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579610998012279, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579610998012279, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579610998012279, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579610998012279, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579610998012279, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611598788694, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611598788694, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611598788694, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611598788694, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611598788694, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307579611598788694, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789384809545, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789384809545, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789384809545, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789384809545, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789384809545, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789384809545, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789992402280, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789992402280, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789992402280, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789992402280, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789992402280, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819362789992402280, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437224046236, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437224046236, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437224046236, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437224046236, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437224046236, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437224046236, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437698731965, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437698731965, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437698731965, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437698731965, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437698731965, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674655437698731965, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274921873700194, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274921873700194, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274921873700194, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274921873700194, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274921873700194, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274921873700194, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922472051779, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922472051779, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922472051779, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922472051779, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922472051779, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771274922472051779, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582249921085970, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582249921085970, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582249921085970, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582249921085970, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582249921085970, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582249921085970, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250391757619, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250391757619, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250391757619, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250391757619, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250391757619, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823582250391757619, guid: b12f900f9a7956d42beff1bd226d6725,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b12f900f9a7956d42beff1bd226d6725, type: 3}
 --- !u!114 &873101400 stripped
@@ -1475,6 +2238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 899471350}
+  suppressBlockAutoSelect: 0
   ProgressMarkerKeys:
   - second
 --- !u!114 &899471349
@@ -1567,6 +2331,7 @@ MonoBehaviour:
   eventHandler: {fileID: 899471348}
   commandList:
   - {fileID: 899471349}
+  suppressAllAutoSelections: 0
 --- !u!114 &899471351
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1580,6 +2345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 899471353}
+  suppressBlockAutoSelect: 0
   ProgressMarkerKeys:
   - first
 --- !u!114 &899471352
@@ -1672,6 +2438,7 @@ MonoBehaviour:
   eventHandler: {fileID: 899471351}
   commandList:
   - {fileID: 899471352}
+  suppressAllAutoSelections: 0
 --- !u!114 &899471354
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1685,6 +2452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 899471356}
+  suppressBlockAutoSelect: 0
   ProgressMarkerKeys: []
 --- !u!114 &899471355
 MonoBehaviour:
@@ -1728,6 +2496,7 @@ MonoBehaviour:
   eventHandler: {fileID: 899471354}
   commandList:
   - {fileID: 899471355}
+  suppressAllAutoSelections: 0
 --- !u!114 &899471357
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1940,6 +2709,7 @@ MonoBehaviour:
   - {fileID: 899471359}
   - {fileID: 899471358}
   - {fileID: 899471357}
+  suppressAllAutoSelections: 0
 --- !u!114 &899471362
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1971,40 +2741,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471363
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2189,40 +2949,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471369
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2272,40 +3022,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471371
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2365,40 +3105,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471373
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2448,40 +3178,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471375
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2631,40 +3351,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2723,6 +3433,7 @@ MonoBehaviour:
   - {fileID: 899471364}
   - {fileID: 899471363}
   - {fileID: 899471362}
+  suppressAllAutoSelections: 0
 --- !u!114 &899471381
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2736,6 +3447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 899471403}
+  suppressBlockAutoSelect: 0
   waitForFrames: 5
 --- !u!114 &899471382
 MonoBehaviour:
@@ -2768,40 +3480,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471383
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2987,40 +3689,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471389
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3080,40 +3772,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471391
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3191,40 +3873,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471394
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3283,40 +3955,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471396
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3366,40 +4028,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471398
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3431,40 +4083,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &899471399
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3596,6 +4238,7 @@ MonoBehaviour:
   - {fileID: 899471384}
   - {fileID: 899471383}
   - {fileID: 899471382}
+  suppressAllAutoSelections: 0
 --- !u!114 &899471405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3786,8 +4429,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1009912568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3806,8 +4447,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 226248ac6f184e448af731df91b91958, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3901,8 +4540,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: ea8f56c43254d41728f5ac4e8299b6c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -3965,6 +4602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1307372144}
+  suppressBlockAutoSelect: 0
   targetButton: {fileID: 0}
 --- !u!114 &1307372143
 MonoBehaviour:
@@ -3997,40 +4635,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1307372144
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4057,6 +4685,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1307372142}
   commandList:
   - {fileID: 1307372143}
+  suppressAllAutoSelections: 0
 --- !u!114 &1307372145
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4070,6 +4699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1307372147}
+  suppressBlockAutoSelect: 0
   targetButton: {fileID: 0}
 --- !u!114 &1307372146
 MonoBehaviour:
@@ -4102,40 +4732,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1307372147
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4162,6 +4782,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1307372145}
   commandList:
   - {fileID: 1307372146}
+  suppressAllAutoSelections: 0
 --- !u!114 &1307372148
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4175,6 +4796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1307372150}
+  suppressBlockAutoSelect: 0
   targetButton: {fileID: 0}
 --- !u!114 &1307372149
 MonoBehaviour:
@@ -4207,40 +4829,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1307372150
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4267,6 +4879,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1307372148}
   commandList:
   - {fileID: 1307372149}
+  suppressAllAutoSelections: 0
 --- !u!114 &1307372151
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4280,6 +4893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1307372153}
+  suppressBlockAutoSelect: 0
   targetButton: {fileID: 0}
 --- !u!114 &1307372152
 MonoBehaviour:
@@ -4323,40 +4937,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1307372153
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4383,6 +4987,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1307372151}
   commandList:
   - {fileID: 1307372152}
+  suppressAllAutoSelections: 0
 --- !u!114 &1307372154
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4396,6 +5001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1307372156}
+  suppressBlockAutoSelect: 0
   targetButton: {fileID: 1770173202}
 --- !u!114 &1307372155
 MonoBehaviour:
@@ -4439,40 +5045,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
   booleanEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   integerParameter:
     integerRef: {fileID: 0}
     integerVal: 0
   integerEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   floatParameter:
     floatRef: {fileID: 0}
     floatVal: 0
   floatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   stringParameter:
     stringRef: {fileID: 0}
     stringVal: 
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1307372156
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4499,6 +5095,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1307372154}
   commandList:
   - {fileID: 1307372155}
+  suppressAllAutoSelections: 0
 --- !u!114 &1307372157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4680,8 +5277,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
 --- !u!225 &1403820134
 CanvasGroup:
@@ -4713,8 +5308,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: e8ab00ef0d9684dcb9deb52811d91218, type: 3}
   m_Type: 1
   m_PreserveAspect: 1
@@ -4809,8 +5402,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -5300,8 +5891,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1770173203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5320,8 +5909,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -5416,8 +6003,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 79197ecfbc3a4294a89ce589dac02cf2, type: 3}
     m_FontSize: 45
@@ -5495,8 +6080,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 64bd3e45f7a714f16b3c213f55f17fea, type: 3}
     m_FontSize: 14

@@ -7,6 +7,7 @@ namespace CGTUnity.Fungus.SaveSystem
     /// <summary>
     /// Creates Flowchart save data.
     /// </summary>
+    [AddComponentMenu("Slot-Based Save System/Savers/Flowchart Saver")]
     public class FlowchartSaver : DataSaver<FlowchartData>, ISaveCreator<FlowchartData, Flowchart>,
                                     IGroupSaver<FlowchartData>
     {

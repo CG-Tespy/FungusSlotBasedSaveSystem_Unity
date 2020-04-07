@@ -9,6 +9,7 @@ namespace CGTUnity.Fungus.SaveSystem
     /// <summary>
     /// Loads save data for a whole game/playthrough.
     /// </summary>
+    [AddComponentMenu("Slot-Based Save System/Loaders/Game Loader")]
     public class GameLoader : SaveLoader<GameSaveData>
     {
         protected List<SaveLoader> subloaders =               new List<SaveLoader>(); 

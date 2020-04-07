@@ -7,6 +7,7 @@ namespace CGTUnity.Fungus.SaveSystem
     /// <summary>
     /// Manages and is used to interact with the slots in the Save System's UI.
     /// </summary>
+    [AddComponentMenu("Slot-Based Save System/UI/Save Slot Manager")]
     public class SaveSlotManager : MonoBehaviour
     {
         // This class updates its slots mainly by reacting to saves being written, read, or erased. It

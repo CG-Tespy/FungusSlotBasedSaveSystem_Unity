@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Globalization;
+using UnityEngine;
 using UnityEngine.UI;
+using CGTUnity.Fungus.SaveSystem;
 
 
 namespace CGTUnity.Fungus.SaveSystem
 {
     [RequireComponent(typeof(RectTransform))]
+    [AddComponentMenu("Slot-Based Save System/UI/Save Slot")]
     public class SaveSlot : MonoBehaviour
     {
         #region Fields
@@ -12,6 +16,8 @@ namespace CGTUnity.Fungus.SaveSystem
         [SerializeField] Text numDisplay =                      null;
         [Tooltip("Displays the description for this slot.")]
         [SerializeField] Text descDisplay =                     null;
+        [Tooltip("Displays the date that the slot was last saved to.")]
+        [SerializeField] Text dateDisplay = null;
         protected Button clickReceiver =                        null;
         protected GameSaveData saveData =                       null;
         int number; // Cached to avoid too much casting
@@ -42,6 +48,21 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             get                                                 { return descDisplay.text; }
             protected set                                       { descDisplay.text = value; }
+        }
+
+        
+        public virtual string TimeLastSavedTo
+        {
+            get 
+            {
+                if (SaveData != null)
+                {
+                    CultureInfo currentLocale = CultureInfo.CurrentCulture;
+                    return SaveData.LastWritten.ToString("f", currentLocale);
+                }
+                else
+                    return string.Empty;
+            }
         }
 
         public virtual GameSaveData SaveData
@@ -95,12 +116,14 @@ namespace CGTUnity.Fungus.SaveSystem
             string newDesc =                                        null;
 
             if (saveData != null)
-                newDesc =                                           saveData.Description;
-            
+                newDesc = saveData.Description;
+                
             else
-                newDesc =                                           "<No Save Data>";
+                newDesc = "<No Save Data>";
             
             Description =                                           newDesc;
+            dateDisplay.text = TimeLastSavedTo;
+
         }
 
         protected virtual void OnClick()

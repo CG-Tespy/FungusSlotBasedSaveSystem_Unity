@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 
+
 namespace CGTUnity.Fungus.SaveSystem
 {
     /// <summary>
     /// Main manager of the save system's UI, meant to be the main interface used when
     /// accessing the save system through said UI.
     /// </summary>
+    [AddComponentMenu("Slot-Based Save System/UI/Save Menu")]
     public class SaveMenu : MonoBehaviour
     {
         #region Fields

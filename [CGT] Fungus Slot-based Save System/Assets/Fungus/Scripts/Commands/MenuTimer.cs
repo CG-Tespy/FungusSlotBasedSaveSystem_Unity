@@ -15,7 +15,7 @@ namespace Fungus
                  "Displays a timer bar and executes a target block if the player fails to select a menu option in time.")]
     [AddComponentMenu("")]
     [ExecuteInEditMode]
-    public class MenuTimer : Command
+    public class MenuTimer : Command, IBlockCaller
     {
         [Tooltip("Length of time to display the timer for")]
         [SerializeField] protected FloatData _duration = new FloatData(1);
@@ -62,6 +62,17 @@ namespace Fungus
             return new Color32(184, 210, 235, 255);
         }
 
+        public override bool HasReference(Variable variable)
+        {
+            return _duration.floatRef == variable ||
+                base.HasReference(variable);
+        }
+
+        public bool MayCallBlock(Block block)
+        {
+            return block == targetBlock;
+        }
+        
         #endregion
 
         #region Backwards compatibility

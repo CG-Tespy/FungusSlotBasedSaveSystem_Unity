@@ -11,6 +11,7 @@ namespace CGTUnity.Fungus.SaveSystem
     /// Handles Flowcharts and NarrativeLogs by default.
     /// To extend this to handle other data types, just modify or subclass this component.
     /// </summary>
+    [AddComponentMenu("Slot-Based Save System/Savers/Game Saver")]
     public class GameSaver: DataSaver<GameSaveData>, ISaveCreator<GameSaveData>
     {
         protected List<DataSaver> subsavers =       new List<DataSaver>();
@@ -51,9 +52,9 @@ namespace CGTUnity.Fungus.SaveSystem
             var sayDialog =                         SayDialog.ActiveSayDialog;
 
             if (sayDialog != null || string.IsNullOrEmpty(sayDialog.StoryText))
-                description =                       sayDialog.StoryText;
+                description = sayDialog.StoryText;
             else
-                description =                       newGameSave.LastWritten.ToLongDateString();
+                description = newGameSave.LastWritten.ToShortTimeString();
            
             newGameSave.Description =               description;
             return newGameSave;

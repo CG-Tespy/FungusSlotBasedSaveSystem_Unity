@@ -9,6 +9,7 @@ namespace CGTUnity.Fungus.SaveSystem
     /// <summary>
     /// The main interface for creating, loading, and deleting saves.
     /// </summary>
+    [AddComponentMenu("Slot-Based Save System/Save Manager")]
     public class SaveManager : MonoBehaviour
     {
         

@@ -6,6 +6,7 @@ namespace CGTUnity.Fungus.SaveSystem
     /// <summary>
     /// Can currently only decode these variables for Flowcharts: Bool, Int, Float, and String.
     /// </summary>
+    [AddComponentMenu("Slot-Based Save System/Loaders/Flowchart Loader")]
     public class FlowchartLoader : SaveLoader<FlowchartData>
     {
         /// <summary>

@@ -11,7 +11,7 @@ namespace Fungus
     [CommandInfo("Flow", 
                  "Stop Block", 
                  "Stops executing the named Block")]
-    public class StopBlock : Command 
+    public class StopBlock : Command, IBlockCaller
     {
         [Tooltip("Flowchart containing the Block. If none is specified, the parent Flowchart is used.")]
         [SerializeField] protected Flowchart flowchart;
@@ -53,6 +53,18 @@ namespace Fungus
         public override Color GetButtonColor()
         {
             return new Color32(253, 253, 150, 255);
+        }
+
+        public override bool HasReference(Variable variable)
+        {
+            return blockName.stringRef == variable || base.HasReference(variable);
+        }
+
+        public bool MayCallBlock(Block block)
+        {
+            if(flowchart != null)
+                return block == flowchart.FindBlock(blockName.Value);
+            return false;
         }
 
         #endregion
