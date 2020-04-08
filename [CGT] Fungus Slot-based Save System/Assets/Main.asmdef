@@ -1,7 +1,8 @@
 {
     "name": "Main",
     "references": [
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Sirenix.OdinSerializer"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
