@@ -19,6 +19,8 @@ namespace CGTUnity.Fungus.SaveSystem
         [SerializeField] List<SaveDataItem> items =    new List<SaveDataItem>();
         [SerializeField] string progressMarkerKey;
 
+        public static readonly GameSaveData Null = new GameSaveData();
+
         #endregion
 
         #region Properties

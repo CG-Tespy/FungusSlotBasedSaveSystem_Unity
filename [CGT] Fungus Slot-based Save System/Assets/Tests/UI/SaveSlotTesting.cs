@@ -7,13 +7,14 @@ using Fungus;
 using CGTUnity.Fungus.SaveSystem;
 using CGTUnity.Fungus.SaveSystem.Experimental;
 using System.Linq;
+using UnityEngine.UI;
 
 namespace Tests
 {
     public class SaveSlotTesting
     {
         List<ModularSaveSlot> saveSlots = null;
-        string pathToScenePrefab = "ScenePrefabs/SaveSlotTestScene";
+        readonly string pathToScenePrefab = "ScenePrefabs/SaveSlotTestScene";
         GameObject scenePrefab = null;
         GameObject scene = null;
 
@@ -44,7 +45,8 @@ namespace Tests
                 var slot = saveSlots[i];
                 GameSaveData newData = new GameSaveData("test", i + 1);
                 newData.Description = "This is the desc of slot number " + (i + 1);
-                slot.saveData = newData;
+                newData.SlotNumber = i + 1;
+                slot.SaveData = newData;
             }
         }
 
@@ -80,7 +82,7 @@ namespace Tests
 
             foreach (var component in components)
             {
-                if (!slot.Components.Contains(component))
+                if (!slot.Subcomponents.Contains(component))
                 {
                     Debug.LogError("Components not registered correctly in " + slot.name);
                     return false;
@@ -99,6 +101,7 @@ namespace Tests
             return slotComponents;
         }
 
+        [Test]
         public void CorrectNumbersDisplayed()
         {
             // Arrange
@@ -110,28 +113,35 @@ namespace Tests
 
             // Act
             // Apply this test to each slot
+            foreach (var slot in saveSlots)
+            {
+                int slotNum = slot.SaveData.SlotNumber;
+                var numComponent = slot.GetComponentInChildren<BasicSaveSlotNumber>();
+                var textField = numComponent.GetComponent<Text>();
+                bool correctNumber = textField.text.Contains(slotNum.ToString());
 
-
-            // Assert
+                // Assert
+                Assert.IsTrue(correctNumber);
+            }
 
         }
 
         void EnsureSlotHasSaveData(ModularSaveSlot slot)
         {
-            if (slot.saveData == null)
+            if (slot.SaveData == null)
                 throw new System.MissingFieldException(slot.name + " is missing save data!");
         }
 
         void EnsureSlotHasNumberComponent(ModularSaveSlot slot)
         {
-            SaveSlotNumber number = slot.GetComponentInChildren<SaveSlotNumber>();
+            BasicSaveSlotNumber number = slot.GetComponentInChildren<BasicSaveSlotNumber>();
             if (number == null)
                 throw new System.MissingFieldException(slot.name + " is missing a number component!");
         }
 
         bool CorrectNumberDisplayedFor(ModularSaveSlot slot)
         {
-            SaveSlotNumber number = slot.GetComponentInChildren<SaveSlotNumber>();
+            BasicSaveSlotNumber number = slot.GetComponentInChildren<BasicSaveSlotNumber>();
             throw new System.NotImplementedException();
 
 

@@ -4,12 +4,14 @@ using UnityEngine;
 
 namespace CGTUnity.Fungus.SaveSystem.Experimental
 {
-    public abstract class SaveSlotComponent : MonoBehaviour, ISaveSlotComponent, 
-        IGameSaveDataChangedListener
+    public abstract class SaveSlotComponent : MonoBehaviour, ISaveSlotComponent
     {
-        public virtual GameSaveData saveData { get; set; }
-
-        public virtual void OnSaveDataChanged(GameSaveData oldData, GameSaveData newData) { }
-
+        public static System.Type saveDataType = typeof(GameSaveData);
+        public System.Type SaveDataType 
+        { 
+            get { return saveDataType; } 
+        }
+        public virtual GameSaveData SaveData { get; set; }
     }
+
 }

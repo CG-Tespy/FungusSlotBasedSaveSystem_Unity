@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace CGTUnity.Fungus.SaveSystem.Experimental
 {
+    
     public interface ISaveDataChangedListener<TSaveData> where TSaveData: SaveData
     {
         void OnSaveDataChanged(TSaveData oldData, TSaveData newData);
     }
 
-    public interface IGameSaveDataChangedListener : ISaveDataChangedListener<GameSaveData>
-    {
-
-    }
+    public interface IGameSaveDataChangedListener<TSaveData> :
+        ISaveDataChangedListener<TSaveData>
+        where TSaveData: GameSaveData
+    { }
 }

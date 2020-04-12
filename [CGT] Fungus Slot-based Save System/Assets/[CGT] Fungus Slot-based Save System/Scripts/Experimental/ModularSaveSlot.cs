@@ -1,45 +1,55 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using System.Collections.Generic;
 
 namespace CGTUnity.Fungus.SaveSystem.Experimental
 {
-    [AddComponentMenu("Slot-Based Save System/UI/Modular Save Slot")]
     public class ModularSaveSlot : SaveSlotComponent
     {
-        [SerializeField] List<SaveSlotComponent> components;
-        public GameSaveDataEvent SaveDataChanged { get; private set; } = new GameSaveDataEvent();
-        public List<SaveSlotComponent> Components
+        public virtual List<ISaveSlotComponent> Subcomponents { get; protected set; }
+        = new List<ISaveSlotComponent>();
+
+
+        public override GameSaveData SaveData
         {
-            get { return components; }
+            get { return saveData; }
+            set
+            {
+                saveData = value;
+                PassSaveDataToSubcomponents();
+            }
         }
+
+        GameSaveData saveData;
+
+        void PassSaveDataToSubcomponents()
+        {
+            // The idea is to let the subcomponents decide what to do with the
+            // data upon being given it
+            for (int i = 0; i < Subcomponents.Count; i++)
+            {
+                var subcomponent = Subcomponents[i];
+                subcomponent.SaveData = this.SaveData;
+            }
+        }
+
+        /// <summary>
+        /// Tells you whether this is the first, second, two hundredth, etc slot.
+        /// </summary>
+        public virtual int Number { get; set; }
 
         protected virtual void Awake()
         {
-            FetchComponentsAsNeeded();
-            HookUpComponentsToSignals();
+            FetchSubcomponents();
         }
 
-        void FetchComponentsAsNeeded()
+        protected virtual void FetchSubcomponents()
         {
-            bool hasAssigned = Components != null && Components.Count > 0;
-
-            if (hasAssigned)
-                return;
-
-            var componentArr = GetComponentsInChildren<SaveSlotComponent>();
-            components = new List<SaveSlotComponent>(componentArr);
-
+            var subcomponentArr = GetComponentsInChildren<ISaveSlotComponent>();
+            Subcomponents.AddRange(subcomponentArr);
+            // GetComponentsInChildren also gets components from the calling MB's
+            // GameObject, for some reason
+            Subcomponents.Remove(this);
         }
-
-        void HookUpComponentsToSignals()
-        {
-            for (int i = 0; i < components.Count; i++)
-            {
-                var currentComponent = components[i];
-
-            }
-        }
+        
     }
+
 }

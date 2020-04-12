@@ -124,9 +124,9 @@ GameObject:
   - component: {fileID: 8335079149223333645}
   - component: {fileID: 8335079149223333644}
   - component: {fileID: 8335079149223333635}
-  - component: {fileID: 772455189707187201}
+  - component: {fileID: 7212775707715603625}
   m_Layer: 5
-  m_Name: ModularSaveSlot
+  m_Name: BasicModularSaveSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
---- !u!114 &772455189707187201
+--- !u!114 &7212775707715603625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,7 +264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f459e506b49af47bd99388f7644a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  components: []
 --- !u!1 &8335079149311711289
 GameObject:
   m_ObjectHideFlags: 0
