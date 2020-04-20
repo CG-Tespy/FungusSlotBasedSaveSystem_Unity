@@ -17,6 +17,7 @@ namespace Tests
         readonly string pathToScenePrefab = "ScenePrefabs/SaveSlotTestScene";
         GameObject scenePrefab = null;
         GameObject scene = null;
+        GameObject slotHolder;
 
         [SetUp]
         public void SetUp()
@@ -34,7 +35,8 @@ namespace Tests
 
         void GetUIElements()
         {
-            var slotArr = GameObject.FindObjectsOfType<ModularSaveSlot>();
+            slotHolder = GameObject.Find("SlotHolder");
+            var slotArr = slotHolder.GetComponentsInChildren<ModularSaveSlot>();
             saveSlots = new List<ModularSaveSlot>(slotArr);
         }
 
@@ -79,6 +81,7 @@ namespace Tests
         bool ComponentsAreRegisteredIn(ModularSaveSlot slot)
         {
             var components = GetSaveSlotComponentsFor(slot);
+            components.Remove(slot); // GetComponentsInChildren is a bit weird
 
             foreach (var component in components)
             {
@@ -92,7 +95,6 @@ namespace Tests
             return true;
         }
 
-
         List<SaveSlotComponent> GetSaveSlotComponentsFor(ModularSaveSlot slot)
         {
             var componentArr = slot.GetComponentsInChildren<SaveSlotComponent>();
@@ -102,7 +104,7 @@ namespace Tests
         }
 
         [Test]
-        public void CorrectNumbersDisplayed()
+        public void CorrectNumberComponentTextDisplayed()
         {
             // Arrange
             foreach (var slot in saveSlots)
@@ -118,10 +120,10 @@ namespace Tests
                 int slotNum = slot.SaveData.SlotNumber;
                 var numComponent = slot.GetComponentInChildren<BasicSaveSlotNumber>();
                 var textField = numComponent.GetComponent<Text>();
-                bool correctNumber = textField.text.Contains(slotNum.ToString());
-
+                var expected = numComponent.Prefix + slotNum + numComponent.Postfix;
+   
                 // Assert
-                Assert.IsTrue(correctNumber);
+                Assert.IsTrue(textField.text == expected);
             }
 
         }
@@ -139,16 +141,99 @@ namespace Tests
                 throw new System.MissingFieldException(slot.name + " is missing a number component!");
         }
 
-        bool CorrectNumberDisplayedFor(ModularSaveSlot slot)
+        [Test]
+        public void CorrectDescriptionsDisplayed()
         {
-            BasicSaveSlotNumber number = slot.GetComponentInChildren<BasicSaveSlotNumber>();
-            throw new System.NotImplementedException();
+            // Arrange
+            foreach (var slot in saveSlots)
+            {
+                EnsureSlotHasSaveData(slot);
+                EnsureSlotHasNumberComponent(slot);
+            }
 
+            // Act
+            foreach (var slot in saveSlots)
+            {
+                var descDisplayer = slot.GetComponentInChildren<BasicSaveSlotDescription>();
+                var fullDesc = slot.SaveData.Description;
+                var descInComponent = descDisplayer.TextField.text;
+                var halfDescInComponent = descInComponent.Substring(0, descInComponent.Length / 2);
+                // ^ May not always want to display the whole desc in the slot
+
+                // Assert
+                bool fullDescHasHalfTheDisplayedDesc = fullDesc.Contains(halfDescInComponent);
+                Assert.IsTrue(fullDescHasHalfTheDisplayedDesc);
+                
+            }
 
         }
 
+        [Test]
+        public void DescriptionsDisplayedWithinCharacterLimits()
+        {
+            // Arrange
+            foreach (var slot in saveSlots)
+            {
+                EnsureSlotHasSaveData(slot);
+                EnsureSlotHasNumberComponent(slot);
+            }
+
+            // Act
+            foreach (var slot in saveSlots)
+            {
+                var descDisplayer = slot.GetComponentInChildren<BasicSaveSlotDescription>();
+                var fullDesc = slot.SaveData.Description;
+                var descInComponent = descDisplayer.TextField.text;
+                var notTooManyCharacters = descInComponent.Length <= descDisplayer.CharLimit;
+
+                // Assert
+                Assert.IsTrue(notTooManyCharacters);
+
+            }
+        }
+
+        [Test]
+        public void DescriptionsShortenedWhenNecessary()
+        {
+            // Arrange
+            BasicSaveSlotDescription descDisplayer = null;
+            foreach (var slot in saveSlots)
+            {
+                EnsureSlotHasSaveData(slot);
+                EnsureSlotHasNumberComponent(slot);
+                descDisplayer = slot.GetComponentInChildren<BasicSaveSlotDescription>();
+
+                GiveOverlyLongDescTo(slot.SaveData, descDisplayer.CharLimit * 2);
+                slot.SaveData = slot.SaveData; // So the components get updated
+            }
+
+            // Act
+            foreach (var slot in saveSlots)
+            {
+                descDisplayer = slot.GetComponentInChildren<BasicSaveSlotDescription>();
+                var fullDesc = slot.SaveData.Description;
+                var descInComponent = descDisplayer.TextField.text;
+                var shortenedCorrectly = descInComponent.Length == descDisplayer.CharLimit;
+
+                // Assert
+                Assert.IsTrue(shortenedCorrectly);
+
+            }
+        }
+
+        void GiveOverlyLongDescTo(GameSaveData saveData, int targetLength)
+        {
+            string newDesc = saveData.Description;
+
+            while (newDesc.Length < targetLength)
+            {
+                newDesc += newDesc;
+            }
+
+            saveData.Description = newDesc;
+
+        }
         
-
-
+        
     }
 }

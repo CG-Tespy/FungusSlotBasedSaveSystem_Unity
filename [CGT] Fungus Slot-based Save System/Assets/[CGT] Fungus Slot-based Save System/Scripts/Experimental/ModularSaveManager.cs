@@ -11,7 +11,7 @@ namespace CGTUnity.Fungus.SaveSystem.Experimental
     /// <summary>
     /// Superclass for the module managing the save data created.
     /// </summary>
-    public abstract class SaveManager
+    public abstract class ModularSaveManager
     {
 
     }

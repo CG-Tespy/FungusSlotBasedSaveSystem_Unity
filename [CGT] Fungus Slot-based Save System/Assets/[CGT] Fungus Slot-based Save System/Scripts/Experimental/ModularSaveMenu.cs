@@ -11,11 +11,11 @@ namespace CGTUnity.Fungus.SaveSystem.Experimental
     /// <summary>
     /// Superclass for the save menus in the system.
     /// </summary>
-    public abstract class SaveMenu
+    public abstract class ModularSaveMenu
     {
         [SerializeField] protected GameLoader gameLoader;
         [SerializeField] protected GameSaver gameSaver;
-        [SerializeField] protected SaveManager saveManager;
+        [SerializeField] protected ModularSaveManager saveManager;
         [SerializeField] protected SaveSlotManager saveSlotManager;
 
         protected virtual void Awake()

@@ -8,32 +8,20 @@ namespace CGTUnity.Fungus.SaveSystem.Experimental
     /// <summary>
     /// Handles displaying a save slot's number.
     /// </summary>
-    [AddComponentMenu("Slot-Based Save System/UI/Save Slot Number")]
-    public class BasicSaveSlotNumber : SaveSlotComponent
+    [AddComponentMenu("Slot-Based Save System/UI/Basic/Save Slot Number")]
+    public class BasicSaveSlotNumber : SaveSlotText
     {
-        public override GameSaveData SaveData
+        [Tooltip("The text displayed right before the number.")]
+        [SerializeField] protected string prefix = "Save #";
+        [Tooltip("The text displayed right after the number.")]
+        [SerializeField] protected string postfix;
+
+        public string Prefix { get { return prefix; } }
+        public string Postfix { get { return postfix; } }
+
+        protected override void UpdateText()
         {
-            get { return base.SaveData; }
-            set
-            {
-                base.SaveData = value;
-                UpdateDisplay();
-            }
-        }
-
-        public Text TextField { get; protected set; }
-
-        protected virtual void Awake()
-        {
-            TextField = GetComponent<Text>();
-        }
-
-        protected virtual void UpdateDisplay()
-        {
-            string toDisplay;
-            int slotNum = GetSlotNumber();
-
-            toDisplay = slotNum.ToString();
+            string toDisplay = prefix + GetSlotNumber() + postfix;
             TextField.text = toDisplay; 
         }
 
@@ -45,7 +33,6 @@ namespace CGTUnity.Fungus.SaveSystem.Experimental
             else
                 return SaveData.SlotNumber;
         }
-
 
     }
 }
