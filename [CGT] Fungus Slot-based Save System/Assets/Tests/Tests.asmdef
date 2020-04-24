@@ -1,7 +1,8 @@
 {
     "name": "Tests1",
     "references": [
-        "Main"
+        "Main",
+        "Unity.TextMeshPro"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"

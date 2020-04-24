@@ -1,28 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CGTUnity.Fungus.SaveSystem.Experimental
 {
     /// <summary>
-    /// Handles displaying a save slot's number.
+    /// Handles displaying a Save Slot's number with a TextMeshPro UGUI component.
     /// </summary>
-    [AddComponentMenu("CGT SB SaveSys/UI/Basic/Save Slot Number")]
-    public class BasicSaveSlotNumber : SlotText
+    [AddComponentMenu("CGT SB SaveSys/UI/TMPro/Save Slot Number")]
+    public class TMProSaveSlotNumber : SaveSlotTMProUGUI
     {
         [Tooltip("The text displayed right before the number.")]
         [SerializeField] protected string prefix = "Save #";
         [Tooltip("The text displayed right after the number.")]
         [SerializeField] protected string postfix;
 
-        public string Prefix { get { return prefix; } }
-        public string Postfix { get { return postfix; } }
+        public virtual string Prefix 
+        { 
+            get { return prefix; } 
+            set { prefix = value; }
+        }
+        public virtual string Postfix 
+        { 
+            get { return postfix; } 
+            set { postfix = value; }
+        }
 
         protected override void UpdateText()
         {
             string toDisplay = prefix + GetSlotNumber() + postfix;
-            TextField.text = toDisplay; 
+            TextField.text = toDisplay;
         }
 
         protected virtual int GetSlotNumber()
@@ -33,6 +40,6 @@ namespace CGTUnity.Fungus.SaveSystem.Experimental
             else
                 return SaveData.SlotNumber;
         }
-
+    
     }
 }

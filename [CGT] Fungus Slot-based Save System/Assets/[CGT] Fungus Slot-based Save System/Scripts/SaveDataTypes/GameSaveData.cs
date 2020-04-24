@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using DateTime = System.DateTime;
 
 namespace CGTUnity.Fungus.SaveSystem
 {
@@ -10,16 +11,16 @@ namespace CGTUnity.Fungus.SaveSystem
     public class GameSaveData : SaveData
     {
         #region Fields
-        [SerializeField] string description =           null;
+        [SerializeField] string description =           "";
     
         [SerializeField] int slotNumber =               -1;
 
         [SerializeField] System.DateTime lastWritten;
 
         [SerializeField] List<SaveDataItem> items =    new List<SaveDataItem>();
-        [SerializeField] string progressMarkerKey;
+        [SerializeField] string progressMarkerKey = "";
 
-        public static readonly GameSaveData Null = new GameSaveData();
+        public static readonly GameSaveData Null;
 
         #endregion
 
@@ -67,6 +68,12 @@ namespace CGTUnity.Fungus.SaveSystem
 
         #region Methods
 
+        static GameSaveData()
+        {
+            Null = new GameSaveData();
+            Null.lastWritten = default(DateTime);
+        }
+
         #region Constructors
         /// <summary>
         /// Warning: GameSaveDatas without scene names are not safe to load, unless your 
@@ -75,7 +82,6 @@ namespace CGTUnity.Fungus.SaveSystem
         public GameSaveData() 
         {
             UpdateTime();
-            description =                   lastWritten.ToLongDateString();
             Signals.GameSaveCreated.Invoke(this);
         }
 

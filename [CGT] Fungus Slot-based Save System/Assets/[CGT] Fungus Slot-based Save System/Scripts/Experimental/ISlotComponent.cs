@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CGTUnity.Fungus.SaveSystem.Experimental
 {
-    public interface ISaveSlotComponent
+    public interface ISlotComponent
     {
         System.Type SaveDataType { get; }
         GameSaveData SaveData { get; set; }
@@ -17,7 +17,7 @@ namespace CGTUnity.Fungus.SaveSystem.Experimental
     /// an implementation is meant to work with.
     /// </summary>
     /// <typeparam name="TSaveData"></typeparam>
-    public interface ISaveSlotComponent<TSaveData> : ISaveSlotComponent
+    public interface ISlotComponent<TSaveData> : ISlotComponent
         where TSaveData : GameSaveData
     {
         /// <summary>

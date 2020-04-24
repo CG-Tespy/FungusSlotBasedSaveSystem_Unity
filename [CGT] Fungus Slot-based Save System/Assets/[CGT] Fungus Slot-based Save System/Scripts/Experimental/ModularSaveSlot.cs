@@ -2,10 +2,10 @@
 
 namespace CGTUnity.Fungus.SaveSystem.Experimental
 {
-    public class ModularSaveSlot : SaveSlotComponent
+    public class ModularSaveSlot : SlotComponent
     {
-        public virtual List<ISaveSlotComponent> Subcomponents { get; protected set; }
-        = new List<ISaveSlotComponent>();
+        public virtual List<ISlotComponent> Subcomponents { get; protected set; }
+        = new List<ISlotComponent>();
 
 
         public override GameSaveData SaveData
@@ -43,7 +43,7 @@ namespace CGTUnity.Fungus.SaveSystem.Experimental
 
         protected virtual void FetchSubcomponents()
         {
-            var subcomponentArr = GetComponentsInChildren<ISaveSlotComponent>();
+            var subcomponentArr = GetComponentsInChildren<ISlotComponent>();
             Subcomponents.AddRange(subcomponentArr);
             // GetComponentsInChildren also gets components from the calling MB's
             // GameObject, for some reason
