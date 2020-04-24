@@ -12,14 +12,14 @@ using System.Globalization;
 using System;
 using TMProText = TMPro.TextMeshProUGUI;
 
-namespace Tests
+namespace CGT_SBSS_Tests
 {
     public class BasicSaveSlotDateTesting : SaveSlotTestingSuite
     {
-        SaveSlotDate dateDisplayer = null;
-        CultureInfo localCulture = CultureInfo.CurrentCulture;
+        BasicSaveSlotDate dateDisplayer = null;
+        CultureInfo localCulture = CultureInfo.CurrentUICulture;
         DateTime date;
-        string formatSpecifier = "F";
+        string format;
         string expected = "";
         GameSaveData saveData = null;
 
@@ -36,10 +36,11 @@ namespace Tests
             // Act
             foreach (var saveSlot in saveSlots)
             {
-                dateDisplayer = saveSlot.GetComponentInChildren<SaveSlotDate>();
+                dateDisplayer = saveSlot.GetComponentInChildren<BasicSaveSlotDate>();
+                format = dateDisplayer.Format;
                 saveData = saveSlot.SaveData;
                 date = saveData.LastWritten;
-                expected = date.ToString(formatSpecifier, localCulture);
+                expected = date.ToString(format, localCulture);
                 var actual = dateDisplayer.TextField.text;
 
                 // Assert
@@ -64,7 +65,7 @@ namespace Tests
             for (int i = 0; i < saveSlots.Count; i++)
             {
                 var saveSlot = saveSlots[i];
-                dateDisplayer = saveSlot.GetComponentInChildren<SaveSlotDate>();
+                dateDisplayer = saveSlot.GetComponentInChildren<BasicSaveSlotDate>();
                 var actual = dateDisplayer.TextField.text;
 
                 // Assert

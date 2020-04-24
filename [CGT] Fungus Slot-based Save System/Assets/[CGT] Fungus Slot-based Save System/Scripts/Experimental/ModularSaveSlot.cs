@@ -7,18 +7,10 @@ namespace CGTUnity.Fungus.SaveSystem.Experimental
         public virtual List<ISlotComponent> Subcomponents { get; protected set; }
         = new List<ISlotComponent>();
 
-
-        public override GameSaveData SaveData
+        public override void Refresh()
         {
-            get { return saveData; }
-            set
-            {
-                saveData = value;
-                PassSaveDataToSubcomponents();
-            }
+            PassSaveDataToSubcomponents();
         }
-
-        GameSaveData saveData;
 
         void PassSaveDataToSubcomponents()
         {

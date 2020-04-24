@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.TestTools;
+﻿using NUnit.Framework;
 using CGTUnity.Fungus.SaveSystem.Experimental;
 using CGTUnity.Fungus.SaveSystem;
 using TMProText = TMPro.TextMeshProUGUI;
 
-namespace Tests
+namespace CGT_SBSS_Tests
 {
     public class TMProUGUINumberTesting : SaveSlotTestingSuite
     {

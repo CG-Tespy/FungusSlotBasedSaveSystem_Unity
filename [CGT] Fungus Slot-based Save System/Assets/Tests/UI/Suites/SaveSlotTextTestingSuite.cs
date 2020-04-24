@@ -4,7 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace Tests
+namespace CGT_SBSS_Tests
 {
     public class SaveSlotTextTestingSuite<TText> : SaveSlotTestingSuite
     {

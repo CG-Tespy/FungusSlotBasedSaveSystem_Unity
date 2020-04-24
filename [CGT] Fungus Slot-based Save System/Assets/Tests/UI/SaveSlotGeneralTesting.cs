@@ -12,7 +12,7 @@ using System.Globalization;
 using System;
 using TMProText = TMPro.TextMeshProUGUI;
 
-namespace Tests
+namespace CGT_SBSS_Tests
 {
     public class SaveSlotGeneralTesting : SaveSlotTestingSuite
     {

@@ -4,14 +4,31 @@ using UnityEngine;
 
 namespace CGTUnity.Fungus.SaveSystem.Experimental
 {
+    /// <summary>
+    /// Base class for all save slot components. By default, they do their thing
+    /// when they are assigned save data.
+    /// </summary>
     public abstract class SlotComponent : MonoBehaviour, ISlotComponent
     {
-        public static System.Type saveDataType = typeof(GameSaveData);
-        public System.Type SaveDataType 
-        { 
-            get { return saveDataType; } 
+        GameSaveData saveData = GameSaveData.Null;
+        public virtual GameSaveData SaveData
+        {
+            get { return saveData; }
+            set
+            {
+                if (value == null)
+                    saveData = GameSaveData.Null;
+                else
+                    saveData = value;
+
+                Refresh();
+            }
         }
-        public virtual GameSaveData SaveData { get; set; }
+
+        /// <summary>
+        /// Where the component does the main part of its job.
+        /// </summary>
+        public abstract void Refresh();
     }
 
     /// <summary>

@@ -1,24 +1,56 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using TMProText = TMPro.TextMeshProUGUI;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace CGTUnity.Fungus.SaveSystem.Experimental
 {
-    
-    /// <summary>
-    /// Abridges the contents of Unity Text or TextMeshPro UGUI components
-    /// based on user input.
-    /// </summary>
-    public class TextAbridger : MonoBehaviour
+    public abstract class TextAbridger<TTextField> : MonoBehaviour
     {
-        [Tooltip("Whether or not this does its job every frame.")]
-        public bool applyOnUpdate = false;
+        [Tooltip("Whether or not it does its job each frame.")]
+        public bool auto = true;
+
+        [SerializeField]
         [Tooltip("How many characters this allows the text field to have.")]
         [Range(1, int.MaxValue - 100)]
-        public int charLimit = 100;
+        int charLimit = 150;
+
+        [SerializeField]
         [Tooltip("What is put at the end of the text field to suggest it is abridged.")]
-        public string cutoffMarker = "...";
-        public dynamic TextField { get; protected set; }
+        string cutoffMarker = "...";
+        public TTextField TextField { get; protected set; }
+
+        dynamic dTextField { get { return TextField; } }
+
+        public int CharLimit
+        {
+            get { return charLimit; }
+            set
+            {
+                charLimit = value;
+                WarnForCharLimitIssues();
+            }
+        }
+
+        public string CutoffMarker
+        {
+            get { return cutoffMarker; }
+            set
+            {
+                if (value == null)
+                    cutoffMarker = "";
+                else
+                    cutoffMarker = value;
+            }
+        }
+
+        protected virtual void ValidateTextField()
+        {
+            if (TextField == null)
+            {
+                string errorMessage = this.name + @"'s TextAbridger component needs a text field to work with!";
+                throw new System.MissingFieldException(errorMessage);
+            }
+        }
 
         protected virtual void Awake()
         {
@@ -27,27 +59,21 @@ namespace CGTUnity.Fungus.SaveSystem.Experimental
 
         protected virtual void GetTextField()
         {
-            TextField = GetComponent<Text>();
-            if (TextField == null)
-                TextField = GetComponent<TMProText>();
-        }
-
-        protected virtual void ValidateTextField()
-        {
-            if (TextField == null)
-            {
-                string errorMessage = this.name + @"'s TextAbridger component needs a Unity UI Text or TextMeshPro UGUI
-component!";
-                throw new System.MissingFieldException(errorMessage);
-            }
+            TextField = GetComponent<TTextField>();
         }
 
         protected virtual void Update()
         {
-            if (!applyOnUpdate)
+            if (!auto)
                 return;
 
             Apply();
+        }
+
+        protected virtual void WarnForCharLimitIssues()
+        {
+            if (CharLimit < CutoffMarker.Length)
+                Debug.LogWarning("The char limit being shorter than the cutoff marker may lead to issues!");
         }
 
         /// <summary>
@@ -64,18 +90,18 @@ component!";
 
         protected virtual bool TextNeedsToBeAbridged()
         {
-            return TextField.text.Length > charLimit;
+            return dTextField.text.Length > CharLimit;
         }
 
         protected virtual void CutDownText()
         {
-            string cutText = TextField.text.Substring(0, charLimit - cutoffMarker.Length);
-            TextField.text = cutText;
+            string cutText = dTextField.text.Substring(0, CharLimit - CutoffMarker.Length);
+            dTextField.text = cutText;
         }
 
         protected virtual void AddCutoffToText()
         {
-            TextField.text = string.Concat(TextField.text, cutoffMarker);
+            dTextField.text = string.Concat(dTextField.text, CutoffMarker);
         }
 
     }

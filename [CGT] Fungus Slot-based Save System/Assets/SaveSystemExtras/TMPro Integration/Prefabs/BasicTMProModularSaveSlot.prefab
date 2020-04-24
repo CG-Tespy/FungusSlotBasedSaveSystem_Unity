@@ -79,8 +79,8 @@ MonoBehaviour:
   m_MinHeight: -1
   m_PreferredWidth: -1
   m_PreferredHeight: 20
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
+  m_FlexibleWidth: 1
+  m_FlexibleHeight: 1
   m_LayoutPriority: 1
 --- !u!1 &3906763430001927918
 GameObject:
@@ -148,8 +148,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Save #'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 89aca18dd19dcca4fba0c25b3a6c050e, type: 2}
-  m_sharedMaterial: {fileID: 21899202435041922, guid: 89aca18dd19dcca4fba0c25b3a6c050e,
+  m_fontAsset: {fileID: 11400000, guid: 94a39b471fd7d274eac909810b1e670c, type: 2}
+  m_sharedMaterial: {fileID: 21045622730785476, guid: 94a39b471fd7d274eac909810b1e670c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -175,13 +175,13 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 32.6
+  m_fontSize: 18.1
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -318,8 +318,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Insert Date Here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 89aca18dd19dcca4fba0c25b3a6c050e, type: 2}
-  m_sharedMaterial: {fileID: 21899202435041922, guid: 89aca18dd19dcca4fba0c25b3a6c050e,
+  m_fontAsset: {fileID: 11400000, guid: 94a39b471fd7d274eac909810b1e670c, type: 2}
+  m_sharedMaterial: {fileID: 21045622730785476, guid: 94a39b471fd7d274eac909810b1e670c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -345,13 +345,13 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 32.6
+  m_fontSize: 18.1
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 3113567693594240235}
   - component: {fileID: 3532660472839302071}
   - component: {fileID: 6895890775907014405}
-  - component: {fileID: 2660484137131693722}
+  - component: {fileID: 8401598528171777759}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -629,8 +629,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Insert description here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 89aca18dd19dcca4fba0c25b3a6c050e, type: 2}
-  m_sharedMaterial: {fileID: 21899202435041922, guid: 89aca18dd19dcca4fba0c25b3a6c050e,
+  m_fontAsset: {fileID: 11400000, guid: 94a39b471fd7d274eac909810b1e670c, type: 2}
+  m_sharedMaterial: {fileID: 21045622730785476, guid: 94a39b471fd7d274eac909810b1e670c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -656,13 +656,13 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 257
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -736,8 +736,8 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
+  m_PreferredHeight: 65
+  m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
 --- !u!114 &6895890775907014405
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f550d9a4606e030448a5d98ac2f586b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2660484137131693722
+--- !u!114 &8401598528171777759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -761,9 +761,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8740800397802864841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b15f51b8304631a46818b91ea1f61540, type: 3}
+  m_Script: {fileID: 11500000, guid: 6aaf3a90f77a34e46986241b2b869217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  applyOnUpdate: 0
-  charLimit: 100
+  applyOnUpdate: 1
+  charLimit: 150
   cutoffMarker: '...'

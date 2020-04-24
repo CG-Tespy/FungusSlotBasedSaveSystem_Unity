@@ -9,35 +9,46 @@ namespace CGTUnity.Fungus.SaveSystem.Experimental
     /// Base class for Save Slot Components that apply their functionality to a 
     /// Unity UI Text component.
     /// </summary>
-    public abstract class SlotText : SaveSlotComponent<Text>
+    public abstract class SlotText : SlotComponent, ISlotText
     {
+        public virtual dynamic TextField { get; set; }
 
-        public override GameSaveData SaveData
+        public override void Refresh()
         {
-            get { return base.SaveData; }
-            set
-            {
-                base.SaveData = value;
-                UpdateText();
-            }
+            UpdateText();
         }
 
-        /// <summary>
-        /// Alias for the TextField.
-        /// </summary>
-        public override Text PartnerComponent
-        {
-            get { return this.TextField; }
-            protected set { this.TextField = value; }
-        }
+        public abstract void UpdateText();
+    }
 
-        public Text TextField { get; protected set; }
+
+    public abstract class SlotText<TTextField> : SlotText, ISlotText<TTextField>
+        where TTextField: class
+    {
+        public new TTextField TextField
+        {
+            get { return base.TextField; }
+            set { base.TextField = value; }
+        }
 
         protected virtual void Awake()
         {
-            TextField = GetComponent<Text>();
+            TextField = GetComponent<TTextField>();
         }
 
-        protected abstract void UpdateText();
+    }
+
+    /// <summary>
+    /// For save slot components that display text.
+    /// </summary>
+    public interface ISlotText : ISlotComponent
+    {
+        dynamic TextField { get; }
+        void UpdateText();
+    }
+
+    public interface ISlotText<T> : ISlotText
+    {
+        new T TextField { get; }
     }
 }

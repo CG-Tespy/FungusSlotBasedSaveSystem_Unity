@@ -1,22 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CGTUnity.Fungus.SaveSystem.Experimental
 {
     /// <summary>
-    /// Handles displaying a save slot's description. This is the SBSS's default 
-    /// implementation thereof, using Unity's default Text component.
+    /// Base class for save slot components displaying mainly the description.
     /// </summary>
-    [AddComponentMenu("CGT SB SaveSys/UI/Default/Save Slot Description")]
-    public class SaveSlotDescription : SlotText
+    public abstract class SaveSlotDescription<TTextField> : SlotText<TTextField>, 
+        ISlotDescription
+        where TTextField: class
     {
+        public virtual string Description { get; set; }
 
-        protected override void UpdateText()
+        public override void UpdateText()
         {
-            TextField.text = SaveData.Description;
-        }
+            Description = SaveData.Description;
 
+            dynamic baseTextField = (dynamic)TextField;
+            baseTextField.text = Description;
+        }
+    }
+
+    /// <summary>
+    /// For save slot components that display the description.
+    /// </summary>
+    public interface ISlotDescription : ISlotComponent
+    {
+        string Description { get; }
     }
 }

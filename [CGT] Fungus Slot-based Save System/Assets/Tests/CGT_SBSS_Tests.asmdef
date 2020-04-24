@@ -1,5 +1,5 @@
 {
-    "name": "Tests1",
+    "name": "CGT_SBSS_Tests",
     "references": [
         "Main",
         "Unity.TextMeshPro"

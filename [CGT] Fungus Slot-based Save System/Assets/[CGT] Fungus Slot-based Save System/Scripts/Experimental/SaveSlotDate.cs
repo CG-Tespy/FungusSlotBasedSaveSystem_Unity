@@ -7,36 +7,73 @@ using DateTime = System.DateTime;
 namespace CGTUnity.Fungus.SaveSystem.Experimental
 {
     /// <summary>
-    /// Handles displaying a save slot's date. This is the SBSS's default 
-    /// implementation thereof, using Unity's default Text component.
+    /// Base class for save slot components displaying mainly the date.
     /// </summary>
-    [AddComponentMenu("CGT SB SaveSys/UI/Default/Save Slot Date")]
-    public class SaveSlotDate : SlotText
+    public abstract class SaveSlotDate<TTextField> : SlotText, ISlotDate
+        where TTextField : class
     {
-        CultureInfo localCulture = CultureInfo.CurrentCulture;
-        string formatSpecifier = "F";
-        DateTime date;
+        [SerializeField]
+        string format = "G";
 
-        protected override void UpdateText()
+        public virtual string Format
+        {
+            get { return format; }
+            set
+            {
+                if (value == null)
+                    NullOrEmptyFormatAlert();
+                else
+                    format = value;
+            }
+        }
+
+        protected virtual void NullOrEmptyFormatAlert()
+        {
+            var errorMessage = "Cannot have a null or empty date format!";
+            throw new System.ArgumentException(errorMessage);
+        }
+
+        public DateTime Date { get; set; }
+        protected CultureInfo localCulture = CultureInfo.CurrentUICulture;
+
+        public new TTextField TextField
+        {
+            get { return base.TextField; }
+            set { base.TextField = value; }
+        }
+
+        protected virtual void Awake()
+        {
+            TextField = GetComponent<TTextField>();
+        }
+
+        public override void UpdateText()
         {
             UpdateDate();
             string toDisplay = DecideWhatToDisplay();
-            TextField.text = toDisplay;
+            base.TextField.text = toDisplay;
         }
 
         protected virtual void UpdateDate()
         {
-            date = SaveData.LastWritten;
+            Date = SaveData.LastWritten;
         }
 
         protected virtual string DecideWhatToDisplay()
         {
-            bool invalidDate = date.Equals(default(DateTime));
+            bool invalidDate = Date.Equals(default);
 
             if (invalidDate)
                 return "";
             else
-                return date.ToString(formatSpecifier, localCulture);
+                return Date.ToString(format, localCulture);
         }
+    }
+
+ 
+
+    public interface ISlotDate : ISlotComponent
+    {
+        DateTime Date { get; }
     }
 }
