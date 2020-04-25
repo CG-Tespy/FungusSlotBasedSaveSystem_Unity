@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CGTUnity.Fungus.SaveSystem.Experimental
+namespace CGT.Unity.Fungus.SBSaveSys
 {
     public abstract class TextAbridger<TTextField> : MonoBehaviour
     {

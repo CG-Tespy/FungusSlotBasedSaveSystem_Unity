@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Fungus;
+using CGTUnity.Fungus.SaveSystem;
 
-namespace CGTUnity.Fungus.SaveSystem.Experimental
+namespace CGT.Unity.Fungus.SBSaveSys
 {
     /// <summary>
     /// Superclass for the save menus in the system.

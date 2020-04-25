@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMProUGUI = TMPro.TextMeshProUGUI;
 
-namespace CGTUnity.Fungus.SaveSystem.Experimental
+namespace CGT.Unity.Fungus.SBSaveSys
 {
     /// <summary>
     /// Handles displaying a Save Slot's number with a TextMeshPro UGUI component.

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using TMProText = TMPro.TextMeshProUGUI;
 
-namespace CGTUnity.Fungus.SaveSystem.Experimental
+namespace CGT.Unity.Fungus.SBSaveSys
 {
     public class BasicTextAbridger : TextAbridger<Text> { }
 

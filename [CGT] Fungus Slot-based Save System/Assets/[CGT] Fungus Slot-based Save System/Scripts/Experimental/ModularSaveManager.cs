@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Fungus;
 
-namespace CGTUnity.Fungus.SaveSystem.Experimental
+namespace CGT.Unity.Fungus.SBSaveSys
 {
     /// <summary>
     /// Superclass for the module managing the save data created.

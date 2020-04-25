@@ -58,7 +58,7 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 1
@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 2044672840670604449}
   - component: {fileID: 348768904495096346}
   - component: {fileID: 1784623271260146869}
+  - component: {fileID: 7338587563923075845}
   - component: {fileID: 360210704283556259}
   m_Layer: 5
   m_Name: Number
@@ -239,6 +240,26 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7338587563923075845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906763430001927918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: 18
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &360210704283556259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +285,7 @@ GameObject:
   - component: {fileID: 8130913462560706755}
   - component: {fileID: 5991352686753471454}
   - component: {fileID: 3197568202342698833}
+  - component: {fileID: 3751760874284151289}
   m_Layer: 5
   m_Name: Date
   m_TagString: Untagged
@@ -409,6 +431,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3751760874284151289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3982292835807436667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa8c6aee1db6ca4e9a3d56fffdcf618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  format: G
 --- !u!1 &8335079149223333632
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aaf3a90f77a34e46986241b2b869217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  applyOnUpdate: 1
+  auto: 1
   charLimit: 150
   cutoffMarker: '...'

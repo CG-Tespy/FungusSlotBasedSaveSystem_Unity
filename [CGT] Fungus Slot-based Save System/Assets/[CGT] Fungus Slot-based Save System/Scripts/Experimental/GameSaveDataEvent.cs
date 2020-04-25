@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
-using CGTUnity.Fungus.SaveSystem;
-using CGTUnity.Fungus.SaveSystem.Experimental;
 
-public class GameSaveDataEvent : UnityEvent<GameSaveData> { }
+namespace CGT.Unity.Fungus.SBSaveSys
+{
+    public class GameSaveDataEvent : UnityEvent<GameSaveData> { }
+}

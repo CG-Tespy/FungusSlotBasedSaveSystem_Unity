@@ -426,9 +426,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Save Description Save Description Save Description Save Description Save
-    Description Save Description Save Description Save Description Save Description
-    Save Description Save Description Save Description
+  m_Text: 'Save Description '
 --- !u!114 &8335079149311711291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15f51b8304631a46818b91ea1f61540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  applyOnUpdate: 0
+  auto: 1
   charLimit: 150
   cutoffMarker: '...'
 --- !u!1 &9068059296265741618

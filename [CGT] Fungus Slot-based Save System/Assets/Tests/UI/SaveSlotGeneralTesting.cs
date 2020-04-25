@@ -1,16 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.TestTools;
-using Fungus;
-using CGTUnity.Fungus.SaveSystem;
-using CGTUnity.Fungus.SaveSystem.Experimental;
-using System.Linq;
-using UnityEngine.UI;
-using System.Globalization;
-using System;
-using TMProText = TMPro.TextMeshProUGUI;
+using CGT.Unity.Fungus.SBSaveSys;
 
 namespace CGT_SBSS_Tests
 {
@@ -23,7 +14,7 @@ namespace CGT_SBSS_Tests
             // Act
             // Execute this test for each save slot in the scene
             bool failed = false;
-            foreach (var slot in saveSlots)
+            foreach (var slot in SaveSlots)
             {
                 if (!ComponentsAreRegisteredIn(slot))
                 {
@@ -36,7 +27,7 @@ namespace CGT_SBSS_Tests
             Assert.IsTrue(!failed);
         }
 
-        bool ComponentsAreRegisteredIn(ModularSaveSlot slot)
+        bool ComponentsAreRegisteredIn(SaveSlot slot)
         {
             var components = GetSaveSlotComponentsFor(slot);
             components.Remove(slot); // GetComponentsInChildren is a bit weird
@@ -53,7 +44,7 @@ namespace CGT_SBSS_Tests
             return true;
         }
 
-        List<SlotComponent> GetSaveSlotComponentsFor(ModularSaveSlot slot)
+        List<SlotComponent> GetSaveSlotComponentsFor(SaveSlot slot)
         {
             var componentArr = slot.GetComponentsInChildren<SlotComponent>();
             var slotComponents = new List<SlotComponent>(componentArr);
