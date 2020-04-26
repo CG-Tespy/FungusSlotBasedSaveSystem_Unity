@@ -16,7 +16,7 @@ namespace CGTUnity.Fungus.SaveSystem
     public abstract class DataSaver<TSaveData> : DataSaver 
                                                 where TSaveData: SaveData
     {
-        protected System.Type saveType =            typeof(TSaveData);
+        protected System.Type saveType = typeof(TSaveData);
     }
 
 }

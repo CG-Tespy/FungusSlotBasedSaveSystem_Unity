@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-using EntryDisplay =                                        CGTUnity.Fungus.NarrativeLogSystem.NarrativeLogEntryDisplay;
+using EntryDisplay = CGTUnity.Fungus.NarrativeLogSystem.NarrativeLogEntryDisplay;
 
 namespace CGTUnity.Fungus.NarrativeLogSystem
 {
@@ -17,18 +17,18 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
         [SerializeField] protected EntryDisplay entryDisplayPrefab;
         [SerializeField] protected RectTransform entryHolder;
         protected CanvasGroup canvasGroup;
-        protected List<EntryDisplay> entryDisplays =        new List<EntryDisplay>();
+        protected List<EntryDisplay> entryDisplays = new List<EntryDisplay>();
         #endregion
 
         #region Methods
 
         protected virtual void Awake()
         {
-            canvasGroup =                                   GetComponent<CanvasGroup>();
+            canvasGroup = GetComponent<CanvasGroup>();
             // Make sure to update the UI when new entries are added to or 
             // cleared from the log.
-            Signals.NarrativeAdded +=    OnNarrativeAdded;
-            Signals.LogCleared +=        OnLogCleared;
+            Signals.NarrativeAdded += OnNarrativeAdded;
+            Signals.LogCleared += OnLogCleared;
         }
 
         public virtual void SetLogEntries(IList<Entry> entries)
@@ -42,7 +42,7 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
         {
             for (int i = 0; i < entryDisplays.Count; i++)
             {
-                var entryDisplay =                      entryDisplays[i];
+                var entryDisplay = entryDisplays[i];
                 Destroy(entryDisplay.gameObject);
             }
 
@@ -51,16 +51,16 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
 
         public virtual void Open()
         {
-            canvasGroup.alpha =                         1;
-            canvasGroup.interactable =                  true;
-            canvasGroup.blocksRaycasts =                true;
+            canvasGroup.alpha = 1;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
         }
 
         public virtual void Close()
         {
-            canvasGroup.alpha =                         0;
-            canvasGroup.interactable =                  false;
-            canvasGroup.blocksRaycasts =                false;
+            canvasGroup.alpha = 0;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
         }
 
         #region For event-listening
@@ -69,9 +69,9 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
         {
             // Create a display for the new entry, and have it show in the UI. 
                 
-            var newEntryDisplay =                           Instantiate<EntryDisplay>(entryDisplayPrefab);
+            var newEntryDisplay = Instantiate<EntryDisplay>(entryDisplayPrefab);
             newEntryDisplay.transform.SetParent(entryHolder, false);
-            newEntryDisplay.ToDisplay =                     entryAdded;
+            newEntryDisplay.ToDisplay = entryAdded;
             entryDisplays.Add(newEntryDisplay);
         }
 
@@ -83,8 +83,8 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
         protected virtual void OnDestroy()
         {
             // Avoid this responding to signals when being destroyed.
-            Signals.NarrativeAdded -=    OnNarrativeAdded;
-            Signals.LogCleared -=        OnLogCleared;
+            Signals.NarrativeAdded -= OnNarrativeAdded;
+            Signals.LogCleared -= OnLogCleared;
         }
 
         #endregion

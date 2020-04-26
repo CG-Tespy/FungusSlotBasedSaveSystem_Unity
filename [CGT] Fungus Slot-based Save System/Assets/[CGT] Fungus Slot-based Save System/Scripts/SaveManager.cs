@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using Fungus;
+using UnityEngine.SceneManagement;
 
 namespace CGTUnity.Fungus.SaveSystem
 {
@@ -21,19 +21,37 @@ namespace CGTUnity.Fungus.SaveSystem
         [SerializeField] protected SaveReader saveReader;
         [SerializeField] protected GameLoader gameLoader;
         [SerializeField] protected GameSaver gameSaver;
+        [Tooltip("Whether or not this should display warnings when asked to add saves when it isn't allowed to.")]
+        [SerializeField] protected bool warnOnUnallowedSave = true;
+        
 
-        protected static List<GameSaveData> gameSaves =                    new List<GameSaveData>();
-        protected static List<GameSaveData> unwrittenSaves =               new List<GameSaveData>();
-        public static Dictionary<string, GameSaveData> WrittenSaves { get; private set; } = new Dictionary<string, GameSaveData>();
+        protected static List<GameSaveData> gameSaves = new List<GameSaveData>();
+        protected static List<GameSaveData> unwrittenSaves = new List<GameSaveData>();
+        public static Dictionary<string, GameSaveData> WrittenSaves { get; private set; }
         // ^ Keeping track of what's written or unwritten helps optimize the save-writing 
         // and save-deleting processes.
 
+        static SaveManager()
+        {
+            WrittenSaves = new Dictionary<string, GameSaveData>();
+            WrittenSaves = new Dictionary<string, GameSaveData>();
+        }
+
         [Tooltip("Whether or not this SaveManager can add saves.")]
         [SerializeField] bool savingEnabled = true;
-        public bool SavingEnabled
+        public virtual bool SavingEnabled
         {
             get { return savingEnabled; }
             set { savingEnabled = value; }
+        }
+
+        [Tooltip("How long to keep self from saving when this SaveManager first starts up.")]
+        [SerializeField] protected float awakeSaveDelay = 2f;
+
+        public virtual float AwakeSaveDelay
+        {
+            get { return awakeSaveDelay; }
+            set { awakeSaveDelay = value; }
         }
 
         #endregion
@@ -64,13 +82,23 @@ namespace CGTUnity.Fungus.SaveSystem
             S = this;
 
             // Get the necessary components
-            if (gameLoader == null) gameLoader =    FindObjectOfType<GameLoader>();
-            if (gameSaver == null) gameSaver =      FindObjectOfType<GameSaver>();
+            if (gameLoader == null) gameLoader = FindObjectOfType<GameLoader>();
+            if (gameSaver == null) gameSaver = FindObjectOfType<GameSaver>();
 
             if (!Directory.Exists(SaveDirectory))
                 Directory.CreateDirectory(SaveDirectory);
 
             ListenForEvents();
+            if (awakeSaveDelay > 0)
+                StartCoroutine(ExecuteSaveDelay());
+        }
+
+        IEnumerator ExecuteSaveDelay()
+        {
+            bool previous = savingEnabled;
+            savingEnabled = false;
+            yield return new WaitForSeconds(awakeSaveDelay);
+            savingEnabled = previous;
         }
 
         protected virtual void Start()
@@ -93,12 +121,12 @@ namespace CGTUnity.Fungus.SaveSystem
         protected virtual void OnGameSaveWritten(GameSaveData saveData, string filePath, string fileName)
         {
             unwrittenSaves.Remove(saveData);
-            WrittenSaves[fileName] =                    saveData;
+            WrittenSaves[fileName] = saveData;
         }
 
         protected virtual void OnGameSaveRead(GameSaveData saveData, string filePath, string fileName)
         {
-            WrittenSaves[fileName] =                    saveData;
+            WrittenSaves[fileName] = saveData;
             if (!gameSaves.Contains(saveData))
                 gameSaves.Add(saveData);
         }
@@ -107,7 +135,7 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             gameSaves.Remove(saveData);
             unwrittenSaves.Remove(saveData);
-            WrittenSaves[fileName] =                    null;
+            WrittenSaves[fileName] = null;
         }
 
         #endregion
@@ -136,13 +164,14 @@ namespace CGTUnity.Fungus.SaveSystem
 
         /// <summary>
         /// Creates and registers new save data with the passed slot's number, then writing it to disk
-        /// if set to do so. Save replacement may happen depending on the aformentioned number.
+        /// if set to do so. Save replacement may happen depending on the aforementioned number.
         /// </summary>
         public virtual bool AddSave(SaveSlot slot, bool writeToDisk = true)
         {
             if (!savingEnabled)
             {
-                Debug.LogWarning(this.name + "'s SaveManager is set to not add saves.");
+                if (warnOnUnallowedSave)
+                    Debug.LogWarning(this.name + "'s SaveManager is set to not add saves.");
                 return false;
             }
 
@@ -154,17 +183,18 @@ namespace CGTUnity.Fungus.SaveSystem
 
         /// <summary>
         /// Creates and registers new save data with the passed slot number, then writing it to disk
-        /// if set to do so. Save replacement may happen depending on the aformentioned number.
+        /// if set to do so. Save replacement may happen depending on the aforementioned number.
         /// </summary>
         public virtual bool AddSave(int slotNumber, bool writeToDisk = true)
         {
             if (!savingEnabled)
             {
-                Debug.LogWarning(this.name + "'s SaveManager is set to not add saves.");
+                if (warnOnUnallowedSave)
+                    Debug.LogWarning(this.name + "'s SaveManager is set to not add saves.");
                 return false;
             }
 
-            var newSaveData =                       gameSaver.CreateSave(slotNumber);
+            var newSaveData = gameSaver.CreateSave(slotNumber);
             return AddSave(newSaveData, writeToDisk);
         }
 
@@ -181,20 +211,21 @@ namespace CGTUnity.Fungus.SaveSystem
 
             if (!savingEnabled)
             {
-                Debug.LogWarning(this.name + "'s SaveManager is set to not add saves.");
+                if (warnOnUnallowedSave)
+                    Debug.LogWarning(this.name + "'s SaveManager is set to not add saves.");
                 return false;
             }
 
             // See if any save-replacing will happen
-            var saveWasReplaced =                 false;
+            var saveWasReplaced = false;
 
             for (int i = 0; i < gameSaves.Count; i++)
             {
-                var oldSave =                       gameSaves[i];
+                var oldSave = gameSaves[i];
                 if (oldSave.SlotNumber == newSave.SlotNumber) // Yes, it will!
                 {
                     ReplaceSave(oldSave, newSave);
-                    saveWasReplaced =             true;
+                    saveWasReplaced = true;
                     break;
                 }
             }
@@ -240,7 +271,7 @@ namespace CGTUnity.Fungus.SaveSystem
                 return false;
             }
 
-            var saveData =                  slot.SaveData;
+            var saveData = slot.SaveData;
 
             if (saveData == null)
             {
@@ -259,15 +290,15 @@ namespace CGTUnity.Fungus.SaveSystem
             // Get the file name associated the save data was written into, and use that to delete 
             // it from the save directory.
             // Using foreach because key-value collections are unindexable.
-            var eraseSuccessful =               false;
+            var eraseSuccessful = false;
 
             foreach (var fileName in WrittenSaves.Keys)
             {
                 if (WrittenSaves[fileName] == saveData)
                 {
-                    var filePath =              SaveDirectory + fileName;
+                    var filePath = SaveDirectory + fileName;
                     File.Delete(filePath);
-                    eraseSuccessful =           true;
+                    eraseSuccessful = true;
                     Signals.GameSaveErased.Invoke(saveData, filePath, fileName);
                     break;
                 }
@@ -287,7 +318,7 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             for (int i = 0; i < gameSaves.Count; i++)
             {
-                var save =                      gameSaves[i];
+                var save = gameSaves[i];
                 if (save.SlotNumber == slotNumber)
                     return LoadSave(save);
             }
@@ -314,6 +345,11 @@ namespace CGTUnity.Fungus.SaveSystem
             return LoadSave(slot.SaveData);
         }
 
+        /// <summary>
+        /// Loads the passed GameSaveData, regardless of whether this manager is keeping track of it
+        /// or not.
+        /// </summary>
+        /// <returns></returns>
         public virtual bool LoadSave(GameSaveData saveData)
         {
             return gameLoader.Load(saveData);
@@ -322,6 +358,10 @@ namespace CGTUnity.Fungus.SaveSystem
         #endregion
 
         #region Save-retrieval
+        /// <summary>
+        /// Returns the save that has the passed slot number, if it exists. Returns null if
+        /// it doesn't.
+        /// </summary>
         public virtual GameSaveData GetSave(int slotNumber)
         {
             for (int i = 0; i < gameSaves.Count; i++)
@@ -340,16 +380,16 @@ namespace CGTUnity.Fungus.SaveSystem
         // save readers and writers doing it.
         protected virtual void ListenForEvents()
         {
-            saveWriter.GameSaveWritten +=               OnGameSaveWritten;
-            saveReader.GameSaveRead +=                  OnGameSaveRead;
-            Signals.GameSaveErased +=         OnGameSaveErased;
+            saveWriter.GameSaveWritten += OnGameSaveWritten;
+            saveReader.GameSaveRead += OnGameSaveRead;
+            Signals.GameSaveErased += OnGameSaveErased;
         }
 
         protected virtual void UnlistenForEvents()
         {
-            saveWriter.GameSaveWritten -=               OnGameSaveWritten;
-            saveReader.GameSaveRead -=                  OnGameSaveRead;
-            Signals.GameSaveErased -=         OnGameSaveErased;
+            saveWriter.GameSaveWritten -= OnGameSaveWritten;
+            saveReader.GameSaveRead -= OnGameSaveRead;
+            Signals.GameSaveErased -= OnGameSaveErased;
         }
 
         /// <summary>
@@ -368,7 +408,7 @@ namespace CGTUnity.Fungus.SaveSystem
             {
                 if (WrittenSaves[fileName] == oldSave)
                 {
-                    writeNewSave =              true;
+                    writeNewSave = true;
                     break;
                 }
             }

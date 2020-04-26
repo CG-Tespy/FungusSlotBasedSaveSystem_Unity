@@ -7,12 +7,12 @@ namespace CGTUnity.Fungus.SaveSystem
     /// </summary>
     public class SaveDiskAccessor : ScriptableObject
     {
-        [SerializeField] protected ReadWriteEncoding encoding =     ReadWriteEncoding.Unicode;
+        [SerializeField] protected ReadWriteEncoding encoding = ReadWriteEncoding.Unicode;
 
         [Tooltip("The first part of the save files' names this works with.")]
-        [SerializeField] protected string savePrefix =              "saveData";
+        [SerializeField] protected string savePrefix = "saveData";
         [Tooltip("Just for flavor.")]
-        [SerializeField] protected string fileExtension =           "save";
+        [SerializeField] protected string fileExtension = "save";
 
     }
 }

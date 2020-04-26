@@ -13,7 +13,7 @@ namespace CGTUnity.Fungus.SaveSystem
     /// </summary>
     public class GameSaver: DataSaver<GameSaveData>, ISaveCreator<GameSaveData>
     {
-        protected List<DataSaver> subsavers =       new List<DataSaver>();
+        protected List<DataSaver> subsavers = new List<DataSaver>();
 
         #region Methods
         protected virtual void Awake()
@@ -25,9 +25,9 @@ namespace CGTUnity.Fungus.SaveSystem
         public override IList<SaveDataItem> CreateItems()
         {
             // Create GameSaveData, and encode it into a SaveDataItem
-            var gameSave =                          CreateSave();
-            var jsonSave =                          JsonUtility.ToJson(gameSave, true);
-            var newItem =                           new SaveDataItem(saveType.Name, jsonSave);
+            var gameSave = CreateSave();
+            var jsonSave = JsonUtility.ToJson(gameSave, true);
+            var newItem = new SaveDataItem(saveType.Name, jsonSave);
 
             // The array has only one element, since we only made one GameSaveData
             return new SaveDataItem[1] {newItem};
@@ -38,24 +38,22 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual GameSaveData CreateSave()
         {
-            var sceneName =                         SceneManager.GetActiveScene().name;
-            var newGameSave =                       new GameSaveData(sceneName, -1);
+            var sceneName = SceneManager.GetActiveScene().name;
+            var newGameSave = new GameSaveData(sceneName, -1);
             EncodeInto(ref newGameSave);
             newGameSave.UpdateTime();
             if (ProgressMarker.latestExecuted != null)
-                newGameSave.ProgressMarkerKey =     ProgressMarker.latestExecuted.Key;
-            
+                newGameSave.ProgressMarkerKey = ProgressMarker.latestExecuted.Key;
+
             // It's common to make VN save file descs be the text that was in the textbox, 
             // at the time of the save being made.
-            var description =                       newGameSave.Description;
-            var sayDialog =                         SayDialog.ActiveSayDialog;
+            var description = "";
+            var sayDialog = SayDialog.ActiveSayDialog;
 
             if (sayDialog != null && !string.IsNullOrEmpty(sayDialog.StoryText))
-                description =                       sayDialog.StoryText;
-            else
-                description =                       newGameSave.LastWritten.ToLongDateString();
+                description = sayDialog.StoryText;
            
-            newGameSave.Description =               description;
+            newGameSave.Description = description;
             return newGameSave;
         }
 
@@ -64,8 +62,8 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual GameSaveData CreateSave(int slotNumber)
         {
-            var newGameSave =                       CreateSave();
-            newGameSave.SlotNumber =                slotNumber;
+            var newGameSave = CreateSave();
+            newGameSave.SlotNumber = slotNumber;
             return newGameSave;
         }
 
@@ -83,8 +81,8 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             for (int i = 0; i < subsavers.Count; i++)
             {
-                var subsaver =                      subsavers[i];
-                var saveDataItems =                 subsaver.CreateItems();
+                var subsaver = subsavers[i];
+                var saveDataItems = subsaver.CreateItems();
                 saveData.Items.AddRange(saveDataItems);
             }
         }

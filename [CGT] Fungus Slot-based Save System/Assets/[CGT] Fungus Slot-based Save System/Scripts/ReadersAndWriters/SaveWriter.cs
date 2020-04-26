@@ -19,9 +19,9 @@ namespace CGTUnity.Fungus.SaveSystem
         /// Invoked when this particular SaveWriter writes GameSaveData.
         /// Params: saveData, filePath, fileName
         /// </summary>
-        public UnityAction<GameSaveData, string, string> GameSaveWritten =    delegate {};
-        protected const string fileNameFormat =                     "{0}_0{1}.{2}";
-        protected const string filePathFormat =                     "{0}/{1}";
+        public UnityAction<GameSaveData, string, string> GameSaveWritten = delegate {};
+        protected const string fileNameFormat = "{0}_0{1}.{2}";
+        protected const string filePathFormat = "{0}/{1}";
 
         #endregion
 
@@ -29,7 +29,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
         protected virtual void OnEnable()
         {
-            actualEncoding =                                        encoding.ToTextEncoding();
+            actualEncoding = encoding.ToTextEncoding();
         }
 
         /// <summary>
@@ -41,20 +41,20 @@ namespace CGTUnity.Fungus.SaveSystem
             // Safety.
             if (!Directory.Exists(saveDir))
             {
-                var messageFormat =                         
+                var messageFormat = 
                 @"Could not write save to {0}; that directory does not exist.";
-                var message =                               string.Format(messageFormat, saveDir);
+                var message = string.Format(messageFormat, saveDir);
                 Debug.LogError(message);
                 return false;
             }
 
-            var dataToWrite =                               JsonUtility.ToJson(saveData, true);
+            var dataToWrite = JsonUtility.ToJson(saveData, true);
 
             // Write the file at the appropriate directory with the appropriate writing method.
-            var fileName =                                  string.Format(fileNameFormat, 
+            var fileName = string.Format(fileNameFormat, 
                                                             savePrefix, saveData.SlotNumber, 
                                                             fileExtension);
-            var filePath =                                  string.Format(filePathFormat, saveDir, fileName);
+            var filePath = string.Format(filePathFormat, saveDir, fileName);
             
             if (!writeEncrypted)
                 File.WriteAllText(filePath, dataToWrite, actualEncoding);
@@ -82,16 +82,16 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual bool WriteOneToDisk(GameSaveData saveData, string saveDir, out string outputDir)
         {
-            var success =                                       WriteOneToDisk(saveData, saveDir);
-            outputDir =                                         "";
+            var success = WriteOneToDisk(saveData, saveDir);
+            outputDir = "";
 
             if (success)
             {
-                var fileName =                                  string.Format(fileNameFormat, 
+                var fileName = string.Format(fileNameFormat, 
                                                                 savePrefix, saveData.SlotNumber, 
                                                                 fileExtension);
-                var filePath =                                  string.Format(filePathFormat, saveDir, fileName);
-                outputDir =                                     filePath;
+                var filePath = string.Format(filePathFormat, saveDir, fileName);
+                outputDir = filePath;
             }
 
             return success;
@@ -103,11 +103,11 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual bool WriteAllToDisk(IList<GameSaveData> saveDatas, string saveDir)
         {
-            var success =                       false;
+            var success = false;
 
             for (int i = 0; i < saveDatas.Count; i++)
             {
-                success =                       WriteOneToDisk(saveDatas[i], saveDir);
+                success = WriteOneToDisk(saveDatas[i], saveDir);
 
                 if (!success)
                     return false;

@@ -19,7 +19,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public SaveData(string sceneName)
         {
-            this.sceneName =            sceneName;
+            this.sceneName = sceneName;
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual void SetFrom(SaveData other)
         {
-            this.sceneName =                other.sceneName;
+            this.sceneName = other.sceneName;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual void Clear()
         {
-            this.sceneName =                string.Empty;
+            this.sceneName = string.Empty;
         }
 
         public virtual SaveDataItem ToSaveDataItem()

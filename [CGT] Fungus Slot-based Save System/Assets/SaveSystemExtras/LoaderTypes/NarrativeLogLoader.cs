@@ -12,11 +12,11 @@ namespace CGTUnity.Fungus.SaveSystem
         public override bool Load(NarrativeLogData logData)
         {
             // Tell the UI to register the entries the passed log data has
-            NarrativeLogUI logUI =          GameObject.FindObjectOfType<NarrativeLogUI>();
+            NarrativeLogUI logUI = GameObject.FindObjectOfType<NarrativeLogUI>();
 
             if (logUI == null)
             {
-                string message =            
+                string message = 
                 @"Cannot load NarrativeLogData without a 
                 NarrativeLogUI component in the scene.";
                 Debug.LogError(message);

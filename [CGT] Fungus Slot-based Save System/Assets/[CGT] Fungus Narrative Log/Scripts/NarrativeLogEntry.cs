@@ -18,8 +18,8 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
         public Entry()                              {}
         public Entry(string text, string name)
         {
-            this.storyText =                        text;
-            this.nameText =                         name;
+            this.storyText = text;
+            this.nameText = name;
         }
     }
 }

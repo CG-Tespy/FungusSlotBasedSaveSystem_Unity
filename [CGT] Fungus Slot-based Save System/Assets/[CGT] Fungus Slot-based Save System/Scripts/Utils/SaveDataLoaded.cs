@@ -34,10 +34,10 @@ namespace CGTUnity.Fungus.SaveSystem
         public static void NotifyEventHandlers(string _savePointKey)
         {
             // Fire any matching SavePointLoaded event handler with matching save key.
-            var eventHandlers =             FindObjectsOfType<SaveDataLoaded>();
+            var eventHandlers = FindObjectsOfType<SaveDataLoaded>();
             for (int i = 0; i < eventHandlers.Length; i++)
             {
-                var eventHandler =          eventHandlers[i];
+                var eventHandler = eventHandlers[i];
                 eventHandler.OnSaveDataLoaded(_savePointKey);
             }
 

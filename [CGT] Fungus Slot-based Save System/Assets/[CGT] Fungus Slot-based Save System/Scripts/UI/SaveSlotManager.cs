@@ -16,7 +16,7 @@ namespace CGTUnity.Fungus.SaveSystem
         public static SaveSlotManager S { get; private set; }
 
         [SerializeField] protected RectTransform slotHolder;
-        protected List<SaveSlot> slots =                new List<SaveSlot>();
+        protected List<SaveSlot> slots = new List<SaveSlot>();
 
         public virtual SaveSlot selectedSlot            { get; protected set; }
 
@@ -114,7 +114,7 @@ namespace CGTUnity.Fungus.SaveSystem
                 
             for (int i = 0; i < saves.Count; i++)
             {
-                var saveData =                      saves[i];
+                var saveData = saves[i];
                 SetSlotWith(saveData);
             }
         }
@@ -126,9 +126,9 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             ValidateSaveData(saveData);
 
-            var slot =                              FindSlot(saveData.SlotNumber);
+            var slot = FindSlot(saveData.SlotNumber);
             if (slot != null)
-                slot.SaveData =                     saveData;
+                slot.SaveData = saveData;
         }
 
         /// <summary>
@@ -142,13 +142,13 @@ namespace CGTUnity.Fungus.SaveSystem
             if (slot == null)
                 throw new System.ArgumentException("Cannot set save data to a null slot.");
 
-            saveData.SlotNumber =                   slot.Number;
-            slot.SaveData =                         saveData;
+            saveData.SlotNumber = slot.Number;
+            slot.SaveData = saveData;
         }
 
         public virtual void ClearSlot(int slotNumber)
         {
-            var slot =                              FindSlot(slotNumber);
+            var slot = FindSlot(slotNumber);
 
             if (slot != null)
                 slot.Clear();
@@ -175,13 +175,13 @@ namespace CGTUnity.Fungus.SaveSystem
         protected virtual void OnGameSaveErased(GameSaveData deletedFromDisk, string filePath, string fileName)
         {
             // Clear the slot that was holding the data.
-            var slot =                                  FindSlot(deletedFromDisk);
+            var slot = FindSlot(deletedFromDisk);
             slot.Clear();
         }
 
         protected virtual void OnSaveSlotClicked(SaveSlot slotClicked)
         {
-            selectedSlot =                      slotClicked;
+            selectedSlot = slotClicked;
         }
 
         #endregion
@@ -191,7 +191,7 @@ namespace CGTUnity.Fungus.SaveSystem
             if (indexNumber < 0 || indexNumber >= slots.Count)
                 return;
 
-            selectedSlot =                              slots[indexNumber];
+            selectedSlot = slots[indexNumber];
             EventSystem.current.SetSelectedGameObject(selectedSlot.gameObject);
         }
         #region Helpers
@@ -202,7 +202,7 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         protected virtual bool ValidateSaveData(GameSaveData saveData, bool throwExceptionOnFalse = true)
         {
-            var valid =                         saveData != null;
+            var valid = saveData != null;
 
             if (!valid && throwExceptionOnFalse)
                 throw new System.NullReferenceException(this.name + " cannot work with null save data.");
@@ -212,25 +212,25 @@ namespace CGTUnity.Fungus.SaveSystem
 
         protected virtual void ListenForEvents()
         {
-            Signals.GameSaveWritten +=        OnGameSaveWritten;
-            Signals.GameSaveRead +=           OnGameSaveRead;
-            Signals.GameSaveErased +=         OnGameSaveErased;
-            Signals.SaveSlotClicked +=        OnSaveSlotClicked;
+            Signals.GameSaveWritten += OnGameSaveWritten;
+            Signals.GameSaveRead += OnGameSaveRead;
+            Signals.GameSaveErased += OnGameSaveErased;
+            Signals.SaveSlotClicked += OnSaveSlotClicked;
         }
 
         protected virtual void UnlistenForEvents()
         {
-            Signals.GameSaveWritten -=        OnGameSaveWritten;
-            Signals.GameSaveRead -=           OnGameSaveRead;
-            Signals.GameSaveErased -=         OnGameSaveErased;
-            Signals.SaveSlotClicked -=        OnSaveSlotClicked;
+            Signals.GameSaveWritten -= OnGameSaveWritten;
+            Signals.GameSaveRead -= OnGameSaveRead;
+            Signals.GameSaveErased -= OnGameSaveErased;
+            Signals.SaveSlotClicked -= OnSaveSlotClicked;
         }
 
         protected virtual void AssignSave(GameSaveData saveData)
         {
             for (int i = 0; i < slots.Count; i++)
                 if (slots[i].Number == saveData.SlotNumber)
-                    slots[i].SaveData =                 saveData;
+                    slots[i].SaveData = saveData;
         }
         #endregion
         #endregion

@@ -32,8 +32,8 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public SaveDataItem(string dataType, string data)
         {
-            this.dataType =                         dataType;
-            this.data =                             data;
+            this.dataType = dataType;
+            this.data = data;
         }
         
         /// <summary>

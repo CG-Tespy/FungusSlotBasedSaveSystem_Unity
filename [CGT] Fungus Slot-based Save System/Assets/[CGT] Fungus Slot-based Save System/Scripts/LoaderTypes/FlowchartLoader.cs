@@ -23,8 +23,8 @@ namespace CGTUnity.Fungus.SaveSystem
             }
 
             // Restore the flowchart's state
-            GameObject fcGo =               GameObject.Find(data.FlowchartName);
-            Flowchart flowchart =           fcGo.GetComponent<Flowchart>();
+            GameObject fcGo = GameObject.Find(data.FlowchartName);
+            Flowchart flowchart = fcGo.GetComponent<Flowchart>();
 
             PreventInterruptions(flowchart);
             LoadVariables(data, ref flowchart);
@@ -39,27 +39,27 @@ namespace CGTUnity.Fungus.SaveSystem
 
         protected virtual bool CanLoadData(FlowchartData data, out string errorMessage)
         {
-            errorMessage =                                  null;
-            string objNotFound =                            "Failed to find Flowchart object specified in save data";
+            errorMessage = null;
+            string objNotFound = "Failed to find Flowchart object specified in save data";
 
             // Find the Game Object in the scene
-            GameObject fcGo =                               null;
-            Flowchart fc =                                  null;
-            fcGo =                                          GameObject.Find(data.FlowchartName);
+            GameObject fcGo = null;
+            Flowchart fc = null;
+            fcGo = GameObject.Find(data.FlowchartName);
             
             // If possible, get the Flowchart component from it
             if (fcGo != null)
-                fc =                                        fcGo.GetComponent<Flowchart>();
+                fc = fcGo.GetComponent<Flowchart>();
             
             if (fc == null) // Need the flowchart component to load into
-                errorMessage =                              objNotFound;
+                errorMessage = objNotFound;
             
             return fc != null;
         }
 
         protected virtual void LoadVariables(FlowchartData data, ref Flowchart flowchart)
         {
-            FlowchartVariables vars =                       data.Vars;
+            FlowchartVariables vars = data.Vars;
             LoadValueVariablesFrom(flowchart, vars);
         }
 
@@ -87,7 +87,7 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             for (int i = 0; i < toLoadFrom.Count; i++)
             {
-                var variable =                  toLoadFrom[i];
+                var variable = toLoadFrom[i];
                 toLoadInto.SetVariable<TBase, TNSVarType>(variable.Key, variable.Value);
             }
         }
@@ -98,18 +98,18 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         protected virtual void PreventInterruptions(Flowchart flowchart)
         {
-            var blocks =                        flowchart.GetComponents<Block>();
+            var blocks = flowchart.GetComponents<Block>();
             
             for (int i = 0; i < blocks.Length; i++)
             {
-                var block =                     blocks[i];
+                var block = blocks[i];
 
                 // Getting rid of the Game Started event
-                var hasGameStartedHandler =     block._EventHandler as GameStarted != null;
+                var hasGameStartedHandler = block._EventHandler as GameStarted != null;
 
                 if (hasGameStartedHandler)
                 {
-                    block._EventHandler =       null;
+                    block._EventHandler = null;
                 }
             }
         }
@@ -123,11 +123,11 @@ namespace CGTUnity.Fungus.SaveSystem
             flowchart.StopAllBlocks();
             for (int i = 0; i < data.Blocks.Count; i++)
             {
-                var savedBlock =                data.Blocks[i];
+                var savedBlock = data.Blocks[i];
                 if (!savedBlock.WasExecuting)
                     continue;
                 
-                var fullBlockObj =              flowchart.FindBlock(savedBlock.BlockName);
+                var fullBlockObj = flowchart.FindBlock(savedBlock.BlockName);
 
                 if (fullBlockObj == null)
                 {
@@ -135,7 +135,7 @@ namespace CGTUnity.Fungus.SaveSystem
                     var messageFormat = 
                     @"Could not load state of block named {0} from flowchart named {1}; 
                     the former is not in the latter.";
-                    var message =               string.Format(messageFormat, savedBlock.BlockName, flowchart.name);
+                    var message = string.Format(messageFormat, savedBlock.BlockName, flowchart.name);
                     Debug.LogWarning(message);
                     continue;
                 }

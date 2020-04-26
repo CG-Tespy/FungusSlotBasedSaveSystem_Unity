@@ -2982,7 +2982,7 @@ public class LTSpline {
         ratio += 0.001f;
         if(ratio<=1.0f){
             Vector3 ptAhead = point( ratio );//trans.TransformPoint(  );
-            Vector3 v3Dir =  ptAhead - transform.localPosition;
+            Vector3 v3Dir = ptAhead - transform.localPosition;
             float angle = Mathf.Atan2(v3Dir.y, v3Dir.x) * Mathf.Rad2Deg;
             transform.localEulerAngles = new Vector3(0, 0, angle);
         }

@@ -7,7 +7,7 @@ namespace CGTUnity.Fungus.SaveSystem
         /// <summary>
         /// Invoked when an object subclassing SaveData (other than GameSaveData) is created.
         /// </summary>
-        public static UnityAction<SaveData> SaveCreated =         delegate {};
+        public static UnityAction<SaveData> SaveCreated = delegate {};
 
         /// <summary>
         /// Invoked when a GameSaveData instance is created.
@@ -28,18 +28,18 @@ namespace CGTUnity.Fungus.SaveSystem
         /// <summary>
         /// Invoked when GameSaveData is read from disk. Params: saveData, filePath, fileName
         /// </summary>
-        public static UnityAction<GameSaveData, string, string> GameSaveRead =    delegate {};
+        public static UnityAction<GameSaveData, string, string> GameSaveRead = delegate {};
 
         /// <summary>
         /// Invoked when a save slot changes its fields to represent a SaveData instance (or lack thereof). 
         /// </summary>
-        public static UnityAction<SaveSlot, GameSaveData> SaveSlotUpdated =             delegate {};
+        public static UnityAction<SaveSlot, GameSaveData> SaveSlotUpdated = delegate {};
 
-        public static UnityAction<SaveSlot> SaveSlotClicked =                           delegate {};
+        public static UnityAction<SaveSlot> SaveSlotClicked = delegate {};
         
         /// <summary>
         /// Invoked when GameSaveData is loaded.
         /// </summary>
-        public static UnityAction<GameSaveData> GameLoaded =                            delegate {};
+        public static UnityAction<GameSaveData> GameLoaded = delegate {};
     }
 }

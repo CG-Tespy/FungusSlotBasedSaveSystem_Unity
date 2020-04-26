@@ -20,11 +20,11 @@ namespace CGTUnity.Fungus.SaveSystem
         protected virtual void Awake()
         {
             // Make sure we have the components we need
-            if (gameLoader == null) gameLoader =    FindObjectOfType<GameLoader>();
-            if (gameSaver == null) gameSaver =      FindObjectOfType<GameSaver>();
-            if (slotManager == null) slotManager =  FindObjectOfType<SaveSlotManager>();
-            if (saveManager == null) saveManager =  FindObjectOfType<SaveManager>();
-            canvasGroup =                           GetComponent<CanvasGroup>();
+            if (gameLoader == null) gameLoader = FindObjectOfType<GameLoader>();
+            if (gameSaver == null) gameSaver = FindObjectOfType<GameSaver>();
+            if (slotManager == null) slotManager = FindObjectOfType<SaveSlotManager>();
+            if (saveManager == null) saveManager = FindObjectOfType<SaveManager>();
+            canvasGroup = GetComponent<CanvasGroup>();
         }
         
         #region Saving
@@ -51,11 +51,11 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public virtual void SaveToSelectedSlot()
         {
-            var slot =                          slotManager.selectedSlot;
+            var slot = slotManager.selectedSlot;
             if (slot == null)
                 return;
             
-            var newSaveData =                   gameSaver.CreateSave(slot.Number);
+            var newSaveData = gameSaver.CreateSave(slot.Number);
             saveManager.AddSave(newSaveData);
         }
 
@@ -83,7 +83,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public virtual void LoadFromSelectedSlot()
         {
-            var slot =                      slotManager.selectedSlot;
+            var slot = slotManager.selectedSlot;
             if (slot == null || slot.SaveData == null)
                 return;
 
@@ -114,7 +114,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public virtual void ClearSelectedSlot()
         {
-            var slot =                          slotManager.selectedSlot;
+            var slot = slotManager.selectedSlot;
             if (slot == null || slot.SaveData == null)
                 return;
 
@@ -129,7 +129,7 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual GameSaveData GetSaveFromSlot(int slotNumber)
         {
-            var slot =                      slotManager.FindSlot(slotNumber);
+            var slot = slotManager.FindSlot(slotNumber);
             if (slot != null) return slot.SaveData;
 
             return null;
@@ -140,16 +140,16 @@ namespace CGTUnity.Fungus.SaveSystem
         #region Menu Display
         public virtual void Open()
         {
-            canvasGroup.alpha =             1;
-            canvasGroup.interactable =      true;
-            canvasGroup.blocksRaycasts =    true;
+            canvasGroup.alpha = 1;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
         }
 
         public virtual void Close()
         {
-            canvasGroup.alpha =             0;
-            canvasGroup.interactable =      false;
-            canvasGroup.blocksRaycasts =    false;
+            canvasGroup.alpha = 0;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
         }
 
         #endregion

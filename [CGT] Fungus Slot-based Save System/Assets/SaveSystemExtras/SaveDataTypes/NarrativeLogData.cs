@@ -11,7 +11,7 @@ namespace CGTUnity.Fungus.SaveSystem
     [System.Serializable]
     public class NarrativeLogData : SaveData
     {
-        [SerializeField] List<Entry> entries =      new List<Entry>();
+        [SerializeField] List<Entry> entries = new List<Entry>();
 
         public virtual List<Entry> Entries          
         { 

@@ -21,7 +21,7 @@ public class ButtonTestFuncs : MonoBehaviour
 
     void Start()
     {
-        eventSystem =                       EventSystem.current;
+        eventSystem = EventSystem.current;
     }
 
     public void SelectButton(Button button)
@@ -32,15 +32,15 @@ public class ButtonTestFuncs : MonoBehaviour
 
     public void InvokeClick(Button button)
     {
-        PointerEventData eventData =        new PointerEventData(eventSystem);
+        PointerEventData eventData = new PointerEventData(eventSystem);
         button.OnPointerClick(eventData);
     }
 
     public void ClickSaveSlot(int indexNumber)
     {
         slotManager.SelectSlot(indexNumber);
-        PointerEventData eventData =        new PointerEventData(eventSystem);
-        Button slotButton =                 slotManager.selectedSlot.GetComponent<Button>();
+        PointerEventData eventData = new PointerEventData(eventSystem);
+        Button slotButton = slotManager.selectedSlot.GetComponent<Button>();
         eventSystem.SetSelectedGameObject(slotButton.gameObject);
 
         slotButton.OnPointerClick(eventData);
@@ -49,8 +49,8 @@ public class ButtonTestFuncs : MonoBehaviour
     public void SelectSaveSlot(int indexNumber)
     {
         slotManager.SelectSlot(indexNumber);
-        PointerEventData eventData =        new PointerEventData(eventSystem);
-        Button slotButton =                 slotManager.selectedSlot.GetComponent<Button>();
+        PointerEventData eventData = new PointerEventData(eventSystem);
+        Button slotButton = slotManager.selectedSlot.GetComponent<Button>();
         eventSystem.SetSelectedGameObject(slotButton.gameObject);
     }
 

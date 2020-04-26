@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+using DateTime = System.DateTime;
+using System.Globalization;
+using CGT.Globalization;
 
 namespace CGTUnity.Fungus.SaveSystem
 {
@@ -9,41 +11,28 @@ namespace CGTUnity.Fungus.SaveSystem
     {
         #region Fields
         [Tooltip("Displays the number for this slot.")]
-        [SerializeField] Text numDisplay =                      null;
+        [SerializeField] protected Text numDisplay = null;
         [Tooltip("Displays the description for this slot.")]
-        [SerializeField] Text descDisplay =                     null;
-        protected Button clickReceiver =                        null;
-        protected GameSaveData saveData =                       null;
-        int number; // Cached to avoid too much casting
+        [SerializeField] protected Text descDisplay = null;
+        [Tooltip("Displays the last-written date for this slot.")]
+        [SerializeField] protected Text dateDisplay = null;
+        [Tooltip("The .NET Standard format to display the date in.")]
+        [SerializeField] protected StandardFormat dateFormat = StandardFormat.fullLongDate;
+        [Tooltip("Whether or not this updates its displays every frame.")]
+        [SerializeField] protected bool refreshContinuously = true;
 
+        
+        protected GameSaveData saveData = null;
+        
         #endregion
 
-        #region Properties
+        #region Properties and helpers
         #region UI Elements
         public RectTransform rectTransform                      { get; private set; }
         
 
         #endregion
         
-        /// <summary>
-        /// Defines which slot this is in the Save Menu. First, second, etc.
-        /// </summary>
-        public virtual int Number                               
-        { 
-            get                                                 { return number; } 
-            protected set
-            {
-                number =                                        value;
-                numDisplay.text =                               "Save #" + number.ToString();
-            } 
-        }
-
-        public virtual string Description
-        {
-            get                                                 { return descDisplay.text; }
-            protected set                                       { descDisplay.text = value; }
-        }
-
         public virtual GameSaveData SaveData
         {
             get                                                 { return saveData; }
@@ -51,28 +40,95 @@ namespace CGTUnity.Fungus.SaveSystem
             {
                 if (value == null)
                 {
-                    string message =                            
-                    @"Cannot assign null GameSaveData to a Save Slot. If you want to 
-                    clear the slot, call its Clear() method instead.";
-                    Debug.LogWarning(message);
+                    WarnForNullSaveDataAssignment();
                     return;
                 }
                 
-                saveData =                                     value;
+                saveData = value;
+                SyncWithSaveData();
                 UpdateDisplays();
                 Signals.SaveSlotUpdated.Invoke(this, value);
             }
         }
+
+        void WarnForNullSaveDataAssignment()
+        {
+            string message =
+                    @"Cannot assign null GameSaveData to a Save Slot. If you want to 
+                    clear the slot, call its Clear() method instead.";
+            Debug.LogWarning(message);
+        }
+
+        protected virtual void SyncWithSaveData()
+        {
+            Number = saveData.SlotNumber;
+            Description = saveData.Description;
+            Date = saveData.LastWritten;
+        }
+
+        /// <summary>
+        /// Defines which slot this is in the Save Menu. First, second, etc.
+        /// </summary>
+        public virtual int Number { get; set; }
+        public virtual string Description { get; set; }
+        public virtual DateTime Date { get; set; }
+
+        /// <summary>
+        /// Updates the UI elements in this SaveSlot based on the save data (or lack thereof) it holds.
+        /// </summary>
+        public virtual void UpdateDisplays()
+        {
+            UpdateNumberDisplay();
+            UpdateDateDisplay();
+            UpdateDescriptionDisplay();
+        }
+
+        protected virtual void UpdateNumberDisplay()
+        {
+            numDisplay.text = "Save #" + Number;
+        }
+
+        protected virtual void UpdateDateDisplay()
+        {
+            if (Date == default(DateTime))
+                // The default is so far back in the past, it can't be accurate,
+                // considering when this system came out
+                dateDisplay.text = "";
+            else
+                DisplayDateBasedOnUserLocale();
+        }
+
+        void DisplayDateBasedOnUserLocale()
+        {
+            string formatVal = StandardFormatValues.vals[dateFormat];
+            dateDisplay.text = Date.ToString(formatVal, userLocale);
+        }
+
+        protected readonly CultureInfo userLocale = CultureInfo.CurrentUICulture;
+
+        protected virtual void UpdateDescriptionDisplay()
+        {
+            descDisplay.text = Description;
+        }
+
         #endregion
 
         #region Methods
         protected virtual void Awake()
         {
-            rectTransform =                                     GetComponent<RectTransform>();
-            Number =                                            rectTransform.GetSiblingIndex();
-            clickReceiver =                                         GetComponent<Button>();
+            rectTransform = GetComponent<RectTransform>();
+            Number = rectTransform.GetSiblingIndex();
+            Description = "";
+            clickReceiver = GetComponent<Button>();
             clickReceiver.onClick.AddListener(OnClick);
             UpdateDisplays();
+        }
+
+        protected Button clickReceiver = null;
+
+        protected virtual void OnClick()
+        {
+            Signals.SaveSlotClicked.Invoke(this);
         }
 
         protected virtual void OnDestroy()
@@ -82,30 +138,17 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public virtual void Clear()
         {
-            saveData =                                         null;
+            saveData = null;
+            Description = "";
+            Date = default(DateTime);
             UpdateDisplays();
             Signals.SaveSlotUpdated.Invoke(this, SaveData);
         }
 
-        /// <summary>
-        /// Updates the UI elements in this SaveSlot based on the save data (or lack thereof) it holds.
-        /// </summary>
-        protected virtual void UpdateDisplays()
+        protected virtual void Update()
         {
-            string newDesc =                                        null;
-
-            if (saveData != null)
-                newDesc =                                           saveData.Description;
-            
-            else
-                newDesc =                                           "<No Save Data>";
-            
-            Description =                                           newDesc;
-        }
-
-        protected virtual void OnClick()
-        {
-            Signals.SaveSlotClicked.Invoke(this);
+            if (refreshContinuously)
+                UpdateDisplays();
         }
 
         #endregion

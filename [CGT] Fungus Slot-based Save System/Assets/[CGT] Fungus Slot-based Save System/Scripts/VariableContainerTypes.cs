@@ -74,13 +74,13 @@ namespace CGTUnity.Fungus.SaveSystem
     public class FlowchartVariables
     {
         #region Var lists
-        [SerializeField] protected List<StringVar> strings =            new List<StringVar>();
-        [SerializeField] protected List<IntVar> ints =                  new List<IntVar>();
-        [SerializeField] protected List<FloatVar> floats =              new List<FloatVar>();
-        [SerializeField] protected List<BoolVar> bools =                new List<BoolVar>();
-        [SerializeField] protected List<ColorVar> colors =              new List<ColorVar>();
-        [SerializeField] protected List<Vec2Var> vec2s =                new List<Vec2Var>();
-        [SerializeField] protected List<Vec3Var> vec3s =             new List<Vec3Var>();
+        [SerializeField] protected List<StringVar> strings = new List<StringVar>();
+        [SerializeField] protected List<IntVar> ints = new List<IntVar>();
+        [SerializeField] protected List<FloatVar> floats = new List<FloatVar>();
+        [SerializeField] protected List<BoolVar> bools = new List<BoolVar>();
+        [SerializeField] protected List<ColorVar> colors = new List<ColorVar>();
+        [SerializeField] protected List<Vec2Var> vec2s = new List<Vec2Var>();
+        [SerializeField] protected List<Vec3Var> vec3s = new List<Vec3Var>();
         #endregion
 
         #region Allowing access to those lists

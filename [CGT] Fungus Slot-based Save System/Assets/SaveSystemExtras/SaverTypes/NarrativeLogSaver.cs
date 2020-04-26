@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using CGTUnity.Fungus.NarrativeLogSystem;
-using NarrativeSignals =                                CGTUnity.Fungus.NarrativeLogSystem.Signals;
+using NarrativeSignals = CGTUnity.Fungus.NarrativeLogSystem.Signals;
 
 namespace CGTUnity.Fungus.SaveSystem
 {
@@ -12,21 +12,21 @@ namespace CGTUnity.Fungus.SaveSystem
         // it much faster, using less resources per frame than it would if it were to just create 
         // the data on-demand.
         [SerializeField] protected NarrativeLog toSave;
-        protected NarrativeLogData saveData =           new NarrativeLogData();
+        protected NarrativeLogData saveData = new NarrativeLogData();
 
         #region Methods
 
         #region MonoBehaviour Standard
         protected virtual void Awake()
         {
-            NarrativeSignals.LogCleared +=              OnNarrativeLogCleared;
-            NarrativeSignals.NarrativeAdded +=          OnNarrativeAdded;
+            NarrativeSignals.LogCleared += OnNarrativeLogCleared;
+            NarrativeSignals.NarrativeAdded += OnNarrativeAdded;
         }
 
         protected virtual void OnDestroy()
         {
-            NarrativeSignals.LogCleared -=              OnNarrativeLogCleared;
-            NarrativeSignals.NarrativeAdded -=          OnNarrativeAdded;
+            NarrativeSignals.LogCleared -= OnNarrativeLogCleared;
+            NarrativeSignals.NarrativeAdded -= OnNarrativeAdded;
         }
         #endregion
 
@@ -41,9 +41,9 @@ namespace CGTUnity.Fungus.SaveSystem
         {
             // At the time of this writing, the NarrativeLog is a singleton, so we're setting up a
             // one-element array.
-            var jsonData =                              JsonUtility.ToJson(saveData, true);
-            var singleItem =                            new SaveDataItem(saveType.Name, jsonData);
-            var result =                                new SaveDataItem[1] {singleItem};
+            var jsonData = JsonUtility.ToJson(saveData, true);
+            var singleItem = new SaveDataItem(saveType.Name, jsonData);
+            var result = new SaveDataItem[1] {singleItem};
 
             return result;
         }

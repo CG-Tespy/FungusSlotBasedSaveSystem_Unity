@@ -12,7 +12,7 @@ namespace CGTUnity.Fungus.SaveSystem
         ISaveCreator<TransformVarData, Transform>,
         IGroupSaver<TransformVarData>
     {
-        [SerializeField] protected Flowchart[] flowcharts =               null;
+        [SerializeField] protected Flowchart[] flowcharts = null;
 
         public virtual TransformVarData CreateSave(Transform transform)
         {

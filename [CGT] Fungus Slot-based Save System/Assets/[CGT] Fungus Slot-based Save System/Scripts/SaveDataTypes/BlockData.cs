@@ -53,18 +53,18 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public BlockData(string blockName, int commandIndex = -1)
         {
-            this.blockName =                            blockName;
-            this.commandIndex =                         commandIndex;
+            this.blockName = blockName;
+            this.commandIndex = commandIndex;
         }
 
         #endregion
 
         public virtual void SetFrom(Block block)
         {
-            blockName =                                 block.BlockName;
-            var flowchart =                             block.GetFlowchart();
+            blockName = block.BlockName;
+            var flowchart = block.GetFlowchart();
             if (block.ActiveCommand != null)
-                commandIndex =                          block.CommandList.IndexOf(block.ActiveCommand);
+                commandIndex = block.CommandList.IndexOf(block.ActiveCommand);
         }
 
         public override void Clear()

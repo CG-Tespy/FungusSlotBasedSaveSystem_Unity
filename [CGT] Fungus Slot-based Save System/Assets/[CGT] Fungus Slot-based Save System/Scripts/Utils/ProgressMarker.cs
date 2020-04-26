@@ -15,7 +15,7 @@ namespace CGTUnity.Fungus.SaveSystem
                 "Marks a point for where a player has gotten. Helps with reacting to GameSaveData being loaded.")]
     public class ProgressMarker : Command
     {
-        [SerializeField] string key =                   null;
+        [SerializeField] string key = null;
         public virtual string Key
         {
                                                         get { return key; }
@@ -26,7 +26,7 @@ namespace CGTUnity.Fungus.SaveSystem
         public override void OnEnter()
         {
             base.OnEnter();
-            latestExecuted =                        this;
+            latestExecuted = this;
             Continue();
         }
 
@@ -36,7 +36,7 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public static ProgressMarker FindWithKey(string key)
         {
-            var markers =                           FindObjectsOfType<ProgressMarker>();
+            var markers = FindObjectsOfType<ProgressMarker>();
             for (int i = 0; i < markers.Length; i++)
                 if (markers[i].key == key)
                     return markers[i];

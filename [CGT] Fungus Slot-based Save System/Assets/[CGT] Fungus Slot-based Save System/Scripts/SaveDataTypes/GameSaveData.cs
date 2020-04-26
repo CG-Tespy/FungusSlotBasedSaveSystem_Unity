@@ -10,13 +10,13 @@ namespace CGTUnity.Fungus.SaveSystem
     public class GameSaveData : SaveData
     {
         #region Fields
-        [SerializeField] string description =           null;
+        [SerializeField] string description = null;
     
-        [SerializeField] int slotNumber =               -1;
+        [SerializeField] int slotNumber = -1;
 
         [SerializeField] System.DateTime lastWritten;
 
-        [SerializeField] List<SaveDataItem> items =    new List<SaveDataItem>();
+        [SerializeField] List<SaveDataItem> items = new List<SaveDataItem>();
         [SerializeField] string progressMarkerKey;
 
         #endregion
@@ -73,7 +73,7 @@ namespace CGTUnity.Fungus.SaveSystem
         public GameSaveData() 
         {
             UpdateTime();
-            description =                   lastWritten.ToLongDateString();
+            description = lastWritten.ToLongDateString();
             Signals.GameSaveCreated.Invoke(this);
         }
 
@@ -87,8 +87,8 @@ namespace CGTUnity.Fungus.SaveSystem
                             ICollection<SaveDataItem> items = null) : base(sceneName)
         {
             UpdateTime();
-            description =                   lastWritten.ToLongDateString();
-            this.slotNumber =               slotNumber;
+            description = lastWritten.ToLongDateString();
+            this.slotNumber = slotNumber;
             if (items != null)
                 this.items.AddRange(items);
             Signals.GameSaveCreated.Invoke(this);
@@ -99,10 +99,10 @@ namespace CGTUnity.Fungus.SaveSystem
         public virtual void SetFrom(GameSaveData other)
         {
             base.SetFrom(other as SaveData);
-            this.description =              other.description;
-            this.slotNumber =               other.slotNumber;
-            this.lastWritten =              other.lastWritten;
-            this.progressMarkerKey =        other.progressMarkerKey;
+            this.description = other.description;
+            this.slotNumber = other.slotNumber;
+            this.lastWritten = other.lastWritten;
+            this.progressMarkerKey = other.progressMarkerKey;
             this.items.Clear();
             this.items.AddRange(other.items);
         }
@@ -112,7 +112,7 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual void UpdateTime()
         {
-            lastWritten =                   System.DateTime.Now;
+            lastWritten = System.DateTime.Now;
         }
 
         /// <summary>
@@ -121,11 +121,11 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public override void Clear()
         {
-            SceneName =                     "";
-            description =                   "";
-            progressMarkerKey =             "";
-            slotNumber =                    -1;
-            lastWritten =                   new System.DateTime();
+            SceneName = "";
+            description = "";
+            progressMarkerKey = "";
+            slotNumber = -1;
+            lastWritten = new System.DateTime();
             items.Clear();
         }
 

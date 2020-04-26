@@ -6,7 +6,7 @@ namespace CGTUnity.Fungus.SaveSystem
     public abstract class SaveLoader : MonoBehaviour, ISaveLoader
     { 
         [Tooltip("Higher priority means this loads before the others.")]
-        [SerializeField] protected int loadPriority =   0;
+        [SerializeField] protected int loadPriority = 0;
 
         public virtual int LoadPriority                 { get { return loadPriority; } }
 
@@ -19,7 +19,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
     public abstract class SaveLoader<TSaveData> : SaveLoader, ISaveLoader<TSaveData>
     {
-        protected System.Type saveType =            typeof(TSaveData);
+        protected System.Type saveType = typeof(TSaveData);
         
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace CGTUnity.Fungus.SaveSystem
             if (item.DataType != this.saveType.Name)
                 return false;
                 
-            TSaveData saveData =                            JsonUtility.FromJson<TSaveData>(item.Data);
+            TSaveData saveData = JsonUtility.FromJson<TSaveData>(item.Data);
 
             if (saveData == null)
                 return false;

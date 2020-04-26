@@ -5,7 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Tests/transformVarTestScene.unity
-    guid: a6c8c8c1da657ab45b237e8d12df97b1
-  m_configObjects: {}
+    path: Assets/[CGT] Fungus Slot-based Save System/Scenes/NewSaveSystemSandbox.unity
+    guid: 541cfbb32ac89654ca4ba9f1ebe86049
+  - enabled: 1
+    path: Assets/[CGT] Fungus Slot-based Save System/Scenes/NewSaveSystemAutoTestWithUI.unity
+    guid: d093cab962f23dc41a803fb72abf88c5
+  - enabled: 1
+    path: Assets/[CGT] Fungus Slot-based Save System/Scenes/NewSaveSystemAutoTestNoUI.unity
+    guid: 23299d961bce4fe4db3ef861ab81b982

@@ -9,7 +9,7 @@ using CGTUnity.Fungus.SaveSystem;
 /// </summary>
 public class SaveAndLoadTester : MonoBehaviour
 {
-    [SerializeField] string saveKey =           "gameSaveData";
+    [SerializeField] string saveKey = "gameSaveData";
     GameSaver gameSaver;
     GameLoader gameLoader;
 
@@ -17,24 +17,24 @@ public class SaveAndLoadTester : MonoBehaviour
 
     void Awake()
     {
-        gameLoader =                            FindObjectOfType<GameLoader>();
-        gameSaver =                             FindObjectOfType<GameSaver>();
+        gameLoader = FindObjectOfType<GameLoader>();
+        gameSaver = FindObjectOfType<GameSaver>();
     }
 
     public void SaveGame()
     {
-        saveData =                              gameSaver.CreateSave();
+        saveData = gameSaver.CreateSave();
 
         // Write the save data to PlayerPrefs
-        var jsonSave =                          JsonUtility.ToJson(saveData, true);
+        var jsonSave = JsonUtility.ToJson(saveData, true);
         PlayerPrefs.SetString(saveKey, jsonSave);
     }
 
     public void LoadGame()
     {
         // Load the data from PlayerPrefs
-        var jsonSave =                          PlayerPrefs.GetString(saveKey);
-        saveData =                              JsonUtility.FromJson<GameSaveData>(jsonSave);
+        var jsonSave = PlayerPrefs.GetString(saveKey);
+        saveData = JsonUtility.FromJson<GameSaveData>(jsonSave);
         gameLoader.Load(saveData);
     }
 
@@ -44,8 +44,8 @@ public class SaveAndLoadTester : MonoBehaviour
         if (loadMode == LoadSceneMode.Single)
         {
             // Get the gameLoader to load
-            SceneManager.sceneLoaded -=     OnSceneLoaded;
-            gameLoader =                    FindObjectOfType<GameLoader>();
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            gameLoader = FindObjectOfType<GameLoader>();
             gameLoader.LoadState(saveData);
         }
     }
