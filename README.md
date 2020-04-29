@@ -1,7 +1,7 @@
 # Fungus-Slot-based-Save-System
 A replacement for the built-in Fungus Save System that is closer to the standard save systems you see in games. The repo hosts mainly a project bundled with Fungus as a template to help understand the system.
 <br/><br/>
-This was made with Fungus 3.10.0 in Unity 2018. It should work well for Unity 2017 and later, with Fungus 3.10.0 and later.
+This was made with Fungus 3.12.0 (compatibility version) in Unity 2018, with the master branch project set for Unity 2017.4. It should work well for that version and later, with any official version of Fungus that's 3.12.0 and later.
 <br/><br/>
 Releases for this system: https://github.com/CG-Tespy/Fungus-Slot-based-Save-System/releases <br/> <br/>
 
