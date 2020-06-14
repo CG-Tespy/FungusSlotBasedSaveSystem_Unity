@@ -9,7 +9,7 @@ namespace CGTUnity.Fungus.SaveSystem
     public class SaveMenu : MonoBehaviour
     {
         #region Fields
-        // This makes the below submodules to the vast majority of the work.
+        // This makes the below submodules do the vast majority of the work.
         [SerializeField] protected GameLoader gameLoader;
         [SerializeField] protected GameSaver gameSaver;
         [SerializeField] protected SaveSlotManager slotManager;

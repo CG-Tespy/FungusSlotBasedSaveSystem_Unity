@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using CGTUnity.Fungus.NarrativeLogSystem;
-using NarrativeSignals = CGTUnity.Fungus.NarrativeLogSystem.Signals;
+using Fungus;
+using Entry = Fungus.NarrativeLogEntry;
 
 namespace CGTUnity.Fungus.SaveSystem
 {
@@ -11,7 +11,7 @@ namespace CGTUnity.Fungus.SaveSystem
         // is itself updated. This way, when this is called to "create" the save data, it can return
         // it much faster, using less resources per frame than it would if it were to just create 
         // the data on-demand.
-        [SerializeField] protected NarrativeLog toSave;
+        //[SerializeField] protected NarrativeLog toSave;
         protected NarrativeLogData saveData = new NarrativeLogData();
 
         #region Methods
@@ -19,14 +19,24 @@ namespace CGTUnity.Fungus.SaveSystem
         #region MonoBehaviour Standard
         protected virtual void Awake()
         {
-            NarrativeSignals.LogCleared += OnNarrativeLogCleared;
-            NarrativeSignals.NarrativeAdded += OnNarrativeAdded;
+            ListenForNarrativeLogSignals();
+        }
+
+        void ListenForNarrativeLogSignals()
+        {
+            NarrativeLog.OnNarrativeLogClear += OnNarrativeLogCleared;
+            NarrativeLog.OnNarrativeAdded += OnNarrativeAdded;
         }
 
         protected virtual void OnDestroy()
         {
-            NarrativeSignals.LogCleared -= OnNarrativeLogCleared;
-            NarrativeSignals.NarrativeAdded -= OnNarrativeAdded;
+            UnlistenForNarrativeLogSignals();
+        }
+
+        void UnlistenForNarrativeLogSignals()
+        {
+            NarrativeLog.OnNarrativeLogClear -= OnNarrativeLogCleared;
+            NarrativeLog.OnNarrativeAdded -= OnNarrativeAdded;
         }
         #endregion
 

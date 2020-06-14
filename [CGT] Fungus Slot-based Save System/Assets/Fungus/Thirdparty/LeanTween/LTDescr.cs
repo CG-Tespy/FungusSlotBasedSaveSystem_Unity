@@ -1165,7 +1165,7 @@ public class LTDescr
 	*/
 	public LTDescr pause(){
 		if(this.direction != 0.0f){ // check if tween is already paused
-			this.directionLast = this.direction;
+			this.directionLast =  this.direction;
 			this.direction = 0.0f;
 		}
 

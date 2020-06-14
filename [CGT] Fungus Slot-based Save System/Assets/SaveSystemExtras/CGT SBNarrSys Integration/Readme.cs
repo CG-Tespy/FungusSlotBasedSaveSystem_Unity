@@ -1,10 +1,9 @@
 ﻿/*
 
-This is for integrating my Slot-Based Narrative System with my Slot-Based Save System.
-Only include these scripts if you are using said Narrative System, otherwise they'll
-just add errors to your project.
+These integration scripts are made to work with Fungus 3.13's built-in Narrative System, which
+has adapted the one I made (I'm honored, btw, Fungus devs!)
 
-Github for the Narrative System: 
+Github for the Narrative System adapted: 
 https://github.com/CG-Tespy/Fungus-Slot-based-Narrative-System
 
 */

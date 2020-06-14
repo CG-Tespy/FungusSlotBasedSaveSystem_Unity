@@ -1,4 +1,4 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
+// This code is part of the Fungus library (https://github.com/snozbot/fungus)
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
 ﻿using UnityEditor;
@@ -42,7 +42,7 @@ namespace Fungus
         {
             boundObjectsList = new ReorderableList(serializedObject, boundObjectsProp, true, true, true, true);
 
-            boundObjectsList.drawElementCallback = 
+            boundObjectsList.drawElementCallback =  
                 (Rect rect, int index, bool isActive, bool isFocused) => {
                 var element = boundObjectsList.serializedProperty.GetArrayElementAtIndex(index);
                 rect.y += 2;
