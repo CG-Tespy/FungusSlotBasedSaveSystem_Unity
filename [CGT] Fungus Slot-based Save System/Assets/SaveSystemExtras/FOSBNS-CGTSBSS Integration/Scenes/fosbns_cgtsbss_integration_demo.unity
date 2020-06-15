@@ -303,6 +303,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114793060700718496, guid: 49f6429d8e3ca0d47b51a5cabbfb9970,
+        type: 2}
+      propertyPath: m_Spacing
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49f6429d8e3ca0d47b51a5cabbfb9970, type: 2}
   m_IsPrefabParent: 0
@@ -372,9 +377,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 221
+    x: 220
     y: 162
-    width: 62
+    width: 102
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -424,7 +429,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 742305486}
   selectedCommands:
-  - {fileID: 742305497}
+  - {fileID: 742305495}
   variables:
   - {fileID: 742305502}
   description: 
@@ -489,7 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: Going to save the game.{w=0.5}
+  storyText: Going to save the game to Slot 99.{w=0.5}
   description: 
   character: {fileID: 183235547}
   portrait: {fileID: 0}
@@ -542,8 +547,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: Testing integration of Fungus's built-in Narrative Log with CG-Tespy's
-    Save System.{w=0.5}
+  storyText: Testing the integration of the Fungus Official Slot-Based Narrative System
+    with CG-Tespy's Slot-Based Save System.{w=0.5}
   description: 
   character: {fileID: 183235547}
   portrait: {fileID: 0}
@@ -598,7 +603,7 @@ MonoBehaviour:
   itemId: 7
   indentLevel: 1
   storyText: Now going to load the game. Only all narrative entries before this one
-    should show up afterwards.{w=0.5}
+    should show up afterwards.{w=1.5}
   description: 
   character: {fileID: 183235547}
   portrait: {fileID: 0}
@@ -637,7 +642,7 @@ MonoBehaviour:
       typeAssemblyname: System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       typeFullname: System.Int32
-      intValue: 0
+      intValue: 99
       boolValue: 0
       floatValue: 0
       stringValue: 
@@ -681,7 +686,7 @@ MonoBehaviour:
       typeAssemblyname: System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       typeFullname: System.Int32
-      intValue: 0
+      intValue: 99
       boolValue: 0
       floatValue: 0
       stringValue: 
@@ -714,7 +719,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 592
     y: 135
-    width: 60
+    width: 92
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -740,7 +745,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 455
     y: 175
-    width: 77
+    width: 117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1260,7 +1265,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &742305508
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 742305484}
