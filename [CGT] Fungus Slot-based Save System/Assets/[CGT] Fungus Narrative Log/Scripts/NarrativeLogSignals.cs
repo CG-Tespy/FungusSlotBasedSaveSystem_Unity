@@ -10,11 +10,11 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
         /// <summary>
         /// Invoked when a new entry is registered into the Narrative Log.
         /// </summary>
-        public static UnityAction<Entry> NarrativeAdded = delegate {};
+        public static UnityAction<Entry> NarrativeAdded =   delegate {};
 
         /// <summary>
         /// Invoked when a NarrativeLog's contents are cleared.
         /// </summary>
-        public static UnityAction LogCleared = delegate {};
+        public static UnityAction LogCleared =              delegate {};
     }
 }

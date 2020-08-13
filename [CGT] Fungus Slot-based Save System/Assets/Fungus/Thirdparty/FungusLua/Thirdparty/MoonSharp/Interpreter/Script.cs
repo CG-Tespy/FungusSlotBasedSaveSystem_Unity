@@ -416,7 +416,7 @@ namespace MoonSharp.Interpreter
 			else
 			{
 				var syms = new SymbolRef[] {
-					new SymbolRef() { i_Env = null, i_Index= 0, i_Name = WellKnownSymbols.ENV, i_Type = SymbolRefType.DefaultEnv },
+					new SymbolRef() { i_Env = null, i_Index= 0, i_Name = WellKnownSymbols.ENV, i_Type =  SymbolRefType.DefaultEnv },
 				};
 
 				var vals = new DynValue[] {

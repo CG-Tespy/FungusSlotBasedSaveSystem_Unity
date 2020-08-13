@@ -64,13 +64,25 @@ namespace CGTUnity.Fungus.SaveSystem
         }
         public virtual string SaveDirectory
         {
-            get { return Path.Combine(Application.dataPath, "saveData"); } // Platform-neutrality
-        }
-        #endregion
+            get 
+            {
+                // Platform-neutrality
+                string dataPath = null;
 
-        #region Methods
+#if (UNITY_STANDALONE)
+                dataPath = Application.dataPath;
+#else
+                dataPath = Application.persistentDataPath;
+#endif
+
+                return Path.Combine(dataPath, "saveData"); 
+            } 
+        }
+#endregion
+
+#region Methods
         
-        #region MonoBehaviour Standard
+#region MonoBehaviour Standard
         protected virtual void Awake()
         {
             if (S != null && S != this)
@@ -115,9 +127,9 @@ namespace CGTUnity.Fungus.SaveSystem
             UnlistenForEvents();
         }
 
-        #endregion
+#endregion
 
-        #region Event Listeners
+#region Event Listeners
         protected virtual void OnGameSaveWritten(GameSaveData saveData, string filePath, string fileName)
         {
             unwrittenSaves.Remove(saveData);
@@ -138,9 +150,9 @@ namespace CGTUnity.Fungus.SaveSystem
             WrittenSaves[fileName] = null;
         }
 
-        #endregion
+#endregion
 
-        #region Save-writing
+#region Save-writing
 
         /// <summary>
         /// Writes all the unwritten saves this is keeping track of to disk.
@@ -158,9 +170,9 @@ namespace CGTUnity.Fungus.SaveSystem
             saveWriter.WriteOneToDisk(saveData, SaveDirectory);
         }
 
-        #endregion
+#endregion
 
-        #region Save-creation and registration
+#region Save-creation and registration
 
         /// <summary>
         /// Creates and registers new save data with the passed slot's number, then writing it to disk
@@ -244,9 +256,9 @@ namespace CGTUnity.Fungus.SaveSystem
             return true;
         }
 
-        #endregion
+#endregion
 
-        #region Save-erasing
+#region Save-erasing
         /// <summary>
         /// Erases the save data with the passed slot number from disk.
         /// </summary>
@@ -306,9 +318,9 @@ namespace CGTUnity.Fungus.SaveSystem
 
             return eraseSuccessful;
         }
-        #endregion
+#endregion
 
-        #region Save-loading
+#region Save-loading
         // Ultimately, the loading is always passed off to the GameLoader.
 
         /// <summary>
@@ -355,9 +367,9 @@ namespace CGTUnity.Fungus.SaveSystem
             return gameLoader.Load(saveData);
         }
 
-        #endregion
+#endregion
 
-        #region Save-retrieval
+#region Save-retrieval
         /// <summary>
         /// Returns the save that has the passed slot number, if it exists. Returns null if
         /// it doesn't.
@@ -373,9 +385,9 @@ namespace CGTUnity.Fungus.SaveSystem
 
             return null;
         }
-        #endregion
+#endregion
 
-        #region Helpers
+#region Helpers
         // When it comes to saves being read or written, this manager only cares when it's the specified
         // save readers and writers doing it.
         protected virtual void ListenForEvents()
@@ -423,8 +435,8 @@ namespace CGTUnity.Fungus.SaveSystem
                 unwrittenSaves.Add(newSave);
             }
         }
-        #endregion
-        #endregion
+#endregion
+#endregion
 
     }
 }

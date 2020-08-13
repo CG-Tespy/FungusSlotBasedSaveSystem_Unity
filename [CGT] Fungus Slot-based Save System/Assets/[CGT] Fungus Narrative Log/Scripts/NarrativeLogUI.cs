@@ -1,41 +1,37 @@
-﻿using System.Collections.Generic;
+﻿// This code is part of the Fungus library (https://github.com/snozbot/fungus)
+// It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
+
+using System.Collections.Generic;
 using UnityEngine;
 
-using EntryDisplay = CGTUnity.Fungus.NarrativeLogSystem.NarrativeLogEntryDisplay;
-
-namespace CGTUnity.Fungus.NarrativeLogSystem
+namespace Fungus
 {
     /// <summary>
-    /// Manages the UI aspects of the Narrative Log.
+    /// Manages the UI aspects of the Narrative Log via EntryDisplay objects
+    ///
+    /// Originally contributed by https://github.com/CG-Tespy
     /// </summary>
-    public class NarrativeLogUI : MonoBehaviour
+    public class NarrativeLogEntryUI : MonoBehaviour
     {
-        #region Fields
-        [Tooltip("Contains the entries this UI is there to display.")]
-        [SerializeField] protected NarrativeLog narrativeLog;
         [Tooltip("Contains the overall aesthetic of each entry.")]
-        [SerializeField] protected EntryDisplay entryDisplayPrefab;
+        [SerializeField] protected NarrativeLogEntryDisplay entryDisplayPrefab;
+
         [SerializeField] protected RectTransform entryHolder;
         protected CanvasGroup canvasGroup;
-        protected List<EntryDisplay> entryDisplays = new List<EntryDisplay>();
-        #endregion
-
-        #region Methods
+        protected List<NarrativeLogEntryDisplay> entryDisplays = new List<NarrativeLogEntryDisplay>();
+        protected UnityEngine.UI.ScrollRect scrollRect;
 
         protected virtual void Awake()
         {
             canvasGroup = GetComponent<CanvasGroup>();
-            // Make sure to update the UI when new entries are added to or 
+            var tmp = FungusManager.Instance.NarrativeLog;
+            // Make sure to update the UI when new entries are added to or
             // cleared from the log.
-            Signals.NarrativeAdded += OnNarrativeAdded;
-            Signals.LogCleared += OnLogCleared;
-        }
+            //using the fungusmanager to ensure that the narrativeLog is inited
+            NarrativeLog.OnNarrativeAdded += OnNarrativeAdded;
+            NarrativeLog.OnNarrativeLogClear += Clear;
 
-        public virtual void SetLogEntries(IList<Entry> entries)
-        {
-            // Out with the old, and in with the new!
-            narrativeLog.Clear(); // Note the display entries go boom when the log is cleared.
-            narrativeLog.AddEntries(entries);
+            scrollRect = GetComponentInChildren<UnityEngine.UI.ScrollRect>();
         }
 
         public virtual void Clear()
@@ -63,31 +59,36 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
             canvasGroup.blocksRaycasts = false;
         }
 
-        #region For event-listening
-
-        protected virtual void OnNarrativeAdded(Entry entryAdded)
+        protected virtual void OnNarrativeAdded(NarrativeLogEntry entryAdded)
         {
-            // Create a display for the new entry, and have it show in the UI. 
-                
-            var newEntryDisplay = Instantiate<EntryDisplay>(entryDisplayPrefab);
+            // Create a display for the new entry, and have it show in the UI.
+            var newEntryDisplay = Instantiate(entryDisplayPrefab);
             newEntryDisplay.transform.SetParent(entryHolder, false);
             newEntryDisplay.ToDisplay = entryAdded;
             entryDisplays.Add(newEntryDisplay);
+            StartCoroutine(ForceToBottom());
+        }
+
+        private System.Collections.IEnumerator ForceToBottom()
+        {
+            yield return null;
+            scrollRect.verticalNormalizedPosition = 0;
         }
 
         protected virtual void OnLogCleared()
         {
-            this.Clear();
+            Clear();
         }
 
         protected virtual void OnDestroy()
         {
+            var fManInst = FungusManager.Instance;
             // Avoid this responding to signals when being destroyed.
-            Signals.NarrativeAdded -= OnNarrativeAdded;
-            Signals.LogCleared -= OnLogCleared;
+            if (fManInst != null)
+            {
+                NarrativeLog.OnNarrativeAdded -= OnNarrativeAdded;
+                NarrativeLog.OnNarrativeLogClear -= Clear;
+            }
         }
-
-        #endregion
-        #endregion
     }
 }
