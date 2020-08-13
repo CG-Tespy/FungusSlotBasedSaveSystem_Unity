@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using CGTUnity.Fungus.NarrativeLogSystem;
+using Fungus;
+using System.Collections.Generic;
 
 namespace CGTUnity.Fungus.SaveSystem
 {
@@ -8,23 +9,38 @@ namespace CGTUnity.Fungus.SaveSystem
     /// </summary>
     public class NarrativeLogLoader : SaveLoader<NarrativeLogData>
     {
+        protected NarrativeLog Log { get { return FungusManager.Instance.NarrativeLog; } }
 
         public override bool Load(NarrativeLogData logData)
         {
-            // Tell the UI to register the entries the passed log data has
-            NarrativeLogUI logUI = GameObject.FindObjectOfType<NarrativeLogUI>();
+            EnsureTheUIIsThere();
+            Log.Clear();
+            PopulateLogWithEntries(logData.Entries);
+            
+            return true;
+        }
+
+        void EnsureTheUIIsThere()
+        {
+            var logUI = GameObject.FindObjectOfType<NarrativeLogEntryUI>();
 
             if (logUI == null)
             {
-                string message = 
+                string message =
                 @"Cannot load NarrativeLogData without a 
                 NarrativeLogUI component in the scene.";
-                Debug.LogError(message);
-                return false;
+                // Can't load the log without the UI, after all
+                throw new System.InvalidOperationException(message);
             }
+        }
 
-            logUI.SetLogEntries(logData.Entries);
-            return true;
+        void PopulateLogWithEntries(List<NarrativeLogEntry> entries)
+        {
+            for (int i = 0; i < entries.Count; i++)
+            {
+                var currentEntry = entries[i];
+                Log.AddLine(currentEntry);
+            }
         }
     }
 }

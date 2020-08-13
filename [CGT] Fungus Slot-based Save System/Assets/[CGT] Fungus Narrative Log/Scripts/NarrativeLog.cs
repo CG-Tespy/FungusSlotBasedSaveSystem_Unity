@@ -14,19 +14,19 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
         #region Methods
         protected virtual void Awake()
         {
-            Entries = new List<Entry>();
+            Entries =                               new List<Entry>();
         }
 
         public virtual void AddNewEntry()
         {
             // Try finding the say Dialog in the scene 
-            var sayDialog = SayDialog.ActiveSayDialog;
+            var sayDialog =                         SayDialog.ActiveSayDialog;
 
             if (sayDialog == null) // This is no time to be logging any narrative
                 return;
 
             // Get the story and name texts, apply them to a new entry to register
-            var newEntry = new Entry(sayDialog.StoryText, sayDialog.NameText);
+            var newEntry =                          new Entry(sayDialog.StoryText, sayDialog.NameText);
             AddNewEntry(newEntry);
 
         }
@@ -49,8 +49,8 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
             // Add a new boxful when it's done being typed out.
             if (writerState == WriterState.End)
             {
-                var sayDialog = SayDialog.GetSayDialog();
-                var newEntry = new Entry(sayDialog.StoryText, sayDialog.NameText);
+                var sayDialog =                     SayDialog.GetSayDialog();
+                var newEntry =                      new Entry(sayDialog.StoryText, sayDialog.NameText);
                 AddNewEntry(newEntry);
             }
         }
@@ -63,12 +63,12 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
 
         protected virtual void OnEnable()
         {
-            WriterSignals.OnWriterState += OnWriterStateChange;
+            WriterSignals.OnWriterState +=                  OnWriterStateChange;
         }
 
         protected virtual void OnDisable()
         {
-            WriterSignals.OnWriterState -= OnWriterStateChange;
+            WriterSignals.OnWriterState -=                  OnWriterStateChange;
         }
 
         #endregion
