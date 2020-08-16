@@ -42,7 +42,7 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
         {
             for (int i = 0; i < entryDisplays.Count; i++)
             {
-                var entryDisplay = entryDisplays[i];
+                var entryDisplay =                      entryDisplays[i];
                 Destroy(entryDisplay.gameObject);
             }
 
@@ -51,16 +51,16 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
 
         public virtual void Open()
         {
-            canvasGroup.alpha = 1;
-            canvasGroup.interactable = true;
-            canvasGroup.blocksRaycasts = true;
+            canvasGroup.alpha =                         1;
+            canvasGroup.interactable =                  true;
+            canvasGroup.blocksRaycasts =                true;
         }
 
         public virtual void Close()
         {
-            canvasGroup.alpha = 0;
-            canvasGroup.interactable = false;
-            canvasGroup.blocksRaycasts = false;
+            canvasGroup.alpha =                         0;
+            canvasGroup.interactable =                  false;
+            canvasGroup.blocksRaycasts =                false;
         }
 
         #region For event-listening
@@ -71,7 +71,7 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
                 
             var newEntryDisplay = Instantiate<EntryDisplay>(entryDisplayPrefab);
             newEntryDisplay.transform.SetParent(entryHolder, false);
-            newEntryDisplay.ToDisplay = entryAdded;
+            newEntryDisplay.ToDisplay =                     entryAdded;
             entryDisplays.Add(newEntryDisplay);
         }
 

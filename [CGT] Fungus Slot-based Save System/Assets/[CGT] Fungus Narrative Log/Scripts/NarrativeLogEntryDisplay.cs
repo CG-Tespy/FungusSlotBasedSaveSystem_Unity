@@ -22,7 +22,7 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
             get                                     { return toDisplay; }
             set 
             {
-                toDisplay = value;
+                toDisplay =                         value;
                 UpdateDisplays();
             }
         }
@@ -35,8 +35,8 @@ namespace CGTUnity.Fungus.NarrativeLogSystem
         {
             if (ToDisplay == null)
             {
-                nameTextField.text = "";
-                storyTextField.text = "";
+                nameTextField.text =                "";
+                storyTextField.text =               "";
             }
             else
             {
