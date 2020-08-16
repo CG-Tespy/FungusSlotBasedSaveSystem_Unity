@@ -42,7 +42,7 @@ namespace Fungus
         {
             boundObjectsList = new ReorderableList(serializedObject, boundObjectsProp, true, true, true, true);
 
-            boundObjectsList.drawElementCallback = 
+            boundObjectsList.drawElementCallback =  
                 (Rect rect, int index, bool isActive, bool isFocused) => {
                 var element = boundObjectsList.serializedProperty.GetArrayElementAtIndex(index);
                 rect.y += 2;

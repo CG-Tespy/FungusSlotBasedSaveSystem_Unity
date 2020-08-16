@@ -34,7 +34,7 @@ namespace Fungus
                 var flowchart = flowcharts[i];
                 var flowchartData = FlowchartData.Encode(flowchart);
 
-                var saveDataItem = SaveDataItem.Create(FlowchartDataKey, JsonUtility.ToJson(flowchartData, true));
+                var saveDataItem = SaveDataItem.Create(FlowchartDataKey, JsonUtility.ToJson(flowchartData));
                 saveDataItems.Add(saveDataItem);
 
                 var narrativeLogItem = SaveDataItem.Create(NarrativeLogKey, FungusManager.Instance.NarrativeLog.GetJsonHistory());
