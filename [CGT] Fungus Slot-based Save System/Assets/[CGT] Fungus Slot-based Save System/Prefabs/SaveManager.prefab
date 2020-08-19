@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daaf728f355479441ab2ddf2b8a27c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveWriter: {fileID: 11400000, guid: ae4c92a09149051458980d15bc1147f7, type: 2}
-  saveReader: {fileID: 11400000, guid: 529b1e07bde9c794f9d4929291384697, type: 2}
+  saveWriter: {fileID: 11400000, guid: 637a77bada6b9e54cacb6d47a2dad6e5, type: 2}
+  saveReader: {fileID: 11400000, guid: 532e8f2e010a01644b45590912df6283, type: 2}
   gameLoader: {fileID: 0}
   gameSaver: {fileID: 0}
   warnOnUnallowedSave: 1

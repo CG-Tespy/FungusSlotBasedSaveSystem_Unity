@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Fungus;
 
 namespace CGTUnity.Fungus.SaveSystem
@@ -10,35 +8,33 @@ namespace CGTUnity.Fungus.SaveSystem
                         "Execute this block when Game Save Data is loaded.")]
     public class SaveDataLoaded : EventHandler
     {
-        [SerializeField] protected string[] ProgressMarkerKeys;
-
-        protected virtual void OnSaveDataLoaded(string ProgressMarkerKey)
+        protected virtual void OnSaveDataLoaded(string key)
         {
-            // If this has no keys, it acts as if it has the right one.
-            if (ProgressMarkerKeys.Length == 0)
+            if (this.HasNoKeys || this.HasTheKey(key))
             {
                 ExecuteBlock();
                 return;
             }
-
-            for (int i = 0; i < ProgressMarkerKeys.Length; i++)
-            {
-                if (string.Compare(ProgressMarkerKeys[i], ProgressMarkerKey) == 0)
-                {
-                    ExecuteBlock();
-                    break;
-                }
-            }
         }
 
-        public static void NotifyEventHandlers(string _savePointKey)
+        protected bool HasNoKeys { get { return ProgressMarkerKeys.Length == 0; } }
+
+        [SerializeField] protected string[] ProgressMarkerKeys;
+
+        protected bool HasTheKey(string key)
         {
-            // Fire any matching SavePointLoaded event handler with matching save key.
+            return this.ProgressMarkerKeys.Contains(key);
+        }
+
+        public static void NotifyEventHandlers(string savePointKey)
+        {
+            // Execute any SavePointLoaded event handler that has either no keys, or the key passed
+            // to this func.
             var eventHandlers = FindObjectsOfType<SaveDataLoaded>();
             for (int i = 0; i < eventHandlers.Length; i++)
             {
                 var eventHandler = eventHandlers[i];
-                eventHandler.OnSaveDataLoaded(_savePointKey);
+                eventHandler.OnSaveDataLoaded(savePointKey);
             }
 
         }
