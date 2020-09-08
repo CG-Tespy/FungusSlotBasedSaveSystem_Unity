@@ -3609,8 +3609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daaf728f355479441ab2ddf2b8a27c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveWriter: {fileID: 0}
-  saveReader: {fileID: 0}
+  saveWriter: {fileID: 11400000, guid: ae4c92a09149051458980d15bc1147f7, type: 2}
+  saveReader: {fileID: 11400000, guid: 529b1e07bde9c794f9d4929291384697, type: 2}
   gameLoader: {fileID: 0}
   gameSaver: {fileID: 0}
   warnOnUnallowedSave: 1
@@ -7681,7 +7681,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876953912405234}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0

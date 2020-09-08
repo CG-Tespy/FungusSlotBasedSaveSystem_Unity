@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/[CGT] Fungus Slot-based Save System/Scenes/NewSaveSystemAutoTestNoUI.unity
     guid: 23299d961bce4fe4db3ef861ab81b982
+  - enabled: 1
+    path: Assets/[CGT] Fungus Slot-based Save System/Scenes/NewSaveSystemSandbox_MultiMenu.unity
+    guid: 53eda2dba0cfe1046a4fa32d5e0bff50

@@ -40,7 +40,7 @@ public class ButtonTestFuncs : MonoBehaviour
     {
         slotManager.SelectSlot(indexNumber);
         PointerEventData eventData = new PointerEventData(eventSystem);
-        Button slotButton = slotManager.selectedSlot.GetComponent<Button>();
+        Button slotButton = SaveSlotManager.selectedSlot.GetComponent<Button>();
         eventSystem.SetSelectedGameObject(slotButton.gameObject);
 
         slotButton.OnPointerClick(eventData);
@@ -50,7 +50,7 @@ public class ButtonTestFuncs : MonoBehaviour
     {
         slotManager.SelectSlot(indexNumber);
         PointerEventData eventData = new PointerEventData(eventSystem);
-        Button slotButton = slotManager.selectedSlot.GetComponent<Button>();
+        Button slotButton = SaveSlotManager.selectedSlot.GetComponent<Button>();
         eventSystem.SetSelectedGameObject(slotButton.gameObject);
     }
 

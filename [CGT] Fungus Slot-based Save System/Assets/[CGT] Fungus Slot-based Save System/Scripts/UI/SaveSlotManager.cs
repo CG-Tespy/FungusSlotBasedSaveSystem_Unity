@@ -18,20 +18,22 @@ namespace CGTUnity.Fungus.SaveSystem
         [SerializeField] protected RectTransform slotHolder;
         protected List<SaveSlot> slots = new List<SaveSlot>();
 
-        public virtual SaveSlot selectedSlot            { get; protected set; }
+        public static SaveSlot selectedSlot            { get; protected set; }
 
         #region Methods
 
         #region Monobehaviour Standard
         protected virtual void Awake()
         {
+            /*
             if (S != null && S != this)
             {
                 Destroy(this.gameObject);
                 return;
             }
+            */
+            //S = this;
             
-            S = this;
 
             if (slotHolder == null)
                 throw new System.MissingFieldException(this.name + " needs a slot holder!");

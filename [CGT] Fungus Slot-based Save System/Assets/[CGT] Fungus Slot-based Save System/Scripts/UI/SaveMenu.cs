@@ -51,7 +51,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public virtual void SaveToSelectedSlot()
         {
-            var slot = slotManager.selectedSlot;
+            var slot = SaveSlotManager.selectedSlot;
             if (slot == null)
                 return;
             
@@ -83,7 +83,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public virtual void LoadFromSelectedSlot()
         {
-            var slot = slotManager.selectedSlot;
+            var slot = SaveSlotManager.selectedSlot;
             if (slot == null || slot.SaveData == null)
                 return;
 
@@ -114,7 +114,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
         public virtual void ClearSelectedSlot()
         {
-            var slot = slotManager.selectedSlot;
+            var slot = SaveSlotManager.selectedSlot;
             if (slot == null || slot.SaveData == null)
                 return;
 
