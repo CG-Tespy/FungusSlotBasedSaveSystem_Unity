@@ -5,6 +5,6 @@ This was made with Fungus 3.12.0 (compatibility version) in Unity 2018, with the
 <br/><br/>
 Releases for this system: https://github.com/CG-Tespy/Fungus-Slot-based-Save-System/releases <br/> <br/>
 
-Information on how to use this can be found on this repo's wiki pages.
+**Tutorials and other information on using this can be found on this repo's wiki pages.**
 <br/><br/>
 If you are using this in one of your projects, I would very much appreciate it if you'd let me know. Just send me an email at gbcabreracgt@gmail.com
