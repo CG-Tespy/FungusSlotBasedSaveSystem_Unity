@@ -5,7 +5,10 @@ This was made with Fungus 3.12.0 (compatibility version) in Unity 2018, with the
 <br/><br/>
 
 # Installation
-Go to https://github.com/CG-Tespy/Fungus-Slot-based-Save-System/releases/ and download the unitypackage for the version you want. At the time of this writing, the latest version is 1.06.05. When the package is done downloading, open your Unity project and install the save system through that package.
+Go to https://github.com/CG-Tespy/Fungus-Slot-based-Save-System/releases/ and download the unitypackage for the version you want.  When the package is done downloading, open your Unity project and install the save system through that package.
+
+<br>
+At the time of this writing, the latest version is 1.06.05.
 
 # Tutorials
 Please be sure to check the wiki for them. https://github.com/CG-Tespy/Fungus-Slot-based-Save-System/wiki
