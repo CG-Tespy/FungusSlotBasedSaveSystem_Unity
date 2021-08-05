@@ -12,6 +12,4 @@ Please be sure to check the wiki for them. https://github.com/CG-Tespy/Fungus-Sl
 
 # Other Notes
 
-**Tutorials and other information on using this can be found on this repo's wiki pages.**
-<br/><br/>
 If you are using this in one of your projects, I would very much appreciate it if you'd let me know. Just send me an email at gbcabreracgt@gmail.com
