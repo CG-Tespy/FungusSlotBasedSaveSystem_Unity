@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using DateTime = System.DateTime;
 
 namespace CGTUnity.Fungus.SaveSystem
 {
@@ -14,7 +15,11 @@ namespace CGTUnity.Fungus.SaveSystem
     
         [SerializeField] int slotNumber = -1;
 
-        [SerializeField] System.DateTime lastWritten;
+        [SerializeField] DateTime lastWritten;
+        [SerializeField] string lastWrittenAsString = "";
+        // ^ DateTimes never get properly serialized by Unity's built-in JSON functionality, 
+        // hence the need for a string version that'll be used to bring lastWritten to
+        // the right value
 
         [SerializeField] List<SaveDataItem> items = new List<SaveDataItem>();
         [SerializeField] string progressMarkerKey;
@@ -72,7 +77,6 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public GameSaveData() 
         {
-            UpdateTime();
             description = lastWritten.ToLongDateString();
             Signals.GameSaveCreated.Invoke(this);
         }
@@ -112,8 +116,12 @@ namespace CGTUnity.Fungus.SaveSystem
         /// </summary>
         public virtual void UpdateTime()
         {
-            lastWritten = System.DateTime.Now;
+            lastWritten = DateTime.Now;
+            lastWrittenAsString = lastWritten.ToString(roundTripFormat);
         }
+
+        protected static string roundTripFormat = "O";
+        // ^ To make sure that the date is deserialized correctly regardless of time zone
 
         /// <summary>
         /// Warning: A GameSaveData with a cleared state is not safe to load, unless your 
@@ -127,6 +135,20 @@ namespace CGTUnity.Fungus.SaveSystem
             slotNumber = -1;
             lastWritten = new System.DateTime();
             items.Clear();
+        }
+
+        /// <summary>
+        /// Should be called when a GameSaveData is deserialized.
+        /// </summary>
+        public virtual void OnDeserialize()
+        {
+            UpdateTimeFromString();
+        }
+
+        protected virtual void UpdateTimeFromString()
+        {
+            if (lastWrittenAsString.Length > 0) // To avoid errors in previous versions of this system
+                lastWritten = DateTime.Parse(lastWrittenAsString);
         }
 
         #endregion

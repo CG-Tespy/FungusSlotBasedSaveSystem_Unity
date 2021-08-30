@@ -306,10 +306,12 @@ namespace CGTUnity.Fungus.SaveSystem
 
             foreach (var fileName in WrittenSaves.Keys)
             {
+                var metaFileName = fileName + ".meta";
+
                 if (WrittenSaves[fileName] == saveData)
                 {
                     var filePath = Path.Combine(SaveDirectory, fileName);
-                    var metaFilePath = filePath + ".meta";
+                    var metaFilePath = Path.Combine(SaveDirectory, metaFileName);
                     File.Delete(filePath);
                     File.Delete(metaFilePath);
                     eraseSuccessful = true;

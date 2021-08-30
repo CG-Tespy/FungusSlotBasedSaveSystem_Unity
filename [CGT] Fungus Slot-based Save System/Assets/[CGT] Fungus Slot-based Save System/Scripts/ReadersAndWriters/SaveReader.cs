@@ -80,6 +80,7 @@ namespace CGTUnity.Fungus.SaveSystem
 
             // ... then make sure it worked as intended.
             var saveData = JsonUtility.FromJson<GameSaveData>(jsonSaveData);
+            saveData.OnDeserialize();
             ValidateReadSaveData(saveData, filePath);
 
             // Alert listeners
